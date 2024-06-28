@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.12
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.11...v0.0.12)
+
+### 🩹 Fixes
+
+- Updated vue components import -defineModel +defineAsyncComponent ([aad3d3d](https://github.com/community-release/nx-ui/commit/aad3d3d))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.11
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.10...v0.0.11)
