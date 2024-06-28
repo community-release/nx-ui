@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.9...v0.0.10)
+
+### 🩹 Fixes
+
+- Added use of nuxt/kit resolver to all scripts ([5fb641e](https://github.com/community-release/nx-ui/commit/5fb641e))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.9
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.8...v0.0.9)
