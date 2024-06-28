@@ -1,11 +1,8 @@
 import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const __dirname__ = path.dirname(fileURLToPath(import.meta.url));
 
-export default (options = {}) => {
-	const dirComponents = path.resolve(__dirname__, '../runtime/components/');
+export default (resolve, srcDir, options = {}) => {
+	const dirComponents = resolve(srcDir, './runtime/components/');
 	const result = {};
 
 	// Get components props.json files
@@ -16,7 +13,7 @@ export default (options = {}) => {
 	// Generate result array
 	for (let file of files) {
 		const componentName = file.split('\\')[0];
-		const propsJSON = fs.readFileSync(path.resolve(dirComponents, file), { encoding: 'utf-8' });
+		const propsJSON = fs.readFileSync(resolve(dirComponents, file), { encoding: 'utf-8' });
 		const props = JSON.parse(propsJSON);
 		
 		result[componentName] = props;

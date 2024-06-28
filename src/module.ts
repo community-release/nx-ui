@@ -24,6 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
 	defaults: {},
 	setup(options, nuxt) {
 		const { resolve } = createResolver(import.meta.url);
+		const srcDir = resolve('./');
 
 		// Add templates
 		addTemplate({
@@ -32,14 +33,14 @@ export default defineNuxtModule<ModuleOptions>({
 			//write: true
 		});
 		addTemplate({
-			dst: './src/runtime/components/styles/components.less',
+			dst: resolve('./runtime/components/styles/components.less'),
 			write: true,
 			filename: 'components.less',
 			getContents: () => generateComponentsDefaults(options)
 		});
 
 		// Get component props
-		const componentsProps = readComponentsProps(options);
+		const componentsProps = readComponentsProps(resolve, srcDir, options);
 
 		// Create virtual files with components props
 		for (let componentName in componentsProps) {

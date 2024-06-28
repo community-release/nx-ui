@@ -10,7 +10,7 @@ import readComponentsProps from './readComponentsProps.js';
 const __dirname__ = path.dirname(fileURLToPath(import.meta.url));
 
 // Create mocks for components props
-const componentsProps = readComponentsProps();
+const componentsProps = readComponentsProps(path.resolve, path.resolve(__dirname__, '..'));
 
 console.log(`\nGenerating mock files for Vitest...`);
 
