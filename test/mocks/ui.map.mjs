@@ -1,0 +1,1 @@
+export default {"zoom":8,"zoomMin":7,"zoomMax":18}
