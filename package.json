@@ -25,8 +25,6 @@
         "@nuxtjs/color-mode": "^3.4.2",
         "@nuxtjs/i18n": "^8.3.1",
         "@pinia/nuxt": "^0.5.1",
-        "@vuedoc/md": "^4.0.0-beta8",
-        "@vuedoc/parser": "^4.0.0-beta14",
         "ol": "^9.1.0",
         "pinia": "^2.1.7"
     },
@@ -38,6 +36,8 @@
         "@types/node": "^20.12.4",
         "@vitejs/plugin-vue": "^5.0.5",
         "@vue/test-utils": "^2.4.6",
+        "@vuedoc/md": "^4.0.0-beta8",
+        "@vuedoc/parser": "^4.0.0-beta14",
         "changelogen": "^0.5.5",
         "happy-dom": "^14.12.0",
         "less": "^3.9.0",
