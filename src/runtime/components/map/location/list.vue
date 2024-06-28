@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia';
+import { defineModel, computed, watch } from 'vue';
 import { useMapStore } from '../store';
 
 const model = defineModel();

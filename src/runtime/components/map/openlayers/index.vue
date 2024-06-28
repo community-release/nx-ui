@@ -9,6 +9,9 @@
 // import 'ol/ol.css';
 
 // Imports
+	// Vue
+	import { ref, watch, onMounted } from 'vue';
+
 	// Pinia store
 	import { storeToRefs } from 'pinia';
 	import { useMapStore } from '../store';
@@ -26,7 +29,6 @@
 	import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
 	import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
 	import { boundingExtent } from 'ol/extent.js';
-
 
 	import Map from 'ol/Map.js';
 	import View from 'ol/View.js';

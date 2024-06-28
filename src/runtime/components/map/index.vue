@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+import { watch, computed } from 'vue';
 import { useMapStore } from './store';
 import comProps from '#build/ui.map.mjs';
 

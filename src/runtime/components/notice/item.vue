@@ -12,6 +12,7 @@
 
 <script setup>
 // Imports
+	import { computed } from 'vue';
 	import { useUINoticeStore } from './store';
 
 // Data

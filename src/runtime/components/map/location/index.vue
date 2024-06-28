@@ -10,6 +10,9 @@
 </template>
 
 <script setup>
+// Import
+import { computed, useSlots } from 'vue';
+
 // Data
 const props = defineProps({
 	width: {
