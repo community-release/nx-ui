@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.11
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.10...v0.0.11)
+
+### 🩹 Fixes
+
+- Updated vue components so they now import all that was auto-imported by nuxt ([62a43a9](https://github.com/community-release/nx-ui/commit/62a43a9))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.10
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.9...v0.0.10)
