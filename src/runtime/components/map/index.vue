@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+import openlayers from './openlayers/index.vue';
 import { watch, computed, defineAsyncComponent } from 'vue';
 import { useMapStore } from './store';
 import comProps from '#build/ui.map.mjs';
@@ -17,6 +18,9 @@ import comProps from '#build/ui.map.mjs';
 // Data
 const store = useMapStore();
 const emit = defineEmits('initialized');
+const engines = {
+	openlayers
+};
 
 const props = defineProps({
 	engine: {
@@ -88,7 +92,8 @@ watch(() => props.disabledMarkers, (v) => {
 }, {immediate: true});
 
 const mapEngine = computed(() => {
-	return defineAsyncComponent(() => import(`./${props.engine}/index.vue`));
+	return engines[props.engine];
+	//return defineAsyncComponent(() => import(`./${props.engine}/index.vue`));
 });
 </script>
 
