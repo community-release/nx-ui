@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v0.0.2
+
+
+### 🏡 Chore
+
+- Initial ([315be24](https://github.com/community-release/nx-ui/commit/315be24))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v1.0.4
 
 [compare changes](https://github.com/The-Tirius/nx-ui/compare/v1.0.3...v1.0.4)
