@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.7...v0.0.8)
+
+### 🏡 Chore
+
+- Moved @vuedoc to dev dependencies ([3a1d335](https://github.com/community-release/nx-ui/commit/3a1d335))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.7
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.6...v0.0.7)
