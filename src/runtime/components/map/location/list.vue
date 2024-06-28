@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { defineModel, computed, watch } from 'vue';
+import { computed, watch } from 'vue';
 import { useMapStore } from '../store';
 
 const model = defineModel();

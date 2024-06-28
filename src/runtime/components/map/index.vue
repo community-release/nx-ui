@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { watch, computed } from 'vue';
+import { watch, computed, defineAsyncComponent } from 'vue';
 import { useMapStore } from './store';
 import comProps from '#build/ui.map.mjs';
 
