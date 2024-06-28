@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.13
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.12...v0.0.13)
+
+### 🚀 Enhancements
+
+- **map:** Removed dynamic load of map engine for a test ([b2e1aca](https://github.com/community-release/nx-ui/commit/b2e1aca))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.12
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.11...v0.0.12)
