@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.15
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.14...v0.0.15)
+
+### 🚀 Enhancements
+
+- Map engine now load on demand ([e2a2502](https://github.com/community-release/nx-ui/commit/e2a2502))
+
+### 🏡 Chore
+
+- Readme update (not for production use - added) ([ff20064](https://github.com/community-release/nx-ui/commit/ff20064))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.14
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.13...v0.0.14)
