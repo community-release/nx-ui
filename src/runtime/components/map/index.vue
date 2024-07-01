@@ -1,17 +1,15 @@
 <template>
 	<section class="component-ui-map">
-		<!-- <component :is="mapEngine" @initialized="emit('initialized', $event)"> -->
-		<openlayers @initialized="emit('initialized', $event)">
+		<component :is="mapEngine" @initialized="emit('initialized', $event)">
 			<slot :store="store"></slot>
 			<div class="slot-row">
 				<slot name="row" :store="store"></slot>
 			</div>
-		</openlayers>
+		</component>
 	</section>
 </template>
 
 <script setup>
-import openlayers from './openlayers/index.vue';
 import { watch, computed, defineAsyncComponent } from 'vue';
 import { useMapStore } from './store';
 import comProps from '#build/ui.map.mjs';
@@ -19,9 +17,6 @@ import comProps from '#build/ui.map.mjs';
 // Data
 const store = useMapStore();
 const emit = defineEmits('initialized');
-// const engines = {
-// 	openlayers
-// };
 
 const props = defineProps({
 	engine: {
@@ -92,10 +87,9 @@ watch(() => props.disabledMarkers, (v) => {
 	store.setDisabledMarkers(v);
 }, {immediate: true});
 
-// const mapEngine = computed(() => {
-// 	return engines[props.engine];
-// 	//return defineAsyncComponent(() => import(`./${props.engine}/index.vue`));
-// });
+const mapEngine = computed(() => {
+	return defineAsyncComponent(() => import(`./${props.engine}/index.vue`));
+});
 </script>
 
 <style lang="less">
