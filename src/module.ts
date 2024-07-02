@@ -42,6 +42,9 @@ export default defineNuxtModule<ModuleOptions>({
 		// Get component props
 		const componentsProps = readComponentsProps(resolve, srcDir, options);
 
+		console.log('nx-ui componentsProps', componentsProps);
+		
+
 		// Create virtual files with components props
 		for (let componentName in componentsProps) {
 			addTemplate({
