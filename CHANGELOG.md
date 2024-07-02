@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.18
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.17...v0.0.18)
+
+### 🩹 Fixes
+
+- **map:** Changed dynamic load of map engine component ([5b27bdb](https://github.com/community-release/nx-ui/commit/5b27bdb))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.17
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.16...v0.0.17)
