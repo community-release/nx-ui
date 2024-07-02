@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.17
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.16...v0.0.17)
+
+### ✅ Tests
+
+- Disabled docs render test (fail for no reason) ([68f00b9](https://github.com/community-release/nx-ui/commit/68f00b9))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.16
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.15...v0.0.16)
