@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-
+import path from 'node:path';
 
 export default (resolve, srcDir, options = {}) => {
 	const dirComponents = resolve(srcDir, './runtime/components/');
@@ -12,7 +12,7 @@ export default (resolve, srcDir, options = {}) => {
 
 	// Generate result array
 	for (let file of files) {
-		const componentName = file.split('\\')[0];
+		const componentName = file.split(path.sep)[0];
 		const propsJSON = fs.readFileSync(resolve(dirComponents, file), { encoding: 'utf-8' });
 		const props = JSON.parse(propsJSON);
 		
