@@ -6,7 +6,7 @@ export default defineNuxtPlugin(function (nuxt) {
 
     return {
         provide: {
-            showNotice(duration: 8000, templateComponent: any, templateProps: {}) {
+            showNotice(duration = 8000, templateComponent, templateProps = {}) {
 				const id = noticeStore.add({
 					duration, 
 					templateComponent,

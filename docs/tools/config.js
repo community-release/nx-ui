@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function() {
-	const configDir = path.resolve(dirname__, '../config/');
-	const outputDir = path.resolve(dirname__, '../');
+	const configDir = path.resolve(__dirname, '../config/');
+	const outputDir = path.resolve(__dirname, '../');
 	let result = {};
 	let configMap = {};
 

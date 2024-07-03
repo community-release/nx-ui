@@ -1,6 +1,6 @@
 import defaultComponentsStyle from '../default.components';
 
-export default (options: {}) => {
+export default (options) => {
 	let result = '';
 
 	const components = options?.components ? options.components : {};

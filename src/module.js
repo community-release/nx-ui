@@ -1,7 +1,6 @@
 import {
 	defineNuxtModule,
 	addPlugin,
-	addImports,
 	addComponent,
 	addComponentsDir,
 	addTemplate,
@@ -12,10 +11,7 @@ import generateStyle from './utils/generateStyle';
 import generateComponentsDefaults from './utils/generateComponentsDefaults';
 import readComponentsProps from './utils/readComponentsProps';
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
-
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
 	meta: {
 		name: 'ui',
 		configKey: 'ui',
@@ -41,9 +37,6 @@ export default defineNuxtModule<ModuleOptions>({
 
 		// Get component props
 		const componentsProps = readComponentsProps(resolve, srcDir, options);
-
-		console.log('nx-ui componentsProps', componentsProps);
-		
 
 		// Create virtual files with components props
 		for (let componentName in componentsProps) {

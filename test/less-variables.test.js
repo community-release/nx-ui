@@ -9,7 +9,7 @@ const pathComponents = path.resolve( __dirname__, '../src/runtime/components' );
 
 describe('LESS', async () => {
 	it('Vue components are using less variables in allowed format (@com-*)', async () => {
-		const files = fs.readdirSync(pathComponents, { recursive: true });
+		const files = fs.readdirSync(pathComponents, { recursive: true, encoding: 'utf-8' });
 		const vueComponents = files.filter(name => name.endsWith('.vue'));
 		const arValidVariants = ['import ', 'keyframes ', 'media', 'com-'];
 		let errorMessage = '';

@@ -1,6 +1,6 @@
 import defaultStyle from '../default.style';
 
-export default (options: {}) => {
+export default (options) => {
 	let result = ':root {';
 
 	const userStyle = options?.style ? options.style : {};

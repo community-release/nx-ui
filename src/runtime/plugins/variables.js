@@ -7,7 +7,7 @@ import style from '#build/ui.style.mjs';
 export default defineNuxtPlugin(function(nuxt) {
 	const computedStyle = computed(() => style);
 
-    const headData: any = {
+    const headData = {
         style: [
             {
                 innerHTML: () => computedStyle.value,

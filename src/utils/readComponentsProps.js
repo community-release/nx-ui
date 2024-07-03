@@ -6,7 +6,7 @@ export default (resolve, srcDir, options = {}) => {
 	const result = {};
 
 	// Get components props.json files
-	let files = fs.readdirSync(dirComponents, { recursive: true  });
+	let files = fs.readdirSync(dirComponents, { recursive: true, encoding: 'utf-8' });
 
 	files = files.filter(v => v.indexOf('props.json') !== -1);
 
