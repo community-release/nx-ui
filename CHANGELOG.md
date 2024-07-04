@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.19
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.18...v0.0.19)
+
+### 🩹 Fixes
+
+- Removed ts ([5164ea1](https://github.com/community-release/nx-ui/commit/5164ea1))
+
+### 🤖 CI
+
+- Added deploy script ([6e731e0](https://github.com/community-release/nx-ui/commit/6e731e0))
+- Added pnpm package manager install ([50a3450](https://github.com/community-release/nx-ui/commit/50a3450))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@edvais.lv>
+
 ## v0.0.18
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.17...v0.0.18)
