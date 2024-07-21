@@ -2,17 +2,38 @@
 	<section>
 		<section-title>ui-accordion</section-title>
 
-		<component-preview title="Example" :example="ExampleRaw">
+		<helper-typography>
+			<h3>As props</h3>
+			<p>You can pass accordion items as prop</p>
+		</helper-typography>
+		<br>
+		<component-preview title="Example (props)" :example="ExamplePropsRaw">
 			<template #default>
-				<Example />
+				<ExampleProps />
+			</template>
+		</component-preview>
+
+		<br><br>
+
+		<helper-typography>
+			<h3>As slot</h3>
+			<p>Or you can pass them as components</p>
+		</helper-typography>
+		<br>
+		<component-preview title="Example (slot)" :example="ExampleSlotRaw">
+			<template #default>
+				<ExampleSlot />
 			</template>
 		</component-preview>
 	</section>
 </template>
 
 <script setup>
-import ExampleRaw from './example.vue?raw';
-import Example from './example.vue';
+import ExamplePropsRaw from './ExampleProps.vue?raw';
+import ExampleProps from './ExampleProps.vue';
+
+import ExampleSlotRaw from './ExampleSlot.vue?raw';
+import ExampleSlot from './ExampleSlot.vue';
 
 const { t } = useI18n();
 
