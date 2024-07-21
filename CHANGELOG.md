@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.21
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.20...v0.0.21)
+
+### 🚀 Enhancements
+
+- **accordion:** Active by default equal null, added ability to close all items ([f6c558b](https://github.com/community-release/nx-ui/commit/f6c558b))
+
+### 📖 Documentation
+
+- **accordion:** Fixed example path ([7e5b255](https://github.com/community-release/nx-ui/commit/7e5b255))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.20
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.19...v0.0.20)
