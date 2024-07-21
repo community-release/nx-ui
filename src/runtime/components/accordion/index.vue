@@ -10,18 +10,19 @@
 <script setup>
 // Imports
 	import { ref, computed, provide } from 'vue';
+	import comProps from '#build/ui.accordion.mjs';
 
 // Data
 	const props = defineProps({
 		/** Icon for light theme or light & dark theme*/
 		icon: {
 			type: String,
-			default: ''
+			default: comProps.icon
 		},
 		/** Icon for dark theme */
 		iconDark: {
 			type: String,
-			default: ''
+			default: comProps.iconDark
 		},
 		/**
 		 * Accordion elements list, AccordionListItem = {title: '', text: ''}
