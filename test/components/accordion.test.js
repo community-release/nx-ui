@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 import { mount } from '@vue/test-utils'
-import C from '../../src/runtime/components/accordion.vue';
+import C from '../../src/runtime/components/accordion/index.vue';
 
 describe('accordion component', async () => {
 	const wrapper = mount(C, {
