@@ -4,7 +4,6 @@
 			icon="/icons/question.svg" 
 			icon-dark="/icons/question-dark.svg" 
 			:list="list" 
-			:active="1"
 		></ui-accordion>
 	</div>
 </template>

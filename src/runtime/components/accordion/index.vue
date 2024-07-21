@@ -38,7 +38,7 @@
 		 */
 		active: {
 			type: [Number, null],
-			default: 0
+			default: null
 		}
 	});
 

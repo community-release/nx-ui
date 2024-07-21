@@ -2,7 +2,7 @@
 	<section class="component-ui-accordion-item" 
 		:class="{'tag-active': accordionData.activeItem.value === id, 'tag-icon': accordionData.haveIcon}"
 	>
-		<div class="header" @click="accordionData.activeItem.value = id">
+		<div class="header" @click="accordionData.activeItem.value = accordionData.activeItem.value === id ? null : id">
 			<i class="icon"></i>
 			<div class="title">{{ title }}</div>
 			<div class="btn-toggle"></div>
@@ -14,10 +14,10 @@
 </template>
 
 <script setup>
-	// Import
+// Import
 	import { inject } from 'vue'
 
-	// Data
+// Data
 	const accordionData = inject('accordionData', null);
 	const props = defineProps({
 		title: String,
