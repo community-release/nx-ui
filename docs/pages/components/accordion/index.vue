@@ -29,11 +29,11 @@
 </template>
 
 <script setup>
-import ExamplePropsRaw from './ExampleProps.vue?raw';
-import ExampleProps from './ExampleProps.vue';
+import ExamplePropsRaw from './exampleProps.vue?raw';
+import ExampleProps from './exampleProps.vue';
 
-import ExampleSlotRaw from './ExampleSlot.vue?raw';
-import ExampleSlot from './ExampleSlot.vue';
+import ExampleSlotRaw from './exampleSlot.vue?raw';
+import ExampleSlot from './exampleSlot.vue';
 
 const { t } = useI18n();
 
