@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.20
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.19...v0.0.20)
+
+### 🚀 Enhancements
+
+- **accordion:** Added ability to define data as slot components  (ui-accordion-item), removed icon-dark, now icon is for all the themes and icon-dark for dark theme if needed separate icon ([e09ace4](https://github.com/community-release/nx-ui/commit/e09ace4))
+- **accordion:** Added ability to define icon and iconDark with ui.config file ([b11930a](https://github.com/community-release/nx-ui/commit/b11930a))
+
+### 🏡 Chore
+
+- Renamed docgen.config.js to docgen.config.cjs ([bd243ab](https://github.com/community-release/nx-ui/commit/bd243ab))
+
+### ✅ Tests
+
+- Updated accordion test component import path ([d633070](https://github.com/community-release/nx-ui/commit/d633070))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.19
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.18...v0.0.19)
