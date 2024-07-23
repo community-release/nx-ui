@@ -33,17 +33,17 @@
 			default: () => []
 		},
 		/**
-		 * Slide that is active(open) by default, null = all closed
-		 * @values 1, 2, 3, 1000, null
+		 * Slide that is open by default, -1 = all closed
+		 * @values -1, 1, 2, 3, 1000
 		 */
-		active: {
-			type: [Number, null],
-			default: null
-		}
+		open: {
+			type: Number,
+			default: -1
+		},
 	});
 
-	const activeItem = ref(props.active);
-	const itemCounter = ref(0);
+	const open = ref(props.open);
+	const counter = ref(0);
 
 	const iconLightComputed = computed(() => {
 		return props.icon !== '' ? `url(${props.icon})` : 'none';
@@ -54,8 +54,8 @@
 	});
 
 	provide('accordionData', {
-		itemCounter,
-		activeItem,
+		counter,
+		open,
 		haveIcon: !!props.icon
 	});
 </script>

@@ -2,7 +2,7 @@
 	<div>
 		<ui-accordion 
 			icon="/icons/question.svg"
-			:active="1"
+			:open="1"
 		>
 			<ui-accordion-item title="Hello world 1">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

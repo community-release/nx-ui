@@ -1,8 +1,8 @@
 <template>
 	<section class="component-ui-accordion-item" 
-		:class="{'tag-active': accordionData.activeItem.value === id, 'tag-icon': accordionData.haveIcon}"
+		:class="{'tag-active': accordionData.open.value === id, 'tag-icon': accordionData.haveIcon}"
 	>
-		<div class="header" @click="accordionData.activeItem.value = accordionData.activeItem.value === id ? null : id">
+		<div class="header" @click="accordionData.open.value = accordionData.open.value === id ? -1 : id">
 			<i class="icon"></i>
 			<div class="title">{{ title }}</div>
 			<div class="btn-toggle"></div>
@@ -18,12 +18,12 @@
 	import { inject } from 'vue'
 
 // Data
-	const accordionData = inject('accordionData', null);
+	const accordionData = inject('accordionData');
 	const props = defineProps({
 		title: String,
 		text: String,
 	});
-	const id = accordionData.itemCounter.value++;
+	const id = accordionData.counter.value++;
 </script>
 
 <style lang="less">
@@ -162,12 +162,6 @@
 	}
 
 	&.tag-icon {
-		// .header {
-		// 	position: relative;
-		// 	padding: @com-space-small var(--ui-accordion-btn-padding) @com-space-small calc(var(--ui-accordion-icon-size) + @com-space-default);
-		// 	margin-bottom: @com-space-mini;
-		// 	cursor: pointer;
-		// }
 		--ui-accordion-icon-size: @com-icon-size;
 	}
 }
@@ -177,7 +171,6 @@
 		&.tag-icon {
 			--ui-accordion-icon-size: @com-icon-size-small;
 		}
-		//--ui-accordion-icon-size: @com-icon-size-small;
 		--ui-accordion-btn-padding: @com-btn-padding-small;
 
 		font-size: @com-text-default;
