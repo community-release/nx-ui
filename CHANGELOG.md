@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.22
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.21...v0.0.22)
+
+### 🩹 Fixes
+
+- **accordion:** Renamed active prop to open to fix initial open/close issue ([13e139f](https://github.com/community-release/nx-ui/commit/13e139f))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.21
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.20...v0.0.21)
