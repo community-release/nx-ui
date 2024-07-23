@@ -1,5 +1,8 @@
 <template>
 	<component class="component-ui-card" :is="cardIs" :to="to">
+		<div class="ui-card-image" v-if="image">
+			<img :src="image" :alt="imageAlt">
+		</div>
 		<div class="ui-card-icon" v-if="icon">
 			<img :src="icon">
 			<component v-if="iconTitle" :is="iconTitleIs" :to="iconLink" target="_blank" class="ui-card-icon-title">
@@ -7,10 +10,10 @@
 			</component>
 		</div>
 		<div class="ui-card-title" v-if="title"><strong>{{ title }}</strong></div>
-		<div class="ui-card-content" v-if="slots?.default">
+		<div class="ui-card-content" v-if="$slots?.default">
 			<slot></slot>
 		</div>
-		<div class="ui-card-footer" v-if="slots?.footer">
+		<div class="ui-card-footer" v-if="$slots?.footer">
 			<slot name="footer"></slot>
 		</div>
 	</component>
@@ -18,13 +21,19 @@
 
 <script setup>
 // Imports
-	import { useSlots, resolveComponent } from 'vue';
+import { resolveComponent } from 'vue';
 
-//
-const slots = useSlots()
-
+// Data
 const props = defineProps({
 	to: {
+		type: String,
+		default: ''
+	},
+	image: {
+		type: String,
+		default: ''
+	},
+	imageAlt: {
 		type: String,
 		default: ''
 	},
@@ -80,6 +89,12 @@ const iconTitleIs = props.iconLink ? resolveComponent('NuxtLink') : 'b';
 	color: @com-color-header-text;
 	background: @com-color-surface;
 	border-radius: @com-border-radius-default;
+
+	.ui-card-image {
+		overflow: hidden;
+		border-top-left-radius: @com-border-radius-default;
+		border-top-right-radius: @com-border-radius-default;
+	}
 
 	.ui-card-icon {
 		display: grid;
