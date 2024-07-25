@@ -12,7 +12,7 @@
 const list = [
 	{
 		"title": "Lorem ipsum...",
-		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo mauris quis nisl tristique, in varius lorem consequat."
+		"text": "<b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Nulla commodo mauris quis nisl tristique, in varius lorem consequat."
 	},
 	{
 		"title": "Dolor sit amet...",

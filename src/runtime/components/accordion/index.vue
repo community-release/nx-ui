@@ -1,7 +1,7 @@
 <template>
 	<section class="component-ui-accordion">
 		<ui-accordion-item v-if="list.length" v-for="item of list" :title="item.title">
-			{{ item.text }}
+			<div v-html="item.text"></div>
 		</ui-accordion-item>
 		<slot></slot>
 	</section>

@@ -1,5 +1,8 @@
 <template>
 	<component class="component-ui-card" :is="cardIs" :to="to">
+		<div class="ui-card-header" v-if="$slots?.header">
+			<slot name="header"></slot>
+		</div>
 		<div class="ui-card-image" v-if="image">
 			<img :src="image" :alt="imageAlt">
 		</div>
@@ -9,7 +12,10 @@
 				{{ iconTitle }}
 			</component>
 		</div>
-		<div class="ui-card-title" v-if="title"><strong>{{ title }}</strong></div>
+		<component v-if="title" :is="titleUrl ? 'a' : 'div'" class="ui-card-title" :href="titleUrl">
+			<strong>{{ title }}</strong>
+			<div v-if="subtitle" class="ui-card-subtitle">{{ subtitle }}</div>
+		</component>
 		<div class="ui-card-content" v-if="$slots?.default">
 			<slot></slot>
 		</div>
@@ -53,6 +59,18 @@ const props = defineProps({
 		type: String,
 		default: ''
 	},
+	subtitle: {
+		type: String,
+		default: ''
+	},
+	titleUrl: {
+		type: String,
+		default: ''
+	},
+	href: {
+		type: String,
+		default: ''
+	},
 });
 
 const cardIs = (props.to || props.href) ? resolveComponent('NuxtLink') : 'div';
@@ -70,14 +88,22 @@ const iconTitleIs = props.iconLink ? resolveComponent('NuxtLink') : 'b';
 // Font family
 @com-font-header: var(--ui-font-header);
 
+// Font size
+@com-text-default: var(--ui-text-default);
+@com-text-small: var(--ui-text-small);
+
 // Color
 @com-color-header-text: var(--ui-color-header-text);
+@com-color-gray-text: var(--ui-color-gray-text);
 @com-color-surface: var(--ui-color-surface);
 @com-color-text: var(--ui-color-text);
 @com-color-primary: var(--ui-color-primary);
 
 // Padding
+@com-space-big: var(--ui-space-big);
+@com-space-medium: var(--ui-space-medium);
 @com-space-default: var(--ui-space-default);
+@com-space-small: var(--ui-space-small);
 @com-space-micro: var(--ui-space-micro);
 @com-space-mini: var(--ui-space-mini);
 
@@ -91,6 +117,7 @@ const iconTitleIs = props.iconLink ? resolveComponent('NuxtLink') : 'b';
 	border-radius: @com-border-radius-default;
 
 	.ui-card-image {
+		padding: @com-space-big @com-space-big @com-space-mini @com-space-big;
 		overflow: hidden;
 		border-top-left-radius: @com-border-radius-default;
 		border-top-right-radius: @com-border-radius-default;
@@ -123,6 +150,8 @@ const iconTitleIs = props.iconLink ? resolveComponent('NuxtLink') : 'b';
 		display: block;
 		padding: var(--ui-card-padding) var(--ui-card-padding) @com-space-micro var(--ui-card-padding);
 		font-family: @com-font-header;
+		font-size: @com-text-default;
+		color: @com-color-header-text;
 
 		strong {
 			position: relative;
@@ -140,6 +169,11 @@ const iconTitleIs = props.iconLink ? resolveComponent('NuxtLink') : 'b';
 
 				background: @com-color-primary;
 			}
+		}
+
+		.ui-card-subtitle {
+			font-size: @com-text-small;
+			color: @com-color-gray-text;
 		}
 	}
 

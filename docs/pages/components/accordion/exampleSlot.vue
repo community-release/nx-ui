@@ -5,7 +5,7 @@
 			:open="1"
 		>
 			<ui-accordion-item title="Hello world 1">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+				<b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit, sed do eiusmod tempor
 			</ui-accordion-item>
 			<ui-accordion-item title="Hello world 2">
 				Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
