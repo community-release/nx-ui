@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.24
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.23...v0.0.24)
+
+### 🚀 Enhancements
+
+- **accordion:** You can now use html inside accordion items passed as props ([56dc66e](https://github.com/community-release/nx-ui/commit/56dc66e))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.23
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.22...v0.0.23)
