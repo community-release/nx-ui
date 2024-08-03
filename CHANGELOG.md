@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.26
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.25...v0.0.26)
+
+### 🚀 Enhancements
+
+- **label:** Added more size options, added weight prop ([911a356](https://github.com/community-release/nx-ui/commit/911a356))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.25
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.24...v0.0.25)
