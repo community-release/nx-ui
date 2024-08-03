@@ -1,5 +1,5 @@
 <template>
-	<label class="component-ui-label" :class="`tag-size-${size}`">
+	<label class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`]">
 		<span class="component-ui-label--text">{{ text }}</span>
 		<slot></slot>
 	</label>
@@ -17,7 +17,11 @@
 		size: {
 			type: String,
 			default: comProps.size,
-		}
+		},
+		weight: {
+			type: [String, Number],
+			default: comProps.weight,
+		},
 	});
 </script>
 
@@ -38,13 +42,20 @@
 		display: block;
 		padding-bottom: @com-space-micro;
 		font-weight: @com-font-weight-medium;
-		font-size: @com-text-medium;
+		font-size: @com-text-default;
 		color: @com-color-header-text;
 	}
 
 	// Text size
 	&.tag-size-big .component-ui-label--text { font-size: @com-text-big; }
 	&.tag-size-medium .component-ui-label--text { font-size: @com-text-medium; }
+	&.tag-size-default .component-ui-label--text { font-size: @com-text-default; }
 	&.tag-size-small .component-ui-label--text { font-size: @com-text-small; }
+
+	// Text weight
+	&.tag-weight-700 .component-ui-label--text { font-weight: 700; }
+	&.tag-weight-600 .component-ui-label--text { font-weight: 600; }
+	&.tag-weight-500 .component-ui-label--text { font-weight: 500; }
+	&.tag-weight-400 .component-ui-label--text { font-weight: 400; }
 }
 </style>

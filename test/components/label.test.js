@@ -10,7 +10,8 @@ describe('label component', async () => {
 		},
 		props: {
 			text: 'label text test',
-			size: 'big'
+			size: 'big',
+			weight: '700'
 		}
 	});
 	const html = wrapper.html();
@@ -29,5 +30,9 @@ describe('label component', async () => {
 
 	test('size', async () => {
     	expect(html, 'size is not set').toContain('big');
+	});
+
+	test('weight', async () => {
+    	expect(html, 'weight is not set').toContain('700');
 	});
 });

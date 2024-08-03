@@ -1,1 +1,1 @@
-export default {"size":""}
+export default {"size":"","weight":"700"}
