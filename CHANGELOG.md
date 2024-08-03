@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.27
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.26...v0.0.27)
+
+### 🚀 Enhancements
+
+- **checkbox:** Added ability to put links inside checkbox ([6a720e9](https://github.com/community-release/nx-ui/commit/6a720e9))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.26
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.25...v0.0.26)
