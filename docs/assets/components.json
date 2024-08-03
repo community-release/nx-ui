@@ -44,6 +44,10 @@
         "url": "/components/loading"
     },
     {
+        "name": "label",
+        "url": "/components/label"
+    },
+    {
         "name": "map",
         "url": "/components/map"
     },

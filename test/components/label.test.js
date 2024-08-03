@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 import { mount } from '@vue/test-utils'
-import CLabel from '../../src/runtime/components/label.vue';
+import CLabel from '../../src/runtime/components/label/index.vue';
 import CButton from '../../src/runtime/components/button/index.vue';
 
 describe('label component', async () => {
@@ -9,7 +9,8 @@ describe('label component', async () => {
 			default: CButton
 		},
 		props: {
-			text: 'label text test'
+			text: 'label text test',
+			size: 'big'
 		}
 	});
 	const html = wrapper.html();
@@ -24,5 +25,9 @@ describe('label component', async () => {
 
 	test('text', async () => {
     	expect(html, 'text is not set').toContain('label text test');
+	});
+
+	test('size', async () => {
+    	expect(html, 'size is not set').toContain('big');
 	});
 });
