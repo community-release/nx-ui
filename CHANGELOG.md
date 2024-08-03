@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.25
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.24...v0.0.25)
+
+### 🚀 Enhancements
+
+- **label:** Added example, size prop and updated test ([8cdaadd](https://github.com/community-release/nx-ui/commit/8cdaadd))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.24
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.23...v0.0.24)
