@@ -229,7 +229,6 @@ export default {
 		height: 100%;
 		font-weight: 600;
 		font-family: @com-font-header;
-		letter-spacing: -0.015em;
 
 		.slot-default {
 			padding: 0 @com-space-mini;
