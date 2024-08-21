@@ -17,7 +17,7 @@
 <script setup>
 import { storeToRefs } from 'pinia';
 import { useUINoticeStore } from './store';
-import UiNoticeItem from './item.vue';
+import UiNoticeItem from './notice-item.vue';
 
 const store = useUINoticeStore();
 const { items } = storeToRefs(store);

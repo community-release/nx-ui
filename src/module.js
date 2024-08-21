@@ -68,11 +68,15 @@ export default defineNuxtModule({
 		});
 
 		addComponent({
-			filePath: resolve('./runtime/components/accordion/item'),
+			filePath: resolve('./runtime/components/notice/notice-item'),
+			name: 'ui-notice-item',
+			global: false,
+		});
+		addComponent({
+			filePath: resolve('./runtime/components/accordion/accordion-item'),
 			name: 'ui-accordion-item',
 			global: false,
 		});
-
 		addComponent({
 			filePath: resolve('./runtime/components/map/zoom'),
 			name: 'ui-map-zoom',
