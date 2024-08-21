@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.28
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.27...v0.0.28)
+
+### 🎨 Styles
+
+- **button:** Removed letter-spacing ([c8bc9d4](https://github.com/community-release/nx-ui/commit/c8bc9d4))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.27
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.26...v0.0.27)
