@@ -11,6 +11,7 @@
 // Imports
 	import { ref, computed, provide } from 'vue';
 	import comProps from '#build/ui.accordion.mjs';
+	import UiAccordionItem from './accordion-item.vue';
 
 // Data
 	const props = defineProps({
