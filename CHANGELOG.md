@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.0.29
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.28...v0.0.29)
+
+### 🩹 Fixes
+
+- **ui-animated-number:** Animation now run only on client size ([7d774cb](https://github.com/community-release/nx-ui/commit/7d774cb))
+- **ui-accordion-item:** Renamed component source file (fix of Two component files resolving to the same name) ([2e21e5f](https://github.com/community-release/nx-ui/commit/2e21e5f))
+- **accordion:** Added import of accordion-item ([ab53b61](https://github.com/community-release/nx-ui/commit/ab53b61))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.28
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.27...v0.0.28)
