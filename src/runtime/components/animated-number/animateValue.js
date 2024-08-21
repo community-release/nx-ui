@@ -52,5 +52,6 @@ export default function(callback, start, end, duration) {
 		if (progress < 1) requestAnimationFrame(step);
 	};
 
-	requestAnimationFrame(step);
+	if (typeof requestAnimationFrame !== 'undefined')
+		requestAnimationFrame(step);
 }
