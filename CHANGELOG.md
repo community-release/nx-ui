@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.31
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.30...v0.0.31)
+
+### 🚀 Enhancements
+
+- Added text-spoiler component ([30305af](https://github.com/community-release/nx-ui/commit/30305af))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.30
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.29...v0.0.30)
