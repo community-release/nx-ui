@@ -1,7 +1,7 @@
 <template>
 	<div class="component-ui-text-spoiler">
 		<div class="content">{{ computedText }}</div>
-		<div class="title" @click="handleClick">{{ isShown ? hideText : showText }}</div>
+		<div v-if="textTooLong" class="title" @click="handleClick">{{ isShown ? hideText : showText }}</div>
 	</div>
 </template>
 
@@ -42,8 +42,12 @@ if (hasModel) {
 	}, { immediate: true });
 }
 
+let textTooLong = computed(() => {
+	return props.text.length > props.length;
+});
+
 const computedText = computed(() => {
-	if (!isShown.value && props.text.length > props.length) {
+	if (!isShown.value && textTooLong.value) {
 		return props.text.slice(0, props.length) + '...';
 	} else {
 		return props.text;
