@@ -1,20 +1,20 @@
 <template>
-	<div class="component-ui-spoiler" :class="{'tag-active': isShown}">
-		<div class="content">
-			<div>
-				<slot></slot>
-			</div>
-		</div>
+	<div class="component-ui-text-spoiler">
+		<div class="content">{{ computedText }}</div>
 		<div class="title" @click="handleClick">{{ isShown ? hideText : showText }}</div>
 	</div>
 </template>
 
 <script setup>
-import { watch, ref } from 'vue';
+import { watch, ref, computed } from 'vue';
 
 // Data
 const emit = defineEmits(['update:modelValue']);
 const props = defineProps({
+	text: {
+		type: String,
+		default: '...'
+	},
 	showText: {
 		type: String,
 		default: 'Show'
@@ -22,6 +22,10 @@ const props = defineProps({
 	hideText: {
 		type: String,
 		default: 'Hide'
+	},
+	length: {
+		type: Number,
+		default: 0
 	},
 	modelValue: {
 		type: [Boolean, null],
@@ -38,6 +42,14 @@ if (hasModel) {
 	}, { immediate: true });
 }
 
+const computedText = computed(() => {
+	if (!isShown.value && props.text.length > props.length) {
+		return props.text.slice(0, props.length) + '...';
+	} else {
+		return props.text;
+	}
+});
+
 // Methods
 function handleClick() {
 	if (hasModel) {
@@ -49,7 +61,7 @@ function handleClick() {
 </script>
 
 <style lang="less">
-.component-ui-spoiler {
+.component-ui-text-spoiler {
 	@com-space-mini: var(--ui-space-mini);
 	@com-ani-ease: var(--ui-ani-ease);
 	@com-ani-time: var(--ui-ani-time);
@@ -68,19 +80,7 @@ function handleClick() {
 	}
 
 	> .content {
-		transition: grid-template-rows @com-ani-time @com-ani-ease;
-		display: grid;
-		grid-template-rows: 0fr;
-
-		div {
-			overflow: hidden;
-		}
-	}
-
-	&.tag-active {
-		> .content {
-			grid-template-rows: 1fr;
-		}
+		position: relative;
 	}
 }
 </style>

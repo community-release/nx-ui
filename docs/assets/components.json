@@ -68,6 +68,10 @@
         "url": "/components/spoiler"
     },
     {
+        "name": "text-spoiler",
+        "url": "/components/text-spoiler"
+    },
+    {
         "name": "static-map",
         "url": "/components/static-map"
     },
