@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.30
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.29...v0.0.30)
+
+### 🚀 Enhancements
+
+- Added spoiler component ([1688a56](https://github.com/community-release/nx-ui/commit/1688a56))
+
+### 🩹 Fixes
+
+- Removed notice-item and accordion-item import, they should import automaticaly ([1557a15](https://github.com/community-release/nx-ui/commit/1557a15))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.29
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.28...v0.0.29)
