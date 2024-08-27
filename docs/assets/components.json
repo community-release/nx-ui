@@ -64,6 +64,10 @@
         "url": "/components/select"
     },
     {
+        "name": "spoiler",
+        "url": "/components/spoiler"
+    },
+    {
         "name": "static-map",
         "url": "/components/static-map"
     },
