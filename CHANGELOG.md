@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.32
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.31...v0.0.32)
+
+### 🩹 Fixes
+
+- Edited examples of spoiler and text-spoiler, title prop was used instead of showText and hideText ([8c30378](https://github.com/community-release/nx-ui/commit/8c30378))
+- **text-spoiler:** Toggle button now hidden if text.length < length ([720b847](https://github.com/community-release/nx-ui/commit/720b847))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.31
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.30...v0.0.31)
