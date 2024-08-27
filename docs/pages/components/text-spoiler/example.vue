@@ -4,7 +4,7 @@
 			<helper-typography>
 				<strong>Without model</strong>
 			</helper-typography>
-			<ui-text-spoiler title="Show all" :length="length" :text="text" />
+			<ui-text-spoiler showText="Show all" hideText="Hide" :length="length" :text="text" />
 		</div>
 
 		<div>
@@ -12,7 +12,7 @@
 				<strong>Using model</strong>
 			</helper-typography>
 			<ui-checkbox v-model="show">Toggle</ui-checkbox>
-			<ui-text-spoiler title="Show all" v-model="show" :length="length" :text="text" />
+			<ui-text-spoiler showText="Show all" hideText="Hide" v-model="show" :length="length" :text="text" />
 		</div>
 	</ui-grid>
 </template>
