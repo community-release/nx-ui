@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v0.0.33
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.32...v0.0.33)
+
+### 🚀 Enhancements
+
+- **ui-map-location-nearest:** Added find nearest location feature, user position now displayed on map too ([d75594b](https://github.com/community-release/nx-ui/commit/d75594b))
+
+### 🩹 Fixes
+
+- **generateComponentsDefaults:** Fixed componentsStyle option name ([1f2382c](https://github.com/community-release/nx-ui/commit/1f2382c))
+
+### 🏡 Chore
+
+- **package.json:** Added default port ([20ff9eb](https://github.com/community-release/nx-ui/commit/20ff9eb))
+- **package.json:** Added default port for docs ([5d6f3b1](https://github.com/community-release/nx-ui/commit/5d6f3b1))
+- **nuxt.config:** Added default port ([270b8f6](https://github.com/community-release/nx-ui/commit/270b8f6))
+
+### ✅ Tests
+
+- Added ui- as allowed less var prefix ([ec566d7](https://github.com/community-release/nx-ui/commit/ec566d7))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.32
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.31...v0.0.32)
