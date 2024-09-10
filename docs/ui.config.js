@@ -87,7 +87,9 @@ export default {
 		'ani-ease': 'ease'
 	},
 	componentsStyle: {
-
+		map: {
+			'user-position-color': 'var(--color-primary)'
+		}
 	},
 	componentsProps: {
 		button: {
