@@ -15,9 +15,6 @@ describe('tooltip component', async () => {
 	});
 	const html = wrapper.html();
 
-	console.log('tooltip', html);
-	
-
 	test('Component is mounted', async () => {
     	expect(html, 'component html is not found').toContain('tooltip');
     	expect(html, `component slot should contain "${text}"`).toContain(text)

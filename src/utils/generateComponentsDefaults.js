@@ -13,8 +13,5 @@ export default (options) => {
 		}
 	}
 
-	console.log('componentsStyle', result);
-	
-	
 	return result;
 }
