@@ -15,7 +15,7 @@ const props = defineProps({
 	},
 	label: {
 		default: '',
-	}
+	},
 });
 const store = useMapStore();
 

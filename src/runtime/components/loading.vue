@@ -1,5 +1,5 @@
 <template>
-	<section class="component-ui-loading2" :class="{'tag-active': active}">
+	<section class="component-ui-loading" :class="{'tag-active': active}">
 		<svg width="32" height="32">
 			<circle cx="16" cy="16" r="10" ref="progress" />
 		</svg>
@@ -51,7 +51,7 @@ const props = defineProps({
 	}
 }
 
-.component-ui-loading2 {
+.component-ui-loading {
 	transition: visibility @com-ani-time @com-ani-ease, opacity @com-ani-time @com-ani-ease;
 
 	opacity: 0;

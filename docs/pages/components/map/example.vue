@@ -28,7 +28,7 @@
 			<ui-map-location _showDefaultSlot="store.selectedMarker">
 				<template #header>
 					<ui-map-location-list v-model="selectedCity" :options="cities" label="City" />
-					<ui-map-location-nearest icon="ic ic-location-crosshairs" label="Find nearest department" />
+					<ui-map-location-nearest :locations="markers" icon="ic ic-location-crosshairs" label="Find nearest department" />
 				</template>
 
 				<template #default>
