@@ -5,13 +5,13 @@
 	"author": "Pavel Sokolov",
 	"private": true,
 	"scripts": {
-		"build": "cross-env NODE_ENV=dev node ./tools/before-start.js && nuxt build --port=1337",
-		"build:production": "cross-env NODE_ENV=production node ./tools/before-start.js && nuxt build --port=1337",
+		"build": "cross-env NODE_ENV=dev node ./tools/before-start.js && nuxt build --port=7012",
+		"build:production": "cross-env NODE_ENV=production node ./tools/before-start.js && nuxt build --port=7012",
 		"generate": "cross-env NODE_ENV=dev node ./tools/before-start.js && nuxt generate",
 		"generate:production": "cross-env NODE_ENV=production node ./tools/before-start.js && nuxt generate",
-		"preview": "nuxt preview --host --port=1337",
-		"dev": "cross-env NODE_ENV=dev node ./tools/before-start.js && nuxt dev --host --port=1337",
-		"dev:production": "cross-env NODE_ENV=production node ./tools/before-start.js && nuxt dev --host --port=1337",
+		"preview": "nuxt preview --host --port=7012",
+		"dev": "cross-env NODE_ENV=dev node ./tools/before-start.js && nuxt dev --host --port=7012",
+		"dev:production": "cross-env NODE_ENV=production node ./tools/before-start.js && nuxt dev --host --port=7012",
 		"start": "cross-env PORT=3001 HOST=localhost node .output/server/index.mjs",
 		"ic:generate": "node ./tools/generate-icon-font.js"
 	},
