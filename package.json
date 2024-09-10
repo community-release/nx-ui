@@ -52,7 +52,7 @@
     },
     "scripts": {
         "prepack": "nuxt-module-build build",
-        "dev": "nuxi dev docs --host",
+        "dev": "nuxi dev docs --host --port 7012",
         "build": "nuxi build docs",
         "prepare": "nuxt-module-build build && nuxt-module-build prepare && nuxi prepare docs",
         "release": "npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",

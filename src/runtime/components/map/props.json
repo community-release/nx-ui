@@ -1,5 +1,6 @@
 {
 	"zoom": 8,
 	"zoomMin": 7,
-	"zoomMax": 18
+	"zoomMax": 18,
+	"userMarkerColor": "var(--ui-color-primary)"
 }

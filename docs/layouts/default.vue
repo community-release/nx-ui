@@ -48,4 +48,10 @@ export default {
 		margin-top: var(--space-big);
 	}
 }
+
+@media only screen and (max-width: 950px) {
+	#layout-default #wrapper {
+		grid-template-columns: 1fr;
+	}
+}
 </style>

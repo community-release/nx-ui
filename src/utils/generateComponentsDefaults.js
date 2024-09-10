@@ -3,7 +3,7 @@ import defaultComponentsStyle from '../default.components';
 export default (options) => {
 	let result = '';
 
-	const components = options?.components ? options.components : {};
+	const components = options?.componentsStyle ? options.componentsStyle : {};
 	
 	for (let name in defaultComponentsStyle) {
 		const style = Object.assign(defaultComponentsStyle[name], components[name] ? components[name] : {});
@@ -12,6 +12,9 @@ export default (options) => {
 			result += `@ui-${name}-${prop}: ${style[prop]};\n`;
 		}
 	}
+
+	console.log('componentsStyle', result);
+	
 	
 	return result;
 }

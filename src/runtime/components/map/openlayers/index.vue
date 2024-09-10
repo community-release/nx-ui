@@ -1,6 +1,9 @@
 <template>
 	<div class="component-ui-map-openlayer component-ui-map-engine">
 		<div class="map" ref="refMap"></div>
+		<div style="display:none">
+			<div id="user-position-marker"></div>
+		</div>
 		<slot />
 	</div>
 </template>
@@ -29,6 +32,7 @@
 	import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
 	import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
 	import { boundingExtent } from 'ol/extent.js';
+	import Overlay from 'ol/Overlay.js';
 
 	import Map from 'ol/Map.js';
 	import View from 'ol/View.js';
@@ -52,10 +56,12 @@
 	let initialized = false;
 	let features = [];
 	let cluster = null;
+	let userPositionMarker = null;
 
 	// Store
 	const store = useMapStore();
 	const {
+		requestCoordChange,
 		coord,
 		zoom,
 		zoomMin,
@@ -66,7 +72,8 @@
 		markerImage,
 		markerActiveImage,
 		markerDisabledImage,
-		selectedMarker
+		selectedMarker,
+		userCoord
 	} = storeToRefs(store);
 
 	watch(() => selectedMarker.value, (v) => {
@@ -78,7 +85,23 @@
 	});
 
 	// Watch coord
-	watch(coord, (v) => { view.setCenter(fromLonLat(v)); });
+	watch([requestCoordChange, coord], (v) => {
+		if (!v[0]) return;
+
+		const coord = fromLonLat(v[1]);
+
+		if (v[0] === 1)
+			view.setCenter(coord);
+		else
+			view.animate({center: coord, duration: 300});
+
+		requestCoordChange.value = 0;
+	});
+
+	// Watch user coord
+	watch(userCoord, (v) => {
+		userPositionMarker.setPosition(fromLonLat(v));
+	});
 
 	// Watch zoom
 	watch(zoom, (v) => {
@@ -290,6 +313,15 @@
 			controls: []
 		});
 
+		// Add user position marker
+		userPositionMarker = new Overlay({
+			position: fromLonLat(coord.value),
+			positioning: 'center-center',
+			element: document.getElementById('user-position-marker'),
+			stopEvent: false,
+		});
+		map.addOverlay(userPositionMarker);
+
 		// Add mouse wheel interaction
 		mouseWheelInt = new mouseWheelZoomInteraction({
 			condition(e) {
@@ -345,6 +377,86 @@
 </script>
 
 <style lang="less">
+@import (less) '../../styles/components.less';
+@com-user-position-color: @ui-map-user-position-color;
+
+@keyframes pulsar {
+	from {
+		transform: scale(1);
+		opacity: 0;
+	}
+
+	50% { opacity: 0.7; }
+
+	to {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+@keyframes pulsar-base {
+	from { transform: scale(1); }
+	50% { transform: scale(0.95); }
+	to { transform: scale(1); }
+}
+
+.mix-pulsar(@com-pulsar-size: 18px, @com-pulsar-color: @com-user-position-color) {
+	@com-pulsar-duration: 2s;
+
+	pointer-events: none;
+	width: @com-pulsar-size;
+	height: @com-pulsar-size;
+
+	&:before {
+		content: '';
+
+		transform-origin: 50% 50%;
+
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		border-radius: 50%;
+
+		background: @com-pulsar-color;
+
+		animation-name: pulsar;
+		animation-duration: @com-pulsar-duration;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-delay: 0.7s;
+	}
+
+	&:after {
+		content: '';
+
+		transform-origin: 50% 50%;
+		opacity: 0.9;
+
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		border-radius: 50%;
+		border: 2px solid #fff;
+		background: @com-pulsar-color;
+
+		animation-name: pulsar-base;
+		animation-duration: @com-pulsar-duration;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+		animation-delay: 0.7s;
+	}
+}
+
 .component-ui-map-openlayer {
 	position: relative;
 
@@ -352,6 +464,10 @@
 		position: absolute;
 		inset: 0;
 		background: #add19e;
+	}
+
+	#user-position-marker {
+		.mix-pulsar;
 	}
 }
 </style>

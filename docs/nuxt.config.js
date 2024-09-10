@@ -7,7 +7,7 @@ const PRODUCTION_BASE_PATH = '';
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	server: {
-		port: 222,
+		port: 7012,
 	},
 
 	app: {

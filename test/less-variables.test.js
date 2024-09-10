@@ -11,7 +11,7 @@ describe('LESS', async () => {
 	it('Vue components are using less variables in allowed format (@com-*)', async () => {
 		const files = fs.readdirSync(pathComponents, { recursive: true, encoding: 'utf-8' });
 		const vueComponents = files.filter(name => name.endsWith('.vue'));
-		const arValidVariants = ['import ', 'keyframes ', 'media', 'com-'];
+		const arValidVariants = ['import ', 'keyframes ', 'media', 'com-', 'ui-'];
 		let errorMessage = '';
 
 		for (let fileName of vueComponents) {

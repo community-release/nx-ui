@@ -18,6 +18,7 @@ import { defineStore } from 'pinia';
 export const useMapStore = defineStore('map', {
     state: () => {
         return {
+			requestCoordChange: 0,
 			coord: [],
 
 			zoom: 8,
@@ -31,7 +32,9 @@ export const useMapStore = defineStore('map', {
 			markerDisabledImage: '',
 			markers: [],
 			selectedMarker: null,
-			disabledMarkers: []
+			disabledMarkers: [],
+
+			userCoord: []
 		}
     },
 
@@ -85,9 +88,19 @@ export const useMapStore = defineStore('map', {
 		/**
 		 * Set map coord
 		 * @param {MapCoord} v
+		 * @param {number} requestCoordChange - 1 default, 2 animated
 		 */
-		setCoord(v) {
+		setCoord(v, requestCoordChange = 1) {
+			this.requestCoordChange = requestCoordChange;
 			this.coord = v;
+		},
+
+		/**
+		 * Set user coord
+		 * @param {MapCoord} v
+		 */
+		setUserCoord(v) {
+			this.userCoord = v;
 		},
 
 		/**
