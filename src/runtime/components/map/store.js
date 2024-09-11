@@ -34,6 +34,8 @@ export const useMapStore = defineStore('map', {
 			markers: [],
 			selectedMarker: null,
 			disabledMarkers: [],
+			clusterColor: '',
+			disabledClusterColor: '',
 
 			userCoord: []
 		}

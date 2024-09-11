@@ -75,6 +75,14 @@ const props = defineProps({
 		default: '',
 		type: String
 	},
+	clusterColor: {
+		default: comProps.clusterColor,
+		type: String
+	},
+	disabledClusterColor: {
+		default: comProps.disabledClusterColor,
+		type: String
+	},
 });
 
 store.coord = props.coord;
@@ -86,6 +94,8 @@ store.markers = props.markers;
 store.markerImage = props.markerImage;
 store.markerActiveImage = props.markerActiveImage;
 store.markerDisabledImage = props.markerDisabledImage;
+store.clusterColor = props.clusterColor;
+store.disabledClusterColor = props.disabledClusterColor;
 
 watch(() => props.disabledMarkers, (v) => {
 	store.setDisabledMarkers(v);

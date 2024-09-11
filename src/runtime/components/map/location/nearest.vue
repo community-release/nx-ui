@@ -72,6 +72,8 @@
 		if (clickInProcess) return;
 		clickInProcess = true;
 
+		store.setSelectedMarker(null);
+
 		try {
 			// If cache not exist or it's older than 1 minute
 			if (!cachedPosition || Date.now() - cachedTime > 60000) {
@@ -107,7 +109,6 @@
 			emit('error', 'error-geo-not-enabled-on-device');
 		}
 
-		store.setSelectedMarker(null);
 		loading.value = false;
 		clickInProcess = false;
 	}

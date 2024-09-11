@@ -75,6 +75,8 @@
 		markerActiveImage,
 		markerDisabledImage,
 		selectedMarker,
+		clusterColor,
+		disabledClusterColor,
 		userCoord
 	} = storeToRefs(store);
 
@@ -89,8 +91,6 @@
 	// Watch coord or zoom change
 	watch([requestCoordChange, requestZoomChange], () => {
 		if (!requestCoordChange.value && !requestZoomChange.value) return;
-
-		console.log('Watch coord or zoom change');
 
 		const options = {
 			duration: cameraDuration.value
@@ -239,18 +239,31 @@
 				const isSelected = markerId === selectedMarker.value?.id;
 
 				style = styleCache[isSelected ? 'active' : (isDisabled ? 'disabled' : 'default')];
+			
 			// If cluster
 			} else {
+				let isDisabled = false;
+
+				// Check if cluster have disabled markers
+				for (let item of allFeatures) {
+					if (disabledMarkers.value.includes(item.attributes.id)) {
+						isDisabled = true;
+						break;
+					}
+				}
+
+				const cacheId = size + (isDisabled ? 'd' : '');
+
 				// Have cache
-				if (styleCache[size]) {
-					style = styleCache[size];
+				if (styleCache[cacheId]) {
+					style = styleCache[cacheId];
 				// No cache
 				} else {
 					style = new Style({
 						image: new CircleStyle({
 							radius: 14,
 							fill: new Fill({
-								color: '#4b3aaa',
+								color: isDisabled ? disabledClusterColor.value : clusterColor.value,
 							}),
 						}),
 						text: new Text({
@@ -262,7 +275,7 @@
 						}),
 					});
 
-					styleCache[size] = style;
+					styleCache[cacheId] = style;
 				}
 			}
 

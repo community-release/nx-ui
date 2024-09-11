@@ -2,5 +2,6 @@
 	"zoom": 8,
 	"zoomMin": 7,
 	"zoomMax": 18,
-	"userMarkerColor": "var(--ui-color-primary)"
+	"clusterColor": "#4b3aaa",
+	"disabledClusterColor": "#5f6761"
 }
