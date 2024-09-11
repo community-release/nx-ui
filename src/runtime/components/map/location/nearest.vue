@@ -28,6 +28,7 @@
 			type: Array
 		},
 	});
+	const emit = defineEmits(['error']);
 	const store = useMapStore();
 	const loading = ref(false);
 	let cachedPosition = null;
@@ -90,6 +91,8 @@
 			store.setZoom(nearest?.zoom ? nearest.zoom : 14);
 		} catch (err) {
 			console.log('handleClick err', err);
+
+			emit('error', 'error-geo-not-enabled-on-device');
 		}
 
 		store.setSelectedMarker(null);
