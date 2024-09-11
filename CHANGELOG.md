@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.36
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.35...v0.0.36)
+
+### 🚀 Enhancements
+
+- **map example:** Added disabled markers example ([b5437ba](https://github.com/community-release/nx-ui/commit/b5437ba))
+- **map:** Added clusterColor and disabledClusterColor support ([da8a179](https://github.com/community-release/nx-ui/commit/da8a179))
+
+### 🩹 Fixes
+
+- **ui-map-nearest-location:** Open popup(if exist) now instant close when button is clicked ([e1a1911](https://github.com/community-release/nx-ui/commit/e1a1911))
+
+### 🏡 Chore
+
+- Merge branch 'main' into stage ([84fc7e2](https://github.com/community-release/nx-ui/commit/84fc7e2))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.35
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.34...v0.0.35)
