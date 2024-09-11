@@ -77,15 +77,15 @@ const props = defineProps({
 	},
 });
 
-store.setCoord(props.coord);
-store.setZoom(props.zoom);
-store.setZoomMin(props.zoomMin);
-store.setZoomMax(props.zoomMax);
-store.setDeviceZoom(props.deviceZoom);
-store.setMarkers(props.markers);
-store.setMarkerImage(props.markerImage);
-store.setMarkerActiveImage(props.markerActiveImage);
-store.setMarkerDisabledImage(props.markerDisabledImage);
+store.coord = props.coord;
+store.zoom = props.zoom;
+store.zoomMin = props.zoomMin;
+store.zoomMax = props.zoomMax;
+store.deviceZoom = props.deviceZoom;
+store.markers = props.markers;
+store.markerImage = props.markerImage;
+store.markerActiveImage = props.markerActiveImage;
+store.markerDisabledImage = props.markerDisabledImage;
 
 watch(() => props.disabledMarkers, (v) => {
 	store.setDisabledMarkers(v);

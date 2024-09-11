@@ -61,8 +61,10 @@
 	// Store
 	const store = useMapStore();
 	const {
+		cameraDuration,
 		requestCoordChange,
 		coord,
+		requestZoomChange,
 		zoom,
 		zoomMin,
 		zoomMax,
@@ -84,24 +86,23 @@
 		redrawMarkers();
 	});
 
-	// Watch coord
-	watch([requestCoordChange, coord], (v) => {
-		const req = v[0];
+	// Watch coord or zoom change
+	watch([requestCoordChange, requestZoomChange], () => {
+		if (!requestCoordChange.value && !requestZoomChange.value) return;
 
-		if (!req) return;
+		console.log('Watch coord or zoom change');
 
-		const coord = fromLonLat(v[1]);
+		const options = {
+			duration: cameraDuration.value
+		};
 
-		// If req === 1 then set coord instantly
-		if (req === 1) {
-			view.setCenter(coord);
-		// If req === 2 then set coord in default duration, else treat req as duration time in ms
-		} else {
-			const duration = req === 2 ? 300 : req;
-			view.animate({center: coord, duration});
-		}
+		if (requestCoordChange.value) options.center = fromLonLat(coord.value);
+		if (requestZoomChange.value) options.zoom = zoom.value;
 
-		requestCoordChange.value = 0;
+		view.animate(options, () => {
+			requestCoordChange.value = false;
+			requestZoomChange.value = false;
+		});
 	});
 
 	// Watch user coord
@@ -109,20 +110,20 @@
 		userPositionMarker.setPosition(fromLonLat(v));
 	});
 
-	// Watch zoom
-	watch(zoom, (v) => {
-		const currentZoom = view.getZoom();
+	// // Watch zoom
+	// watch(zoom, (v) => {
+	// 	const currentZoom = view.getZoom();
 
-		if (currentZoom === v) return;
+	// 	if (currentZoom === v) return;
 
-		if (initialized)
-			view.animate({
-				zoom: v,
-				duration: 300
-			});
-		else
-			view.setZoom(v);
-	});
+	// 	if (initialized)
+	// 		view.animate({
+	// 			zoom: v,
+	// 			duration: 300
+	// 		});
+	// 	else
+	// 		view.setZoom(v);
+	// });
 
 	const payload = {
 		store,
@@ -373,7 +374,7 @@
 
 		map.on('loadend', () => { 
 			if (initialized) return;
-			
+
 			initialized = true;
 			emit('initialized', payload);
 		});

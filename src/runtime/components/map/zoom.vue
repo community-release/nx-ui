@@ -1,9 +1,9 @@
 <template>
 	<div class="component-ui-map-zoom">
 		<div class="prepend"><slot /></div>
-		<ui-button @click="store.zoomIn" color="gray" block variant="flat" size="small" shape="square">+</ui-button>
+		<ui-button @click="store.zoomIn" class="plus" color="gray" block variant="flat" size="small" shape="square">+</ui-button>
 		<div class="separator"></div>
-		<ui-button @click="store.zoomOut" color="gray" block variant="flat" size="small" shape="square">-</ui-button>
+		<ui-button @click="store.zoomOut" class="minus" color="gray" block variant="flat" size="small" shape="square">-</ui-button>
 	</div>
 </template>
 
@@ -52,6 +52,16 @@ const props = defineProps(['store']);
 	.component-ui-button {
 		height: @com-width;
 		font-size: @com-text-large;
+	}
+
+	.component-ui-button.plus .button-bg {
+		border-top-left-radius: @com-border-radius-default;
+		border-top-right-radius: @com-border-radius-default;
+	}
+
+	.component-ui-button.minus .button-bg {
+		border-bottom-left-radius: @com-border-radius-default;
+		border-bottom-right-radius: @com-border-radius-default;
 	}
 
 	.separator {
