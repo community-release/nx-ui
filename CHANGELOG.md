@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.37
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.36...v0.0.37)
+
+### 🩹 Fixes
+
+- **map:** Cluster color now corrected for disabled markers in it ([f70734d](https://github.com/community-release/nx-ui/commit/f70734d))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.36
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.35...v0.0.36)
