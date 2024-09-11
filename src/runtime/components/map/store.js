@@ -18,9 +18,10 @@ import { defineStore } from 'pinia';
 export const useMapStore = defineStore('map', {
     state: () => {
         return {
-			requestCoordChange: 0,
+			cameraDuration: 0,
+			requestCoordChange: false,
 			coord: [],
-
+			requestZoomChange: false,
 			zoom: 8,
 			zoomMin: 8,
 			zoomMax: 18,
@@ -41,10 +42,13 @@ export const useMapStore = defineStore('map', {
 	actions: {
 		/**
 		 * Set map zoom
-		 * @param {number} v
+		 * @param {number} zoom
+		 * @param {number} duration
 		 */
-		setZoom(v) {
-			this.zoom = v;
+		setZoom(zoom, duration = 300) {
+			this.zoom = zoom;
+			this.cameraDuration = duration;
+			this.requestZoomChange = true;
 		},
 
 		/**
@@ -72,6 +76,8 @@ export const useMapStore = defineStore('map', {
 			}
 
 			this.zoom++;
+			this.cameraDuration = 300;
+			this.requestZoomChange = true;
 		},
 		
 		/** Map zoom out */
@@ -83,16 +89,19 @@ export const useMapStore = defineStore('map', {
 			}
 
 			this.zoom--;
+			this.cameraDuration = 300;
+			this.requestZoomChange = true;
 		},
 
 		/**
 		 * Set map coord
-		 * @param {MapCoord} v
-		 * @param {number} requestCoordChange - 1 default, 2 animated
+		 * @param {number} coord
+		 * @param {number} duration
 		 */
-		setCoord(v, requestCoordChange = 1) {
-			this.requestCoordChange = requestCoordChange;
-			this.coord = v;
+		setCoord(coord, duration = 300) {
+			this.coord = coord;
+			this.cameraDuration = duration;
+			this.requestCoordChange = true;
 		},
 
 		/**
