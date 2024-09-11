@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.0.34
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.33...v0.0.34)
+
+### 🚀 Enhancements
+
+- **ui-map-location-nearest:** Added error event if geolocation not enabled on device ([e626966](https://github.com/community-release/nx-ui/commit/e626966))
+- **ui-map-location-nearest:** Added animated camera movement on click ([123b7c1](https://github.com/community-release/nx-ui/commit/123b7c1))
+
+### 🩹 Fixes
+
+- User location marker now initialy hidden ([502eca0](https://github.com/community-release/nx-ui/commit/502eca0))
+
+### 💅 Refactors
+
+- Removed debug info ([2948e86](https://github.com/community-release/nx-ui/commit/2948e86))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.33
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.32...v0.0.33)
