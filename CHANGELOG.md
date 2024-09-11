@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.35
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.34...v0.0.35)
+
+### 🚀 Enhancements
+
+- **ui-map-location-nearest:** Better camera animation for nearest location added ([584a112](https://github.com/community-release/nx-ui/commit/584a112))
+
+### 💅 Refactors
+
+- Reworked zoom and coord set method ([a748ba7](https://github.com/community-release/nx-ui/commit/a748ba7))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.34
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.33...v0.0.34)
