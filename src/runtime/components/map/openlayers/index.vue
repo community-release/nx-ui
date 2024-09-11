@@ -1,5 +1,5 @@
 <template>
-	<div class="component-ui-map-openlayer component-ui-map-engine">
+	<div class="component-ui-map-openlayer component-ui-map-engine" :class="{'tag-user-position': userCoord.length}">
 		<div class="map" ref="refMap"></div>
 		<div style="display:none">
 			<div id="user-position-marker"></div>
@@ -468,6 +468,14 @@
 
 	#user-position-marker {
 		.mix-pulsar;
+
+		display: none;
+	}
+
+	&.tag-user-position {
+		#user-position-marker {
+			display: block;
+		}
 	}
 }
 </style>
