@@ -12,6 +12,7 @@
 	import { ref } from 'vue';
 	import UiLoading from '../../loading.vue';
 	import { useMapStore } from '../store';
+	import wait from '../../helpers/wait'; 
 
 // Data
 	const props = defineProps({
@@ -66,7 +67,11 @@
 		});
 	}
 
+	let clickInProcess = false;
 	async function handleClick() {
+		if (clickInProcess) return;
+		clickInProcess = true;
+		
 		try {
 			// If cache not exist or it's older than 1 minute
 			if (!cachedPosition || Date.now() - cachedTime > 60000) {
@@ -87,7 +92,12 @@
 			);
 
 			// Set coord and zoom
-			store.setCoord(nearest.coord, 2);
+			store.setCoord(cachedPosition, 750);
+			store.setZoom(14);
+
+			await wait(2000);
+
+			store.setCoord(nearest.coord, 1500);
 			store.setZoom(nearest?.zoom ? nearest.zoom : 14);
 		} catch (err) {
 			console.log('handleClick err', err);
@@ -97,6 +107,7 @@
 
 		store.setSelectedMarker(null);
 		loading.value = false;
+		clickInProcess = false;
 	}
 </script>
 

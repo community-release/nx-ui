@@ -86,14 +86,20 @@
 
 	// Watch coord
 	watch([requestCoordChange, coord], (v) => {
-		if (!v[0]) return;
+		const req = v[0];
+
+		if (!req) return;
 
 		const coord = fromLonLat(v[1]);
 
-		if (v[0] === 1)
+		// If req === 1 then set coord instantly
+		if (req === 1) {
 			view.setCenter(coord);
-		else
-			view.animate({center: coord, duration: 300});
+		// If req === 2 then set coord in default duration, else treat req as duration time in ms
+		} else {
+			const duration = req === 2 ? 300 : req;
+			view.animate({center: coord, duration});
+		}
 
 		requestCoordChange.value = 0;
 	});
@@ -339,8 +345,6 @@
 			}, 50);
 		});
 
-		initialized = true;
-
 		// Handle map marker click
 		map.on('click', (e) => {
 			cluster.getFeatures(e.pixel).then((clickedFeatures) => {
@@ -367,7 +371,12 @@
 			});
 		});
 
-		map.on('loadend', () => { emit('initialized', payload); });
+		map.on('loadend', () => { 
+			if (initialized) return;
+			
+			initialized = true;
+			emit('initialized', payload);
+		});
 	}
 
 // Hooks
