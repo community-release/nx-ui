@@ -72,8 +72,6 @@
 		if (clickInProcess) return;
 		clickInProcess = true;
 
-		console.log('setSelectedMarker null');
-		
 		store.setSelectedMarker(null);
 
 		try {
