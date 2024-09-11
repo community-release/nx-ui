@@ -242,12 +242,12 @@
 			
 			// If cluster
 			} else {
-				let isDisabled = false;
+				let isDisabled = true;
 
-				// Check if cluster have disabled markers
+				// Check if all cluster markers is disabled
 				for (let item of allFeatures) {
-					if (disabledMarkers.value.includes(item.attributes.id)) {
-						isDisabled = true;
+					if (!disabledMarkers.value.includes(item.attributes.id)) {
+						isDisabled = false;
 						break;
 					}
 				}
