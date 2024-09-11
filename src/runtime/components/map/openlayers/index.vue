@@ -90,8 +90,6 @@
 	watch([requestCoordChange, requestZoomChange], () => {
 		if (!requestCoordChange.value && !requestZoomChange.value) return;
 
-		console.log('Watch coord or zoom change');
-
 		const options = {
 			duration: cameraDuration.value
 		};
