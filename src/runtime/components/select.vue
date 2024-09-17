@@ -24,7 +24,7 @@
 
 <script setup>
 // Imports
-import { ref, computed, watch, onMounted } from 'vue';
+import { ref, computed, watch, onMounted, nextTick } from 'vue';
 
 // Setup
 const props = defineProps({
