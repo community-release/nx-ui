@@ -1,5 +1,5 @@
 <template>
-	<span class="component-ui component-ui-checkbox" :class="classes">
+	<div class="component-ui component-ui-checkbox" :class="classes">
 		<label>
 			<input
 				ref="input"
@@ -17,7 +17,7 @@
 				<slot></slot>
 			</span>
 		</label>
-	</span>
+	</div>
 </template>
 
 <script setup>
@@ -103,7 +103,6 @@
 	@com-space-micro: var(--ui-space-micro);
 
 	position: relative;
-	display: inline-block;
 	text-align: left;
 
 	.error-wrap {
