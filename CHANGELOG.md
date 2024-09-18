@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.38
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.37...v0.0.38)
+
+### 🚀 Enhancements
+
+- **label:** Added required flag ([d3520c8](https://github.com/community-release/nx-ui/commit/d3520c8))
+- **checkbox:** Now display as block ([d1a514b](https://github.com/community-release/nx-ui/commit/d1a514b))
+- **select:** Now display as block, block prop removed ([6ccd98b](https://github.com/community-release/nx-ui/commit/6ccd98b))
+- **select:** Added select.value-font-weight style ([ca4e884](https://github.com/community-release/nx-ui/commit/ca4e884))
+
+### 🩹 Fixes
+
+- **select:** Added nextTick import ([3420623](https://github.com/community-release/nx-ui/commit/3420623))
+- **select:** Fixed select label text cut for long letters ([41de8ff](https://github.com/community-release/nx-ui/commit/41de8ff))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.37
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.36...v0.0.37)
