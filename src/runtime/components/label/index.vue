@@ -1,5 +1,5 @@
 <template>
-	<label class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`]">
+	<label class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
 		<span class="component-ui-label--text">{{ text }}</span>
 		<slot></slot>
 	</label>
@@ -22,13 +22,20 @@
 			type: [String, Number],
 			default: comProps.weight,
 		},
+		required: {
+			type: Boolean,
+			default: false
+		},
 	});
 </script>
 
 <style lang="less">
 @com-space-micro: var(--ui-space-micro);
-@com-color-header-text: var(--ui-color-header-text);
+
 @com-font-weight-medium: var(--ui-font-weight-medium);
+
+@com-color-header-text: var(--ui-color-header-text);
+@com-color-red: var(--ui-color-red);
 
 @com-text-big: var(--ui-text-big);
 @com-text-medium: var(--ui-text-medium);
@@ -39,7 +46,8 @@
 	display: block;
 
 	.component-ui-label--text {
-		display: block;
+		position: relative;
+		display: inline-block;
 		padding-bottom: @com-space-micro;
 		font-weight: @com-font-weight-medium;
 		font-size: @com-text-default;
@@ -57,5 +65,19 @@
 	&.tag-weight-600 .component-ui-label--text { font-weight: 600; }
 	&.tag-weight-500 .component-ui-label--text { font-weight: 500; }
 	&.tag-weight-400 .component-ui-label--text { font-weight: 400; }
+
+	// Required
+	&.tag-required {
+		.component-ui-label--text:after {
+			content: '*';
+
+			position: absolute;
+			top: 0;
+			right: -0.7em;
+			color: @com-color-red;
+			font-weight: bold;
+			font-size: @com-text-medium;
+		}
+	}
 }
 </style>
