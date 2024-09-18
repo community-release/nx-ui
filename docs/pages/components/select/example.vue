@@ -6,12 +6,10 @@
 				:options="citiesList" 
 				label="Cities"
 				:disabled="disabled"
-				:block="block"
 			></ui-select>
 		</div>
 		<ui-grid>
 			<ui-checkbox v-model="disabled">disabled</ui-checkbox>
-			<ui-checkbox v-model="block">block</ui-checkbox>
 		</ui-grid>
 	</ui-grid>
 </template>
@@ -27,5 +25,4 @@ const citiesList = ref([
 ]);
 
 const disabled = ref(false);
-const block = ref(false);
 </script>

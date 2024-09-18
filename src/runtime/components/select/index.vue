@@ -45,10 +45,6 @@ const props = defineProps({
 		type: Array,
 		default: () => []
 	},
-	required: {
-		type: Boolean,
-		default: false
-	},
 	disabled: {
 		type: Boolean,
 		default: false
@@ -60,10 +56,6 @@ const props = defineProps({
 	width: {
 		type: [String, Number],
 		default: 'none'
-	},
-	block: {
-		type: Boolean,
-		default: false
 	},
 });
 
@@ -96,8 +88,6 @@ const classes = computed(() => {
 	if (props.modelValue !== null) 	ar.push('tag-not-empty');
 	if (props.error) 				ar.push('tag-error');
 	if (focus.value) 				ar.push('tag-focus');
-	if (props.block) 				ar.push('tag-block');
-	if (props.required) 			ar.push('tag-required');
 	if (props.disabled) 			ar.push('tag-disabled');
 
 	return ar;
@@ -175,7 +165,6 @@ onMounted(() => {
 @com-bs-1: var(--ui-bs-1);
 
 .component-ui-select {
-	display: inline-block;
 	position: relative;
 	text-align: left;
 	font-size: @com-text-default;
@@ -259,22 +248,6 @@ onMounted(() => {
 			border-style: solid;
 			border-width: 6px 5px 0 5px;
 			border-color: @com-color-header-text transparent transparent transparent;
-		}
-	}
-
-	&.tag-block {
-		display: block;
-	}
-
-	&.tag-required {
-		.value:before {
-			content: '*';
-
-			position: absolute;
-			top: 2px;
-			right: 2px;
-
-			color: @com-color-red;
 		}
 	}
 
