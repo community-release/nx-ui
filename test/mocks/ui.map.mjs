@@ -1,1 +1,1 @@
-export default {"zoom":8,"zoomMin":7,"zoomMax":18}
+export default {"zoom":8,"zoomMin":7,"zoomMax":18,"clusterColor":"#4b3aaa","disabledClusterColor":"#5f6761"}
