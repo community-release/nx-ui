@@ -231,7 +231,7 @@ onMounted(() => {
 		label {
 			top: 3px;
 			margin: 0;
-			padding: 0;
+			padding: 0 0 5px 0;
 			font-size: @com-text-small;
 			
 			color: @com-color-gray-text;
