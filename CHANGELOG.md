@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.39
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.38...v0.0.39)
+
+### 🚀 Enhancements
+
+- **select:** Added layout without label ([e8ac4e6](https://github.com/community-release/nx-ui/commit/e8ac4e6))
+
+### 🏡 Chore
+
+- Generate test mocks and component styles ([b90b5f9](https://github.com/community-release/nx-ui/commit/b90b5f9))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.38
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.37...v0.0.38)
