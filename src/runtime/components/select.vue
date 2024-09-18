@@ -145,10 +145,13 @@ onMounted(() => {
 </script>
 
 <style lang="less">
+@import (less) './styles/components.less';
+
 @com-space-micro: var(--ui-space-micro);
 @com-input-height-default: var(--ui-input-height-default);
 
 @com-font-header: var(--ui-font-header);
+@com-value-font-weight: @ui-select-value-font-weight;
 
 @com-text-default: var(--ui-text-default);
 @com-text-small: var(--ui-text-small);
@@ -231,7 +234,7 @@ onMounted(() => {
 			bottom: 0;
 
 			font-family: @com-font-header;
-			font-weight: 600;
+			font-weight: @com-value-font-weight;
 			color: @com-color-header-text;
 		}
 

@@ -9,4 +9,7 @@ export default {
 	map: {
 		'user-position-color': 'var(--ui-color-primary)'
 	},
+	select: {
+		'value-font-weight': 'var(--ui-font-weight-medium)'
+	},
 }

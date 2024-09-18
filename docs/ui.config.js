@@ -89,7 +89,7 @@ export default {
 	componentsStyle: {
 		map: {
 			'user-position-color': 'var(--color-primary)'
-		}
+		},
 	},
 	componentsProps: {
 		button: {
@@ -100,6 +100,6 @@ export default {
 			h: 'Hours',
 			m: 'Minutes',
 			s: 'Seconds',
-		}
+		},
 	},
 };
