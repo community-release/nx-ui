@@ -89,6 +89,7 @@ const classes = computed(() => {
 	if (props.error) 				ar.push('tag-error');
 	if (focus.value) 				ar.push('tag-focus');
 	if (props.disabled) 			ar.push('tag-disabled');
+	if (props.label) 				ar.push('tag-label');
 
 	return ar;
 });
@@ -220,19 +221,10 @@ onMounted(() => {
 			right: 30px;
 		}
 
-		label {
-			top: 3px;
-			margin: 0;
-			padding: 0 0 5px 0;
-			font-size: @com-text-small;
-			
-			color: @com-color-gray-text;
-		}
-
 		strong {
-			top: 20px;
-			bottom: 0;
-
+			transform: translateY(-50%);
+			top: 50%;
+			bottom: auto;
 			font-family: @com-font-header;
 			font-weight: @com-value-font-weight;
 			color: @com-color-header-text;
@@ -251,6 +243,25 @@ onMounted(() => {
 			border-style: solid;
 			border-width: 6px 5px 0 5px;
 			border-color: @com-color-header-text transparent transparent transparent;
+		}
+	}
+
+	&.tag-label {
+		.value {
+			label {
+				top: 3px;
+				margin: 0;
+				padding: 0 0 5px 0;
+				font-size: @com-text-small;
+				
+				color: @com-color-gray-text;
+			}
+
+			strong {
+				transform: none;
+				top: 20px;
+				bottom: 0;
+			}
 		}
 	}
 
