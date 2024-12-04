@@ -16,7 +16,7 @@ import comProps from '#build/ui.map.mjs';
 
 // Data
 const store = useMapStore();
-const emit = defineEmits('initialized');
+const emit = defineEmits(['initialized']);
 
 const mapEngines = {
 	openlayers: defineAsyncComponent(() => import(`./openlayers/index.vue`))

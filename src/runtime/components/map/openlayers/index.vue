@@ -47,7 +47,7 @@
 
 
 // Data
-	const emit = defineEmits('initialized');
+	const emit = defineEmits(['initialized']);
 	const refMap = ref(null);
 	let map = null;
 	let view = null;
