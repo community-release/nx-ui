@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.40
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.39...v0.0.40)
+
+### 🩹 Fixes
+
+- **map:** Fixed incorrect defineEmits usage ([bfee7f0](https://github.com/community-release/nx-ui/commit/bfee7f0))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.39
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.38...v0.0.39)
