@@ -199,7 +199,7 @@ export default {
 
 	cursor: pointer;
 	border: 1px solid transparent;
-	border-radius: @com-input-height-large;
+	border-radius: @com-border-radius-default;
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
