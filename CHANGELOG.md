@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.41
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.40...v0.0.41)
+
+### 🎨 Styles
+
+- **button:** Default border size now equal --ui-border-radius-default ([e432645](https://github.com/community-release/nx-ui/commit/e432645))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.40
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.39...v0.0.40)
