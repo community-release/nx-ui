@@ -104,8 +104,6 @@
 			store.setCoord(nearest.coord, 1500);
 			store.setZoom(nearest?.zoom ? nearest.zoom : 14, 1500);
 		} catch (err) {
-			console.log('handleClick err', err);
-
 			emit('error', 'error-geo-not-enabled-on-device');
 		}
 
