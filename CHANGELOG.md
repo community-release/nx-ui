@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.42
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.41...v0.0.42)
+
+### 💅 Refactors
+
+- **map:** Removed debug info ([095df00](https://github.com/community-release/nx-ui/commit/095df00))
+- **module:** Removed commented code ([93fdb0e](https://github.com/community-release/nx-ui/commit/93fdb0e))
+
+### 🏡 Chore
+
+- Packages update ([547ada0](https://github.com/community-release/nx-ui/commit/547ada0))
+- Updated codebase to meet updated packages requirements ([60b6afd](https://github.com/community-release/nx-ui/commit/60b6afd))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.41
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.40...v0.0.41)
