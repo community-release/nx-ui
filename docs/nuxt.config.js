@@ -1,7 +1,9 @@
 import path from 'node:path';
 import viteRawPlugin from 'vite-raw-plugin';
 import ui from './ui.config';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PRODUCTION_BASE_PATH = '';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -116,6 +118,10 @@ export default defineNuxtConfig({
 			},
 		],
 	],
+
+	alias: {
+		pinia: path.resolve(__dirname, 'node_modules/pinia/dist/pinia.mjs')
+	},
 
 	shiki: {
 		bundledLangs: ['vue', 'javascript'],

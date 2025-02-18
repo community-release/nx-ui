@@ -1,12 +1,12 @@
 <template>
 	<section class="component-bar-top">
 		<div class="g-row">
-			<nuxt-link :to="localePath('/')" class="logo">3</nuxt-link>
+			<nuxt-link :to="$localePath('/')" class="logo">3</nuxt-link>
 			
 			<helper-theme-switcher />
 			<helper-lang-switcher />
 			<nav class="menu">
-				<nuxt-link class="item" v-for="item in menuMain" :key="item.id" :to="localePath(item.id)">
+				<nuxt-link class="item" v-for="item in menuMain" :key="item.id" :to="$localePath(item.id)">
 					{{ $t(item.text) }}
 				</nuxt-link>
 			</nav>

@@ -3,7 +3,7 @@
 		<nuxt-link 
 			v-for="locale in locales" 
 			:key="locale.code"
-			:to="switchLocalePath(locale.code)"
+			:to="$switchLocalePath(locale.code)"
 		>
 			{{ locale.code }}
 		</nuxt-link>
@@ -12,7 +12,7 @@
 
 <script setup>
 	const { locale, locales } = useI18n();
-	const switchLocalePath = useSwitchLocalePath();
+	const $switchLocalePath = useSwitchLocalePath();
 
 	watch(locale, (v) => {
 		console.log('watch', v);

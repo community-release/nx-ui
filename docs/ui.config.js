@@ -101,5 +101,5 @@ export default {
 			m: 'Minutes',
 			s: 'Seconds',
 		},
-	},
+	}
 };

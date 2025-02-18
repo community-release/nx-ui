@@ -8,7 +8,7 @@
 				itemscope
 			>
 				<span v-if="item.last">{{ $t(item.text) }}</span><!--
-				--><nuxt-link v-if="!item.last && item.url !== false" :to="localePath(item.url)" itemprop="item" :class="{'tag-last': item.last}">
+				--><nuxt-link v-if="!item.last && item.url !== false" :to="$localePath(item.url)" itemprop="item" :class="{'tag-last': item.last}">
 					<span itemprop="name">{{ $t(item.text) }}</span>
 				</nuxt-link><meta itemprop="position" :content="index + 1" /><!--
 			--></li>
@@ -19,15 +19,6 @@
 <script>
 export default {
 	name: 'component-bar-breadcrumbs',
-
-	// Data
-	setup() {
-		const localePath = useLocalePath();
-
-		return {
-			localePath
-		};
-	},
 }
 </script>
 

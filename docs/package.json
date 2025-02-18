@@ -16,18 +16,18 @@
 		"ic:generate": "node ./tools/generate-icon-font.js"
 	},
 	"devDependencies": {
-		"@nuxtjs/color-mode": "^3.3.3",
-		"@nuxtjs/i18n": "^8.3.0",
+		"@nuxtjs/color-mode": "^3.5.2",
+		"@nuxtjs/i18n": "^9.2.0",
 		"less": "^3.9.0",
 		"less-loader": "^5.0.0",
-		"nuxt": "^3.12.1",
+		"nuxt": "^3.15.4",
 		"nuxt-shiki": "^0.3.0",
 		"vite-raw-plugin": "^1.0.2"
 	},
 	"dependencies": {
-		"@pinia/nuxt": "^0.4.11",
+		"@pinia/nuxt": "^0.10.1",
+		"pinia": "^3.0.1",
 		"cross-env": "^7.0.3",
-		"pinia": "^2.1.6",
 		"svgtofont": "^4.2.0",
 		"vue-code-highlight": "^0.7.8"
 	}
