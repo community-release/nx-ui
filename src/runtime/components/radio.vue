@@ -8,11 +8,13 @@
 				:value="value"
 				:name="name"
 				:disabled="disabled"
+				@blur="focus = false"
+				@focus="focus = true"
 				autocomplete="off"
 				@change="handleUpdate($event.target.value)"
 			/>
 
-			<i></i>
+			<i :aria-label="ariaLabel"></i>
 
 			<span>
 				<slot></slot>
@@ -22,50 +24,63 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+// Imports
+	import { computed } from 'vue';
 
-const props = defineProps({
-	name: {
-		required: false,
-		default: 'rd'
-	},
-	value: {
-		required: true,
-	},
-	modelValue: { default: '' },
-	haveError: {
-		type: Boolean,
-		default: false
-	},
-	required: {
-		type: Boolean,
-		default: false
-	},
-	disabled: {
-		type: Boolean,
-		default: false
+// Misc
+	const slots = useSlots();
+
+// Data
+	const props = defineProps({
+		name: {
+			required: false,
+			default: 'rd'
+		},
+		value: {
+			required: true,
+		},
+		modelValue: { default: '' },
+		haveError: {
+			type: Boolean,
+			default: false
+		},
+		required: {
+			type: Boolean,
+			default: false
+		},
+		disabled: {
+			type: Boolean,
+			default: false
+		}
+	})
+
+	const emit = defineEmits(['update:modelValue']);
+
+	
+	const focus = ref(false);
+	const ariaLabel = computed(() => {
+		return (slots.default ? slots.default()[0]?.children || '' : '').trim();
+	});
+
+	const classes = computed(() => {
+		const ar = [];
+
+		if (props.value !== '') ar.push('tag-not-empty');
+		if (props.haveError) 	ar.push('tag-error');
+		if (props.text) 		ar.push('tag-text');
+		if (props.disabled) 	ar.push('tag-disabled');
+		if (props.required) 	ar.push('tag-required');
+		if (focus.value) 	ar.push('tag-focus');
+
+		return ar;
+	});
+
+	const isChecked = computed(() => props.modelValue == props.value);
+
+// Methods
+	function handleUpdate(v) {
+		emit('update:modelValue', v);
 	}
-})
-
-const emit = defineEmits(['update:modelValue'])
-
-const classes = computed(() => {
-	const ar = [];
-
-	if (props.value !== '') ar.push('tag-not-empty');
-	if (props.haveError) 	ar.push('tag-error');
-	if (props.text) 		ar.push('tag-text');
-	if (props.disabled) 	ar.push('tag-disabled');
-	if (props.required) 	ar.push('tag-required');
-
-	return ar;
-});
-
-const isChecked = computed(() => props.modelValue == props.value);
-
-function handleUpdate(v) {
-	emit('update:modelValue', v);
-}
 </script>
 
 <style lang="less">
@@ -210,6 +225,19 @@ function handleUpdate(v) {
 	// Error
 	&.tag-error {
 		> label { color: @com-color-error; }
+	}
+}
+
+@media (hover: hover) {
+	.component-ui-radio.tag-focus {
+		// Ally
+		@com-outline: var(--ui-outline);
+		@com-outline-offset: var(--ui-outline-offset);
+
+		i {
+			outline: @com-outline;
+			outline-offset: @com-outline-offset;
+		}
 	}
 }
 </style>

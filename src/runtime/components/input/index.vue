@@ -144,6 +144,9 @@
 @com-text-small: var(--ui-text-small);
 @com-text-mini: var(--ui-text-mini);
 
+// Ally
+@com-outline: var(--ui-outline);
+
 .component-ui-input {
 	overflow: hidden;
 	position: relative;
@@ -224,8 +227,8 @@
 
 	// Focus
 	&.tag-focus {
-		border-color: @com-color-primary;
-		outline: 1px solid @com-color-primary;
+		border-color: transparent;
+		outline: @com-outline;
 	}
 
 	// Disabled

@@ -168,6 +168,9 @@ onMounted(() => {
 @com-border-radius-default: var(--ui-border-radius-default);
 @com-bs-1: var(--ui-bs-1);
 
+// Ally
+@com-outline: var(--ui-outline);
+
 .component-ui-select {
 	position: relative;
 	text-align: left;
@@ -276,7 +279,8 @@ onMounted(() => {
 
 	&.tag-focus {
 		.value {
-			border-color: @com-color-primary;
+			border-color: transparent;
+			outline: @com-outline;
 		}
 	}
 }

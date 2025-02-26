@@ -2,6 +2,7 @@
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
 			<UiButton 
+				ref="com"
 				:color="color" 
 				:size="size" 
 				:disabled="disabled" 
@@ -23,6 +24,7 @@
 			<ui-checkbox v-model="disabled">disabled</ui-checkbox>
 			<ui-checkbox v-model="block">block</ui-checkbox>
 			<ui-checkbox v-model="loading">loading</ui-checkbox>
+			<ui-checkbox v-model="focus">focus</ui-checkbox>
 		</ui-grid>
 	</ui-grid>
 </template>
@@ -31,6 +33,8 @@
 const disabled = ref(false);
 const block = ref(false);
 const loading = ref(false);
+const focus = ref(false);
+const refCom = useTemplateRef('com');
 
 const size = ref('default');
 const sizeList = ref([
@@ -65,4 +69,12 @@ const variantList = ref([
 	{name: 'flat', value: 'flat'},
 	{name: 'outline', value: 'outline'},
 ]);
+
+watch(focus, (v) => {
+	console.log('refCom.value', refCom, refCom.value);
+	if (v)
+		refCom.value.$el.focus();
+	else
+		refCom.value.$el.blur();
+});
 </script>
