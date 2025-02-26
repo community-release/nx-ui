@@ -25,7 +25,7 @@
 
 <script setup>
 // Imports
-	import { computed } from 'vue';
+	import { computed, useSlots } from 'vue';
 
 // Misc
 	const slots = useSlots();
