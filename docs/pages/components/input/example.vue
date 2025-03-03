@@ -1,14 +1,16 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<ui-input 
-				placeholder="Enter text..."
-				v-model="value"
-				:shape="shape"
-				:size="size"
-				:disabled="disabled"
-			>
-			</ui-input>
+			<ui-label text="Text" label-for="input-example"></ui-label>
+				<ui-input 
+					input-id="input-example"
+					placeholder="Enter text"
+					v-model="value"
+					:shape="shape"
+					:size="size"
+					:disabled="disabled"
+				>
+				</ui-input>
 		</div>
 
 		<ui-grid>

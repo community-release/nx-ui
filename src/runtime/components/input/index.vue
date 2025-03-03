@@ -1,5 +1,5 @@
 <template>
-	<section class="component-ui-input" :class="classes" @click="refInput.focus()">
+	<div class="component-ui-input" :class="classes" @click="refInput.focus()">
 		<ui-impulse-indicator :impulse="impulse" @update:impulse="$emit('update:impulse', false)" />
 
 		<div class="com-content">
@@ -7,6 +7,8 @@
 			<div class="slot-default">
 				<input
 					ref="refInput"
+
+					:id="inputId"
 					:value="modelValue"
 					:type="type" 
 					:placeholder="placeholder" 
@@ -25,12 +27,12 @@
 			</div>
 			<div class="slot-append" v-if="hasSlot('append')"><slot name="append"></slot></div>
 		</div>
-	</section>
+	</div>
 </template>
 
 <script setup>
 // Import
-	import { ref, computed, useSlots } from 'vue';
+	import { ref, computed, useSlots  } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import comProps from '#build/ui.input.mjs';
 
@@ -42,6 +44,9 @@
 	const props = defineProps({
 		modelValue: {
 			required: true
+		},
+		inputId: {
+			default: '',
 		},
 		placeholder: {
 			default: comProps.placeholder,
@@ -104,8 +109,6 @@
 	const hasSlot = (name) => {
 		return !!slots[name];
 	};
-// Hooks
-
 </script>
 
 <style lang="less">
