@@ -1,8 +1,8 @@
 <template>
 	<ui-grid grid-template-columns="1fr 1fr">
 		<div>
-			<ui-label text="Text" :required="required">
-				<ui-input v-model="value"></ui-input>
+			<ui-label text="Text" label-for="example" :required="required">
+				<ui-input v-model="value" input-id="example"></ui-input>
 			</ui-label>
 		</div>
 		<div>

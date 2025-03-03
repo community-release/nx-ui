@@ -1,8 +1,8 @@
 <template>
-	<label class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
-		<span class="component-ui-label--text">{{ text }}</span>
+	<div class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
+		<label class="component-ui-label--text" :for="labelFor">{{ text }}</label>
 		<slot></slot>
-	</label>
+	</div>
 </template>
 
 <script setup>
@@ -13,6 +13,9 @@
 	const props = defineProps({
 		text: {
 			default: '',
+		},
+		labelFor: {
+			default: ''
 		},
 		size: {
 			type: String,
@@ -43,11 +46,9 @@
 @com-text-small: var(--ui-text-small);
 
 .component-ui-label {
-	display: block;
-
 	.component-ui-label--text {
 		position: relative;
-		display: inline-block;
+		display: block;
 		padding-bottom: @com-space-micro;
 		font-weight: @com-font-weight-medium;
 		font-size: @com-text-default;
