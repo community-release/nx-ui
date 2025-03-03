@@ -1,8 +1,9 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<ui-label text="Message">
+			<ui-label text="Message" label-for="textarea-example">
 				<ui-textarea 
+					input-id="textarea-example"
 					placeholder="Enter text..."
 					v-model="value" 
 					:disabled="disabled" 

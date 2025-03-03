@@ -2,6 +2,8 @@
 	<section class="component-ui-textarea" :class="classes" @click="refInput.focus()">
 		<textarea
 			ref="refInput"
+
+			:id="inputId"
 			:value="modelValue"
 			:placeholder="placeholder" 
 			:disabled="disabled" 
@@ -30,15 +32,18 @@
 
 // Data
 	const props = defineProps({
+		modelValue: {
+			required: true
+		},
+		inputId: {
+			default: '',
+		},
 		placeholder: {
 			default: comProps.placeholder,
 		},
 		shape: {
 			type: String,
 			default: comProps.shape,
-		},
-		modelValue: {
-			required: true
 		},
 		disabled: {
 			type: Boolean,
