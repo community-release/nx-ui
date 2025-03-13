@@ -1,6 +1,41 @@
 # Changelog
 
 
+## v0.0.44
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.43...v0.0.44)
+
+### 🚀 Enhancements
+
+- **label:** Added label-for prop, improved a11y support ([2ec2d02](https://github.com/community-release/nx-ui/commit/2ec2d02))
+- **input:** Added input-id prop, improved a11y support ([1da6ac4](https://github.com/community-release/nx-ui/commit/1da6ac4))
+- **textarea:** Added input-id prop, improved a11y support ([6507fad](https://github.com/community-release/nx-ui/commit/6507fad))
+- Added required prop to inputs and elements ([927b115](https://github.com/community-release/nx-ui/commit/927b115))
+
+### 🩹 Fixes
+
+- Fixed docs generate errors (i18n, pinia) ([2b6a867](https://github.com/community-release/nx-ui/commit/2b6a867))
+- Fixed docs gen (i18n) ([001a884](https://github.com/community-release/nx-ui/commit/001a884))
+
+### 🏡 Chore
+
+- Merge ([0239e4b](https://github.com/community-release/nx-ui/commit/0239e4b))
+
+### ✅ Tests
+
+- Updated test to match new changes ([7e6b4a1](https://github.com/community-release/nx-ui/commit/7e6b4a1))
+
+### 🤖 CI
+
+- Fix docs generate ([bf87766](https://github.com/community-release/nx-ui/commit/bf87766))
+- Docs gen fix (wip) ([5ff718c](https://github.com/community-release/nx-ui/commit/5ff718c))
+- Docs gen fix (wip) ([547583f](https://github.com/community-release/nx-ui/commit/547583f))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.43
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.42...v0.0.43)
