@@ -4,16 +4,19 @@
 			<input
 				ref="input"
 				type="checkbox" 
+
+				:id="inputId"
 				:name="name"
 				:checked="isChecked"
 				:disabled="disabled"
+				:aria-describedby="describedby"
 				@change="updateValue($event.target.checked)"
 				@blur="focus = false"
 				@focus="focus = true"
 				autocomplete="off"
 			/>
 
-			<i :aria-label="ariaLabel"></i>
+			<i></i>
 
 			<span>
 				<slot></slot>
@@ -32,13 +35,18 @@
 //
 	const props = defineProps({
 		name: {
-			required: false,
 			default: 'cb'
 		},
 		modelValue: {
 			required: true,
 		},
-		haveError: {
+		inputId: {
+			default: '',
+		},
+		describedby: {
+			default: '',
+		},
+		error: {
 			type: Boolean,
 			default: false
 		},
@@ -59,16 +67,12 @@
 	const emit = defineEmits(['change', 'onchange', 'update:modelValue']);
 
 	const focus = ref(false);
-	const ariaLabel = computed(() => {
-		return (slots.default ? slots.default()[0]?.children || '' : '').trim();
-	});
 
 	const classes = computed(() => {
 		const ar = [];
 
-		if (props.haveError) 	ar.push('tag-error');
+		if (props.error) 		ar.push('tag-error');
 		if (props.disabled) 	ar.push('tag-disabled');
-		if (props.required) 	ar.push('tag-required');
 		if (focus.value) 		ar.push('tag-focus');
 
 		return ar;
@@ -115,20 +119,6 @@
 
 	position: relative;
 	text-align: left;
-
-	.error-wrap {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		padding: 0;
-		
-		font-size: 11px;
-		
-		color: @com-color-error-text;
-		background: transparent;
-
-		&:before, &:after { display: none; }
-	}
 	
 	> label {
 		position: relative;
@@ -197,17 +187,6 @@
 		span {
 			//font-weight: 600;
 			color: @com-color-header-text;
-		}
-	}
-
-	// Required
-	&.tag-required {
-		span:after {
-			content: '*';
-			padding-left: @com-space-micro;
-			color: @com-color-red;
-			font-weight: bold;
-			font-size: @com-text-medium;
 		}
 	}
 

@@ -1,8 +1,10 @@
 <template>
-	<div class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
-		<label class="component-ui-label--text" :for="labelFor">{{ text }}</label>
+	<component :is="fieldset ? 'fieldset' : 'div'"  class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
+		<component :is="fieldset ? 'legend' : 'label'" class="component-ui-label--text" :for="labelFor">
+			{{ text }} <span v-if="required" aria-hidden="true">*</span>
+		</component>
 		<slot></slot>
-	</div>
+	</component>
 </template>
 
 <script setup>
@@ -13,6 +15,10 @@
 	const props = defineProps({
 		text: {
 			default: '',
+		},
+		fieldset: {
+			type: Boolean,
+			default: false,
 		},
 		labelFor: {
 			default: ''
@@ -56,29 +62,21 @@
 	}
 
 	// Text size
-	&.tag-size-big .component-ui-label--text { font-size: @com-text-big; }
-	&.tag-size-medium .component-ui-label--text { font-size: @com-text-medium; }
-	&.tag-size-default .component-ui-label--text { font-size: @com-text-default; }
-	&.tag-size-small .component-ui-label--text { font-size: @com-text-small; }
+	&.tag-size-big > .component-ui-label--text { font-size: @com-text-big; }
+	&.tag-size-medium > .component-ui-label--text { font-size: @com-text-medium; }
+	&.tag-size-default > .component-ui-label--text { font-size: @com-text-default; }
+	&.tag-size-small > .component-ui-label--text { font-size: @com-text-small; }
 
 	// Text weight
-	&.tag-weight-700 .component-ui-label--text { font-weight: 700; }
-	&.tag-weight-600 .component-ui-label--text { font-weight: 600; }
-	&.tag-weight-500 .component-ui-label--text { font-weight: 500; }
-	&.tag-weight-400 .component-ui-label--text { font-weight: 400; }
+	&.tag-weight-700 > .component-ui-label--text { font-weight: 700; }
+	&.tag-weight-600 > .component-ui-label--text { font-weight: 600; }
+	&.tag-weight-500 > .component-ui-label--text { font-weight: 500; }
+	&.tag-weight-400 > .component-ui-label--text { font-weight: 400; }
 
 	// Required
-	&.tag-required {
-		.component-ui-label--text:after {
-			content: '*';
-
-			position: absolute;
-			top: 0;
-			right: -0.7em;
-			color: @com-color-red;
-			font-weight: bold;
-			font-size: @com-text-medium;
-		}
+	&.tag-required .component-ui-label--text span {
+		color: @com-color-red;
+		font-weight: bold;
 	}
 }
 </style>

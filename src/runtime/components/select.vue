@@ -2,15 +2,18 @@
 	<div class="component-ui-select" :class="classes" :style="styles">
 		<div class="wrapper">
 			<div class="value" @click="toggle">
-				<label v-if="label" v-html="label"></label>
+				<div v-if="label" v-html="label"></div>
 				<strong v-if="valueName" v-html="valueName"></strong>
 			</div>
 
 			<select 
 				ref="select"
+
+				:id="inputId"
 				@change="onChange"
 				@focus="handleFocus"
 				@blur="handleBlur"
+				:aria-required="required ? 'true' : 'false'"
 				:disabled="disabled"
 				autocomplete="off"
 			>
@@ -25,9 +28,13 @@
 <script setup>
 // Imports
 import { ref, computed, watch, onMounted, nextTick } from 'vue';
+import uniq from './helpers/uniq';
 
 // Setup
 const props = defineProps({
+	inputId: {
+		default: '',
+	},
 	theme: {
 		type: String,
 		default: 'default',
@@ -44,6 +51,10 @@ const props = defineProps({
 	options: {
 		type: Array,
 		default: () => []
+	},
+	required: {
+		type: Boolean,
+		default: false
 	},
 	disabled: {
 		type: Boolean,
@@ -66,6 +77,7 @@ const isOpen = ref(false);
 const increaseZIndex = ref(false);
 const focus = ref(false);
 const select = ref(null);
+const uniqId = uniq();
 
 const valueName = computed(() => {
 	let result = '...';

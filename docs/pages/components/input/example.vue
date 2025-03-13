@@ -1,7 +1,7 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<ui-label text="Text" label-for="input-example"></ui-label>
+			<ui-label text="Text" label-for="input-example" :required="required"></ui-label>
 				<ui-input 
 					input-id="input-example"
 					placeholder="Enter text"
@@ -9,6 +9,7 @@
 					:shape="shape"
 					:size="size"
 					:disabled="disabled"
+					:required="required"
 				>
 				</ui-input>
 		</div>
@@ -16,6 +17,7 @@
 		<ui-grid>
 			<ui-select v-model="size" :options="sizeList" label="size"></ui-select>
 			<ui-select v-model="shape" :options="shapeList" label="shape"></ui-select>
+			<ui-checkbox v-model="required">required</ui-checkbox>
 			<ui-checkbox v-model="disabled">disabled</ui-checkbox>
 		</ui-grid>
 	</ui-grid>
@@ -24,6 +26,7 @@
 <script setup>
 const value = ref('');
 const disabled = ref(false);
+const required = ref(false);
 
 const size = ref('default');
 const sizeList = ref([

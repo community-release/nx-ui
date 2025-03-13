@@ -4,17 +4,21 @@
 			<input
 				ref="input"
 				type="radio" 
+
+				:id="inputId"
 				:checked="isChecked"
 				:value="value"
 				:name="name"
 				:disabled="disabled"
+				:aria-required="required ? 'true' : 'false'"
+				:aria-describedby="describedby"
 				@blur="focus = false"
 				@focus="focus = true"
 				autocomplete="off"
 				@change="handleUpdate($event.target.value)"
 			/>
 
-			<i :aria-label="ariaLabel"></i>
+			<i></i>
 
 			<span>
 				<slot></slot>
@@ -33,13 +37,18 @@
 // Data
 	const props = defineProps({
 		name: {
-			required: false,
 			default: 'rd'
 		},
 		value: {
 			required: true,
 		},
 		modelValue: { default: '' },
+		inputId: {
+			default: '',
+		},
+		describedby: {
+			default: '',
+		},
 		haveError: {
 			type: Boolean,
 			default: false
@@ -55,12 +64,8 @@
 	})
 
 	const emit = defineEmits(['update:modelValue']);
-
 	
 	const focus = ref(false);
-	const ariaLabel = computed(() => {
-		return (slots.default ? slots.default()[0]?.children || '' : '').trim();
-	});
 
 	const classes = computed(() => {
 		const ar = [];
@@ -69,7 +74,6 @@
 		if (props.haveError) 	ar.push('tag-error');
 		if (props.text) 		ar.push('tag-text');
 		if (props.disabled) 	ar.push('tag-disabled');
-		if (props.required) 	ar.push('tag-required');
 		if (focus.value) 	ar.push('tag-focus');
 
 		return ar;
@@ -198,17 +202,6 @@
 
 		span {
 			color: @com-color-header-text;
-		}
-	}
-
-	// Required
-	&.tag-required {
-		span:after {
-			content: '*';
-			padding-left: @com-space-micro;
-			color: @com-color-error;
-			font-weight: bold;
-			font-size: @com-text-medium;
 		}
 	}
 

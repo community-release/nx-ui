@@ -7,6 +7,7 @@
 			:value="modelValue"
 			:placeholder="placeholder" 
 			:disabled="disabled" 
+			:aria-required="required ? 'true' : 'false'"
 
 			@change="updateValue($event.target.value)"
 			@input="updateValue($event.target.value)"
@@ -46,6 +47,10 @@
 			default: comProps.shape,
 		},
 		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		required: {
 			type: Boolean,
 			default: false,
 		},
