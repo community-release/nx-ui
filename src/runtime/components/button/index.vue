@@ -79,7 +79,7 @@ export default {
 	},
 	computed: {
 		computedType() {
-			return this.type !== '' ? this.type : (this.href !== '' ? 'a' : 'span');
+			return this.type !== '' ? this.type : (this.href !== '' ? 'a' : 'button');
 		},
 		classes() {
 			let ar = [];
@@ -108,7 +108,7 @@ export default {
 
 			return {
 				background,
-				color
+				color,
 			};
 		},
 		buttonBgStyle() {
@@ -348,11 +348,20 @@ export default {
 
 @media (hover: hover) {
 	.component-ui-button {
+		// Ally
+		@com-outline: var(--ui-outline);
+		@com-outline-offset: var(--ui-outline-offset);
+
 		&:hover {
 			text-decoration: none;
 			color: var(--button-hover-color) !important;
 
 			.button-bg { opacity: 1; }
+		}
+
+		&:focus {
+			outline: @com-outline;
+			outline-offset: @com-outline-offset;
 		}
 	}
 }

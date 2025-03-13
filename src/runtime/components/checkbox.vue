@@ -8,10 +8,12 @@
 				:checked="isChecked"
 				:disabled="disabled"
 				@change="updateValue($event.target.checked)"
+				@blur="focus = false"
+				@focus="focus = true"
 				autocomplete="off"
 			/>
 
-			<i></i>
+			<i :aria-label="ariaLabel"></i>
 
 			<span>
 				<slot></slot>
@@ -22,7 +24,10 @@
 
 <script setup>
 // Imports
-	import { computed } from 'vue';
+	import { ref, computed, useSlots } from 'vue';
+
+// Misc
+	const slots = useSlots();
 
 //
 	const props = defineProps({
@@ -53,12 +58,18 @@
 
 	const emit = defineEmits(['change', 'onchange', 'update:modelValue']);
 
+	const focus = ref(false);
+	const ariaLabel = computed(() => {
+		return (slots.default ? slots.default()[0]?.children || '' : '').trim();
+	});
+
 	const classes = computed(() => {
 		const ar = [];
 
 		if (props.haveError) 	ar.push('tag-error');
 		if (props.disabled) 	ar.push('tag-disabled');
 		if (props.required) 	ar.push('tag-required');
+		if (focus.value) 		ar.push('tag-focus');
 
 		return ar;
 	});
@@ -213,6 +224,19 @@
 	// Error
 	&.tag-error {
 		> label { color: @com-color-error-text; }
+	}
+}
+
+@media (hover: hover) {
+	.component-ui-checkbox.tag-focus {
+		// Ally
+		@com-outline: var(--ui-outline);
+		@com-outline-offset: var(--ui-outline-offset);
+
+		i {
+			outline: @com-outline;
+			outline-offset: @com-outline-offset;
+		}
 	}
 }
 </style>

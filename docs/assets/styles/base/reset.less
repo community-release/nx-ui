@@ -33,10 +33,6 @@ table {
 	border-spacing: 0;
 }
 
-*:focus {
-	outline: none;
-}
-
 img { 
 	border: 0; -ms-interpolation-mode: bicubic;
 	vertical-align: middle;
@@ -51,4 +47,8 @@ textarea { resize: vertical; }
 
 svg:not(:root) { overflow: hidden; }
 
-* { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; outline: none; }
+* { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+
+*:focus {
+	outline: 2px solid @color-primary;
+}

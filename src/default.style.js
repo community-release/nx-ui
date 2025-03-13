@@ -89,5 +89,9 @@ export default {
 
 	// Animation
 	'ani-time': '0.3s',
-	'ani-ease': 'ease'
+	'ani-ease': 'ease',
+
+	// A11y
+	'outline': '2px solid var(--ui-color-primary)',
+	'outline-offset': '2px',
 }

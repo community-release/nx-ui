@@ -113,6 +113,9 @@
 @com-text-default: var(--ui-text-default);
 @com-text-small: var(--ui-text-small);
 
+// Ally
+@com-outline: var(--ui-outline);
+
 .component-ui-textarea {
 	position: relative;
 	cursor: text;
@@ -158,9 +161,11 @@
 	}
 
 	// Focus
-	&.tag-focus textarea {
-		border-color: @com-color-primary;
-		outline: 1px solid @com-color-primary;
+	&.tag-focus {
+		textarea {
+			border-color: transparent;
+			outline: @com-outline;
+		}
 	}
 }
 </style>

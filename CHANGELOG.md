@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.43
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.42...v0.0.43)
+
+### 🚀 Enhancements
+
+- **a11y:** Added focus support for button, radio, checkbox, input, textarea and select elements ([d6c0a6d](https://github.com/community-release/nx-ui/commit/d6c0a6d))
+
+### 🩹 Fixes
+
+- Added useSlots import to components where it missing ([a5d8b5c](https://github.com/community-release/nx-ui/commit/a5d8b5c))
+- Added ref import to checkbox and radio component ([96325c4](https://github.com/community-release/nx-ui/commit/96325c4))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.42
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.41...v0.0.42)
