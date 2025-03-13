@@ -15,18 +15,17 @@ steps:
 
 # Install Node packages
 - script: |
-    npm install -g pnpm
-    pnpm install
+    npm install
   displayName: 'Install Node packages'
 
 # Build docs
 - script: |
-    pnpm docs:generate
+    npm run generate:production -prefix ./docs
   displayName: 'Build docs'
 
 # Run tests
 - script: |
-    pnpm test
+    npm test
   displayName: 'Run tests'
 
 # Copy build result to Build.ArtifactStagingDirectory

@@ -119,10 +119,6 @@ export default defineNuxtConfig({
 		],
 	],
 
-	alias: {
-		pinia: path.resolve(__dirname, 'node_modules/pinia/dist/pinia.mjs')
-	},
-
 	shiki: {
 		bundledLangs: ['vue', 'javascript'],
 		defaultTheme: 'github-dark',
@@ -130,9 +126,18 @@ export default defineNuxtConfig({
 	},
 
 	i18n: {
+		compilation: {
+			strictMessage: false,
+		},
+
+		lazy: true,
 		locale: 'en',
 		defaultLocale: 'en',
-		langDir: 'locales',
+		fallbackLocale: 'en',
+		compilation: {
+			strictMessage: false,
+		},
+		detectBrowserLanguage: false, // https://i18n.nuxtjs.org/docs/guide/browser-language-detection
 		locales: [
 			{
 				code: 'en',

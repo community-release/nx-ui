@@ -1,9 +1,9 @@
 <template>
 	<section id="page-components">
 		<ui-grid grid-template-columns="repeat(3, 1fr)" gap="var(--space-default)">
-			<nuxt-link v-for="item of components" class="component" :to="$localePath(item.url)">
+			<nuxt-link-locale v-for="item of components" class="component" :to="item.url">
 				ui-{{ item.name }}
-			</nuxt-link>
+			</nuxt-link-locale>
 		</ui-grid>
 	</section>
 </template>
