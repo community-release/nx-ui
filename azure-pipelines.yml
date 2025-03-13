@@ -21,7 +21,7 @@ steps:
 
 # Build docs
 - script: |
-    pnpm docs:generate
+    npm run generate:production -prefix ./docs
   displayName: 'Build docs'
 
 # Run tests

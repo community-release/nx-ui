@@ -129,10 +129,6 @@ export default defineNuxtConfig({
 		defaultLang: 'vue',
 	},
 
-	alias: {
-		pinia: path.resolve(__dirname, 'node_modules/pinia/dist/pinia.mjs')
-	},
-
 	i18n: {
 		compilation: {
 			strictMessage: false,
