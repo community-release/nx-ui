@@ -129,10 +129,24 @@ export default defineNuxtConfig({
 		defaultLang: 'vue',
 	},
 
+	alias: {
+		pinia: path.resolve(__dirname, 'node_modules/pinia/dist/pinia.mjs')
+	},
+
 	i18n: {
+		compilation: {
+			strictMessage: false,
+		},
+
+		lazy: true,
+   	 	langDir: 'i18n/locales',
 		locale: 'en',
 		defaultLocale: 'en',
-		langDir: 'locales',
+		fallbackLocale: 'en',
+		compilation: {
+			strictMessage: false,
+		},
+		detectBrowserLanguage: false, // https://i18n.nuxtjs.org/docs/guide/browser-language-detection
 		locales: [
 			{
 				code: 'en',

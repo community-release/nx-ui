@@ -8,9 +8,9 @@
 				itemscope
 			>
 				<span v-if="item.last">{{ $t(item.text) }}</span><!--
-				--><nuxt-link v-if="!item.last && item.url !== false" :to="$localePath(item.url)" itemprop="item" :class="{'tag-last': item.last}">
+				--><nuxt-link-locale v-if="!item.last && item.url !== false" :to="item.url" itemprop="item" :class="{'tag-last': item.last}">
 					<span itemprop="name">{{ $t(item.text) }}</span>
-				</nuxt-link><meta itemprop="position" :content="index + 1" /><!--
+				</nuxt-link-locale><meta itemprop="position" :content="index + 1" /><!--
 			--></li>
 		</ul>
 	</section>
