@@ -97,11 +97,11 @@ describe('radio component', async () => {
 	});
 
 	test('required', async () => {
-		expect(html, `required should be set`).not.toContain('tag-required');
+		expect(html, `required should be set`).not.toContain('aria-required="true"');
 
 		await wrapper.setProps({ required: true });
 
-		expect(wrapper.html(), `required should be set`).toContain('tag-required');
+		expect(wrapper.html(), `required should be set`).toContain('aria-required="true"');
 	});
 
 	test('disabled', async () => {

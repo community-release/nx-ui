@@ -11,9 +11,8 @@ describe('checkbox component', async () => {
 		props: {
 			modelValue: true,
 			name: 'mycb',
-			required: true,
 			disabled: true,
-			haveError: true,
+			error: true,
 			useBinaries: false
 		}
 	});
@@ -31,12 +30,8 @@ describe('checkbox component', async () => {
     	expect(html, 'name is not set').toContain('mycb');
 	});
 
-	test('required', async () => {
-    	expect(html, 'required is not set').toContain('tag-required');
-	});
-
-	test('haveError', async () => {
-    	expect(html, 'haveError is not set').toContain('tag-error');
+	test('error', async () => {
+    	expect(html, 'error is not set').toContain('tag-error');
 	});
 
 	test('Is checked', async () => {
@@ -62,9 +57,8 @@ describe('checkbox component (useBinaries = true)', async () => {
 		props: {
 			modelValue: 1,
 			name: 'mycb',
-			required: true,
 			disabled: true,
-			haveError: true,
+			error: true,
 			useBinaries: true
 		}
 	});
@@ -82,12 +76,8 @@ describe('checkbox component (useBinaries = true)', async () => {
     	expect(html, 'name is not set').toContain('mycb');
 	});
 
-	test('required', async () => {
-    	expect(html, 'required is not set').toContain('tag-required');
-	});
-
-	test('haveError', async () => {
-    	expect(html, 'haveError is not set').toContain('tag-error');
+	test('error', async () => {
+    	expect(html, 'error is not set').toContain('tag-error');
 	});
 
 	test('Is checked', async () => {
