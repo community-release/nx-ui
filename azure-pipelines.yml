@@ -15,7 +15,7 @@ steps:
 
 # Install Node packages
 - script: |
-    npm run install
+    npm install
   displayName: 'Install Node packages'
 
 # Build docs
