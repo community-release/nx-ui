@@ -119,10 +119,6 @@ export default defineNuxtConfig({
 		],
 	],
 
-	alias: {
-		pinia: path.resolve(__dirname, 'node_modules/pinia/dist/pinia.mjs')
-	},
-
 	shiki: {
 		bundledLangs: ['vue', 'javascript'],
 		defaultTheme: 'github-dark',
