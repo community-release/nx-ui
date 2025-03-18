@@ -28,7 +28,6 @@
 <script setup>
 // Imports
 import { ref, computed, watch, onMounted, nextTick } from 'vue';
-import uniq from './helpers/uniq';
 
 // Setup
 const props = defineProps({
@@ -77,7 +76,6 @@ const isOpen = ref(false);
 const increaseZIndex = ref(false);
 const focus = ref(false);
 const select = ref(null);
-const uniqId = uniq();
 
 const valueName = computed(() => {
 	let result = '...';
@@ -176,6 +174,7 @@ onMounted(() => {
 @com-color-surface: var(--ui-color-surface);
 @com-color-red: var(--ui-color-red);
 @com-color-border: var(--ui-color-border-bolder);
+@com-color-error: var(--ui-color-error);
 
 @com-border-radius-default: var(--ui-border-radius-default);
 @com-bs-1: var(--ui-bs-1);
@@ -294,6 +293,18 @@ onMounted(() => {
 			border-color: transparent;
 			outline: @com-outline;
 		}
+
+
+	}
+
+	&.tag-error {
+		.value {
+			border-color: @com-color-error;
+		}
+
+		&.tag-focus .value {
+			border-color: transparent;
+		}
 	}
 }
 
@@ -301,6 +312,16 @@ onMounted(() => {
 	.value {
 		background: @com-color-surface;
 		border-color: transparent;
+	}
+
+	&.tag-error {
+		.value {
+			border-color: @com-color-error;
+		}
+
+		&.tag-focus .value {
+			border-color: transparent;
+		}
 	}
 }
 </style>

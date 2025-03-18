@@ -12,8 +12,6 @@
 				:disabled="disabled"
 				:aria-required="required ? 'true' : 'false'"
 				:aria-describedby="describedby"
-				@blur="focus = false"
-				@focus="focus = true"
 				autocomplete="off"
 				@change="handleUpdate($event.target.value)"
 			/>
@@ -60,12 +58,14 @@
 		disabled: {
 			type: Boolean,
 			default: false
+		},
+		error: {
+			type: Boolean,
+			default: false
 		}
 	})
 
 	const emit = defineEmits(['update:modelValue']);
-	
-	const focus = ref(false);
 
 	const classes = computed(() => {
 		const ar = [];
@@ -74,7 +74,7 @@
 		if (props.haveError) 	ar.push('tag-error');
 		if (props.text) 		ar.push('tag-text');
 		if (props.disabled) 	ar.push('tag-disabled');
-		if (focus.value) 	ar.push('tag-focus');
+		if (props.error) 		ar.push('tag-error');
 
 		return ar;
 	});
@@ -217,17 +217,24 @@
 
 	// Error
 	&.tag-error {
-		> label { color: @com-color-error; }
+		> label i { border-color: @com-color-error; }
+		> label > input:checked + i {
+			border-color: @com-color-error;
+			background: @com-color-error;
+		}
 	}
 }
 
 @media (hover: hover) {
-	.component-ui-radio.tag-focus {
+	.component-ui-radio {
 		// Ally
 		@com-outline: var(--ui-outline);
 		@com-outline-offset: var(--ui-outline-offset);
 
-		i {
+		input:focus {
+			outline: none;
+		}
+		input:focus-visible + i {
 			outline: @com-outline;
 			outline-offset: @com-outline-offset;
 		}

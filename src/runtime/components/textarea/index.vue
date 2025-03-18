@@ -58,6 +58,10 @@
 			type: String,
 			default: 'on',
 		},
+		error: {
+			type: Boolean,
+			default: false,
+		},
 	});
 
 	const refInput = ref(null);
@@ -72,6 +76,7 @@
 		if (haveFocus.value) ar.push('tag-focus');
 		if (props.disabled) ar.push('tag-disabled');
 		if (props.shape) ar.push(`tag-shape-${props.shape}`);
+		if (props.error) ar.push(`tag-error`);
 
 		return ar;
 	});
@@ -110,6 +115,7 @@
 @com-color-border-bolder: var(--ui-color-border-bolder);
 @com-color-header-text: var(--ui-color-header-text);
 @com-color-gray-text: var(--ui-color-gray-text);
+@com-color-error: var(--ui-color-error);
 
 // Padding
 @com-space-default: var(--ui-space-default);
@@ -175,6 +181,19 @@
 		textarea {
 			border-color: transparent;
 			outline: @com-outline;
+		}
+	}
+
+	// Error
+	&.tag-error {
+		textarea {
+			border-color: @com-color-error;
+		}
+
+		&.tag-focus {
+			textarea {
+				border-color: transparent;
+			}
 		}
 	}
 }

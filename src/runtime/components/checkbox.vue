@@ -11,8 +11,6 @@
 				:disabled="disabled"
 				:aria-describedby="describedby"
 				@change="updateValue($event.target.checked)"
-				@blur="focus = false"
-				@focus="focus = true"
 				autocomplete="off"
 			/>
 
@@ -27,10 +25,7 @@
 
 <script setup>
 // Imports
-	import { ref, computed, useSlots } from 'vue';
-
-// Misc
-	const slots = useSlots();
+	import { ref, computed } from 'vue';
 
 //
 	const props = defineProps({
@@ -62,14 +57,12 @@
 
 	const emit = defineEmits(['change', 'onchange', 'update:modelValue']);
 
-	const focus = ref(false);
-
 	const classes = computed(() => {
 		const ar = [];
 
 		if (props.error) 		ar.push('tag-error');
 		if (props.disabled) 	ar.push('tag-disabled');
-		if (focus.value) 		ar.push('tag-focus');
+		if (props.error) 		ar.push('tag-error');
 
 		return ar;
 	});
@@ -104,7 +97,7 @@
 	@com-color-text: var(--ui-color-text);
 	@com-color-header-text: var(--ui-color-header-text);
 	@com-color-gray-text: var(--ui-color-gray-text);
-	@com-color-error-text: var(--ui-color-error);
+	@com-color-error: var(--ui-color-error);
 
 	@com-text-medium: var(--ui-text-medium);
 	@com-text-small: var(--ui-text-small);
@@ -198,17 +191,24 @@
 
 	// Error
 	&.tag-error {
-		> label { color: @com-color-error-text; }
+		> label i { border-color: @com-color-error; }
+		> label > input:checked + i {
+			border-color: @com-color-error;
+			background: @com-color-error;
+		}
 	}
 }
 
 @media (hover: hover) {
-	.component-ui-checkbox.tag-focus {
+	.component-ui-checkbox {
 		// Ally
 		@com-outline: var(--ui-outline);
 		@com-outline-offset: var(--ui-outline-offset);
 
-		i {
+		input:focus {
+			outline: none;
+		}
+		input:focus-visible + i {
 			outline: @com-outline;
 			outline-offset: @com-outline-offset;
 		}

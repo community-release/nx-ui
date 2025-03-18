@@ -25,7 +25,7 @@
 
 <script setup>
 // Imports
-	import { ref, useTemplateRef } from 'vue';
+	import { ref, computed } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import UiLoading from '../loading.vue';
 	import comProps from '#build/ui.button.mjs';

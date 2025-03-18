@@ -10,6 +10,7 @@
 					:size="size"
 					:disabled="disabled"
 					:required="required"
+					:error="error"
 				>
 				</ui-input>
 			</ui-label>
@@ -21,6 +22,7 @@
 			<ui-select v-model="shape" :options="shapeList" label="shape"></ui-select>
 			<ui-checkbox v-model="required">required</ui-checkbox>
 			<ui-checkbox v-model="disabled">disabled</ui-checkbox>
+			<ui-checkbox v-model="error">error</ui-checkbox>
 		</ui-grid>
 	</ui-grid>
 </template>
@@ -29,6 +31,7 @@
 const value = ref('');
 const disabled = ref(false);
 const required = ref(false);
+const error = ref(false);
 
 const size = ref('default');
 const sizeList = ref([

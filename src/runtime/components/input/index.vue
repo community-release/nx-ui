@@ -60,6 +60,10 @@
 			type: Boolean,
 			default: false,
 		},
+		error: {
+			type: Boolean,
+			default: false,
+		},
 		type: {
 			type: String,
 			default: 'text'
@@ -88,6 +92,7 @@
 		if (props.disabled) ar.push('tag-disabled');
 		if (props.size) ar.push(`tag-size-${props.size}`);
 		if (props.shape) ar.push(`tag-shape-${props.shape}`);
+		if (props.error) ar.push(`tag-error`);
 
 		return ar;
 	});
@@ -138,7 +143,8 @@
 @com-color-bg: var(--ui-color-bg);
 @com-color-header-text: var(--ui-color-header-text);
 @com-color-gray-text: var(--ui-color-gray-text);
-@com-color-primary: var(--color-primary);
+@com-color-primary: var(--ui-color-primary);
+@com-color-error: var(--ui-color-error);
 
 // Space
 @com-space-small: var(--ui-space-small);
@@ -246,6 +252,15 @@
 
 		input {
 			cursor: not-allowed;
+		}
+	}
+
+	// Error
+	&.tag-error {
+		border-color: @com-color-error;
+
+		&.tag-focus {
+			border-color: transparent;
 		}
 	}
 }

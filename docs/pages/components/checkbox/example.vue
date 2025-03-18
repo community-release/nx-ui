@@ -9,6 +9,7 @@
 					input-id="checkbox-example" 
 					:required="required"
 					:disabled="disabled"
+					:error="error"
 				>
 					Checkbox {{checked ? '(checked)' : ''}}
 				</ui-checkbox>
@@ -18,6 +19,7 @@
 			<ui-grid>
 				<ui-checkbox v-model="required">Required</ui-checkbox>
 				<ui-checkbox v-model="disabled">Disabled</ui-checkbox>
+				<ui-checkbox v-model="error">Error</ui-checkbox>
 			</ui-grid>
 		</ui-label>
 	</ui-grid>
@@ -27,4 +29,5 @@
 	const checked = ref(0);
 	const disabled = ref(false);
 	const required = ref(false);
+	const error = ref(false);
 </script>

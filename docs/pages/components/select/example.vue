@@ -9,6 +9,7 @@
 					label="Cities"
 					:disabled="disabled"
 					:required="required"
+					:error="error"
 				></ui-select>
 			</ui-label>
 
@@ -19,6 +20,7 @@
 					:options="citiesList" 
 					:disabled="disabled"
 					:required="required"
+					:error="error"
 				></ui-select>
 			</ui-label>
 		</ui-grid>
@@ -27,6 +29,7 @@
 				<ui-grid>
 					<ui-checkbox v-model="required">required</ui-checkbox>
 					<ui-checkbox v-model="disabled">disabled</ui-checkbox>
+					<ui-checkbox v-model="error">error</ui-checkbox>
 				</ui-grid>
 			</ui-label>
 		</ui-grid>
@@ -45,4 +48,5 @@ const citiesList = ref([
 
 const required = ref(false);
 const disabled = ref(false);
+const error = ref(false);
 </script>
