@@ -2,7 +2,7 @@ import { defineNuxtPlugin } from '#app';
 import { useUINoticeStore } from '../components/notice/store';
 
 export default defineNuxtPlugin(function (nuxt) {
-	const noticeStore = useUINoticeStore();
+	const noticeStore = useUINoticeStore(nuxt.$pinia);
 
     return {
         provide: {

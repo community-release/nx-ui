@@ -4,16 +4,16 @@
 		markerActiveImage="/map-marker-green.png" markerDisabledImage="/map-marker-gray.png" @wheel="onMouseWheel"
 		@initialized="onMapInitialized">
 		<template #row="{ store }">
-			<ui-map-zoom :store="store">
+			<!-- <ui-map-zoom :store="store">
 				<ui-map-device-zoom-switch :store="store">
 					<ui-tooltip v-if="!store.deviceZoom" v-model="showZoomTooltip" location="left"
 						textColor="var(--color-secondary)" bg="var(--color-bg)">
 						"Click to enable mouse wheel or touch manipulations"
 					</ui-tooltip>
 				</ui-map-device-zoom-switch>
-			</ui-map-zoom>
+			</ui-map-zoom> -->
 
-			<ui-map-location _showDefaultSlot="store.selectedMarker">
+			<!-- <ui-map-location _showDefaultSlot="store.selectedMarker">
 				<template #header>
 					<ui-map-location-list v-model="selectedCity" :options="cities" label="City" />
 					<ui-map-location-nearest :locations="markers" icon="ic ic-location-crosshairs"
@@ -29,7 +29,7 @@
 						</div>
 					</Transition>
 				</template>
-			</ui-map-location>
+			</ui-map-location> -->
 		</template>
 	</ui-map>
 </template>

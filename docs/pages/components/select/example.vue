@@ -23,7 +23,7 @@
 			</ui-label>
 		</ui-grid>
 		<ui-grid>
-			<ui-label text="Props" fieldset>
+			<ui-label text="Props" isLegend>
 				<ui-grid>
 					<ui-checkbox v-model="required">required</ui-checkbox>
 					<ui-checkbox v-model="disabled">disabled</ui-checkbox>

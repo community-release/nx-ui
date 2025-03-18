@@ -7,6 +7,7 @@
 		:class="classes" 
 		:style="styles" 
 		@click="handleClick"
+		ref="refCom"
 	>
 		<div class="button-bg" :style="buttonBgStyle"></div>
 
@@ -22,19 +23,15 @@
 	</component>
 </template>
 
-<script>
-import UiImpulseIndicator from '../impulse-indicator.vue';
-import UiLoading from '../loading.vue';
-import comProps from '#build/ui.button.mjs';
+<script setup>
+// Imports
+	import { ref, useTemplateRef } from 'vue';
+	import UiImpulseIndicator from '../impulse-indicator.vue';
+	import UiLoading from '../loading.vue';
+	import comProps from '#build/ui.button.mjs';
 
-export default {
-	components: {
-		UiImpulseIndicator,
-		UiLoading,
-	},
-	
-	// Data
-	props: {
+// Data
+	const props = defineProps({
 		color: {
 			type: String,
 			default: comProps.color,
@@ -71,73 +68,74 @@ export default {
 			type: [Boolean, Number],
 			default: false,
 		},
-	},
-	data: function() {
+	});
+
+	const refCom = ref(null);
+
+	const impulse = ref(false);
+		
+	const computedType = computed(() => {
+		return props.type !== '' ? props.type : (props.href !== '' ? 'a' : 'button');
+	});
+
+	const classes = computed(() => {
+		let ar = [];
+
+		if (props.size) ar.push(`tag-size-${props.size}`);
+		if (props.shape) ar.push(`tag-shape-${props.shape}`);
+		if (props.variant) ar.push(`tag-variant-${props.variant}`);
+		if (props.block) ar.push('tag-block');
+		if (props.loading) ar.push('tag-loading');
+		if (props.disabled) ar.push('tag-disabled');
+
+		return ar;
+	});
+	const stylesHoverColor = computed(() => {
+		return `var(--ui-color-text-on-${props.color})`;
+	});
+
+	const styles = computed(() => {
+		let background = `var(--ui-color-${props.color})`;
+		let color = `var(--ui-color-text-on-${props.color})`;
+
+		if (props.variant === 'flat' || props.variant === 'outline') 
+			background = 'transparent';
+
+		if (props.variant === 'flat' || props.variant === 'outline') 
+			color = `var(--ui-color-${props.color}-text)`;
+
 		return {
-			impulse: false,
+			background,
+			color,
 		};
-	},
-	computed: {
-		computedType() {
-			return this.type !== '' ? this.type : (this.href !== '' ? 'a' : 'button');
-		},
-		classes() {
-			let ar = [];
-
-			if (this.size) ar.push(`tag-size-${this.size}`);
-			if (this.shape) ar.push(`tag-shape-${this.shape}`);
-			if (this.variant) ar.push(`tag-variant-${this.variant}`);
-			if (this.block) ar.push('tag-block');
-			if (this.loading) ar.push('tag-loading');
-			if (this.disabled) ar.push('tag-disabled');
-
-			return ar;
-		},
-		stylesHoverColor() {
-			return `var(--ui-color-text-on-${this.color})`;
-		},
-		styles() {
-			let background = `var(--ui-color-${this.color})`;
-			let color = `var(--ui-color-text-on-${this.color})`;
-
-			if (this.variant === 'flat' || this.variant === 'outline') 
-				background = 'transparent';
-
-			if (this.variant === 'flat' || this.variant === 'outline') 
-				color = `var(--ui-color-${this.color}-text)`;
-
-			return {
-				background,
-				color,
-			};
-		},
-		buttonBgStyle() {
-			return {
-				'background': (this.variant === 'flat' || this.variant === 'outline') ? `var(--ui-color-${this.color})` : 'rgba(66,88,120, 0.075)'
-			}
+	});
+	const buttonBgStyle = computed(() => {
+		return {
+			'background': (props.variant === 'flat' || props.variant === 'outline') ? `var(--ui-color-${props.color.value})` : 'rgba(66,88,120, 0.075)'
 		}
-	},
+	});
 
 	// Methods
-	methods: {
-		handleClick(e) {
-			if (this.disabled || this.loading) return;
+	function handleClick(e) {
+		if (props.disabled || props.loading) return;
 
-			let rect = this.$el.getBoundingClientRect();
+		let rect = refCom.value.getBoundingClientRect();
 
-			this.impulse = {
-				left	: e.clientX - rect.left,
-				top		: e.clientY - rect.top,
-				width	: this.$el.offsetWidth,
-				height	: this.$el.offsetHeight
-			};
-		}
+		impulse.value = {
+			left	: e.clientX - rect.left,
+			top		: e.clientY - rect.top,
+			width	: refCom.value.offsetWidth,
+			height	: refCom.value.offsetHeight
+		};
 	}
-}
 </script>
 
 <style lang="less">
 .component-ui-button {
+	--button-hover-color: #fff;
+	--button-text-color: #fff;
+	--button-background: #fff;
+
 	--button-hover-color: v-bind(stylesHoverColor);
 	--button-text-color: v-bind(styles.color);
 	--button-background: v-bind(styles.background);
@@ -360,6 +358,9 @@ export default {
 		}
 
 		&:focus {
+			outline: none;
+		}
+		&:focus-visible {
 			outline: @com-outline;
 			outline-offset: @com-outline-offset;
 		}

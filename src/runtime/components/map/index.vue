@@ -14,8 +14,9 @@ import { watch, computed, defineAsyncComponent } from 'vue';
 import { useMapStore } from './store';
 import comProps from '#build/ui.map.mjs';
 
-// Data
-const store = useMapStore();
+// // Data
+const nuxtApp = useNuxtApp();
+const store = useMapStore(nuxtApp.$pinia);
 const emit = defineEmits(['initialized']);
 
 const mapEngines = {

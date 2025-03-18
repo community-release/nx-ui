@@ -23,14 +23,16 @@
 				-->
 
 				<!-- <legend>Hello world</legend> -->
-			<ui-label text="Select one of the radio elements" id="radio-desc" tag="fieldset">
-				<ui-grid :gridTemplateColumns="{'default': '1fr 1fr 1fr 1fr', '1000px': '1fr'}">
-					<ui-radio v-model="selected" name="radio" value="1" :disabled="disabled">Option 1</ui-radio>
-					<ui-radio v-model="selected" name="radio" value="2" :disabled="disabled">Option 2</ui-radio>
-					<ui-radio v-model="selected" name="radio" value="3" :disabled="disabled">Option 3</ui-radio>
-					<ui-radio v-model="selected" name="radio" value="4" :disabled="disabled">Option 4</ui-radio>
-				</ui-grid>
-			</ui-label>
+			<fieldset>
+				<ui-label text="Select one of the radio elements" id="radio-desc" isLegend>
+					<ui-grid :gridTemplateColumns="{'default': '1fr 1fr 1fr 1fr', '1000px': '1fr'}">
+						<ui-radio v-model="selected" name="radio" value="1" :disabled="disabled">Option 1</ui-radio>
+						<ui-radio v-model="selected" name="radio" value="2" :disabled="disabled">Option 2</ui-radio>
+						<ui-radio v-model="selected" name="radio" value="3" :disabled="disabled">Option 3</ui-radio>
+						<ui-radio v-model="selected" name="radio" value="4" :disabled="disabled">Option 4</ui-radio>
+					</ui-grid>
+				</ui-label>
+			</fieldset>
 			<div>Selected: {{ selected }}</div>
 		</div>
 		<ui-grid>

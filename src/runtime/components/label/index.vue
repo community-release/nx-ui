@@ -1,10 +1,12 @@
 <template>
-	<component :is="fieldset ? 'fieldset' : 'div'"  class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
-		<component :is="fieldset ? 'legend' : 'label'" class="component-ui-label--text" :for="labelFor">
-			{{ text }} <span v-if="required" aria-hidden="true">*</span>
-		</component>
-		<slot></slot>
-	</component>
+	<div>
+		<div class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
+			<component :is="isLegend ? 'legend' : 'label'" class="component-ui-label--text" :for="labelFor">
+				{{ text }} <span v-if="required" aria-hidden="true">*</span>
+			</component>
+			<slot />
+		</div>
+	</div>
 </template>
 
 <script setup>
@@ -22,6 +24,10 @@
 		},
 		labelFor: {
 			default: ''
+		},
+		isLegend: {
+			type: Boolean,
+			default: false
 		},
 		size: {
 			type: String,

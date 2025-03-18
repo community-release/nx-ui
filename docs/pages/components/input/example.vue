@@ -1,7 +1,7 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<ui-label text="Text" label-for="input-example" :required="required"></ui-label>
+			<ui-label text="Text" label-for="input-example" :required="required">
 				<ui-input 
 					input-id="input-example"
 					placeholder="Enter text"
@@ -12,6 +12,8 @@
 					:required="required"
 				>
 				</ui-input>
+			</ui-label>
+
 		</div>
 
 		<ui-grid>

@@ -12,6 +12,10 @@ node_modules
 # Yarn
 **/.yarn/cache
 **/.yarn/*state*
+yarn.lock
+
+# NPM
+package-lock.json
 
 # Generated dirs
 dist

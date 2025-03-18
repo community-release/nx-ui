@@ -14,7 +14,7 @@
 				</ui-checkbox>
 			</ui-label>
 		</div>
-		<ui-label text="Props" fieldset>
+		<ui-label text="Props" isLegend>
 			<ui-grid>
 				<ui-checkbox v-model="required">Required</ui-checkbox>
 				<ui-checkbox v-model="disabled">Disabled</ui-checkbox>
