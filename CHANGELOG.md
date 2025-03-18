@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.45
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.44...v0.0.45)
+
+### 🚀 Enhancements
+
+- Fixed pinia errors ([8332975](https://github.com/community-release/nx-ui/commit/8332975))
+- Added error state to form components ([f3b82e1](https://github.com/community-release/nx-ui/commit/f3b82e1))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.44
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.43...v0.0.44)
