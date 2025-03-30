@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.46
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.45...v0.0.46)
+
+### 🩹 Fixes
+
+- **button:** Fixed button hover styles for flat and outline ([9bc60c3](https://github.com/community-release/nx-ui/commit/9bc60c3))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.45
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.44...v0.0.45)
