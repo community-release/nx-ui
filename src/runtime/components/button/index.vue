@@ -90,19 +90,30 @@
 
 		return ar;
 	});
-	const stylesHoverColor = computed(() => {
-		return `var(--ui-color-text-on-${props.color})`;
-	});
 
 	const styles = computed(() => {
 		let background = `var(--ui-color-${props.color})`;
 		let color = `var(--ui-color-text-on-${props.color})`;
 
-		if (props.variant === 'flat' || props.variant === 'outline') 
+		if (props.variant === 'flat' || props.variant === 'outline') {
 			background = 'transparent';
-
-		if (props.variant === 'flat' || props.variant === 'outline') 
 			color = `var(--ui-color-${props.color}-text)`;
+		}
+
+		return {
+			background,
+			color,
+		};
+	});
+
+	const stylesHover = computed(() => {
+		let background = `var(--ui-color-${props.color})`;
+		let color = `var(--ui-color-text-on-${props.color})`;
+
+		if (props.variant === 'flat' || props.variant === 'outline') {
+			background = `var(--ui-color-surface)`;
+			color = `var(--ui-color-${props.color}-text)`;
+		}
 
 		return {
 			background,
@@ -132,11 +143,13 @@
 
 <style lang="less">
 .component-ui-button {
-	--button-hover-color: #fff;
+	--button-hover-text-color: #fff;
+	--button-hover-background: #fff;
 	--button-text-color: #fff;
 	--button-background: #fff;
 
-	--button-hover-color: v-bind(stylesHoverColor);
+	--button-hover-text-color: v-bind(stylesHover.color);
+	--button-hover-background: v-bind(stylesHover.background);
 	--button-text-color: v-bind(styles.color);
 	--button-background: v-bind(styles.background);
 
@@ -352,7 +365,8 @@
 
 		&:hover {
 			text-decoration: none;
-			color: var(--button-hover-color) !important;
+			color: var(--button-hover-text-color) !important;
+			background: var(--button-hover-background) !important;
 
 			.button-bg { opacity: 1; }
 		}
