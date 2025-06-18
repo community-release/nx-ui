@@ -50,7 +50,7 @@ export default defineNuxtModule({
 		// Add plugins
 		addPlugin({
 			src: resolve('./runtime/plugins/variables'),
-			mode: 'server'
+			mode: 'all'
 		});
 		addPlugin({
 			src: resolve('./runtime/plugins/methods'),
