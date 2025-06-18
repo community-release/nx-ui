@@ -1,7 +1,7 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<ui-loading :active="!!loading">Loading</ui-loading>
+			<ui-loading :active="loading">Loading</ui-loading>
 		</div>
 		<ui-grid>
 			<ui-checkbox v-model="loading">Enable</ui-checkbox>
@@ -10,5 +10,5 @@
 </template>
 
 <script setup>
-const loading = ref(1);
+const loading = ref(false);
 </script>
