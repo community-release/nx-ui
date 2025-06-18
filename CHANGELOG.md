@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.47
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.46...v0.0.47)
+
+### 🩹 Fixes
+
+- **ui-loading:** Updated active value type in docs example page number -> boolean ([6bab75f](https://github.com/community-release/nx-ui/commit/6bab75f))
+- Variables plugin now used at server and client (to work on ssr: false page) ([dff05ef](https://github.com/community-release/nx-ui/commit/dff05ef))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.46
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.45...v0.0.46)
