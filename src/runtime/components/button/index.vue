@@ -1,9 +1,8 @@
 <template>
-	<component 
+	<a
+		v-if="computedType == 'a'"
 		class="component-ui component-ui-button"
-		:is="computedType" 
-		:href="href" 
-		:to="href" 
+		:href="href"
 		:class="classes" 
 		:style="styles" 
 		@click="handleClick"
@@ -20,15 +19,39 @@
 		</span>
 
 		<ui-loading class="loading-indicator" :active="loading"></ui-loading>
-	</component>
+	</a>
+	<button
+		v-else
+		class="component-ui component-ui-button"
+		:class="classes" 
+		:style="styles" 
+		@click="handleClick"
+		ref="refCom"
+	>
+		<div class="button-bg" :style="buttonBgStyle"></div>
+
+		<ui-impulse-indicator :impulse="impulse" />
+
+		<span class="button-content">
+			<span><slot name="prepend"></slot></span>
+			<span class="slot-default"><slot></slot></span>
+			<span><slot name="append"></slot></span>
+		</span>
+
+		<ui-loading class="loading-indicator" :active="loading"></ui-loading>
+	</button>
 </template>
 
 <script setup>
 // Imports
-	import { ref, computed } from 'vue';
+	import { ref, computed, resolveComponent } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import UiLoading from '../loading.vue';
 	import comProps from '#build/ui.button.mjs';
+	import { useRouter } from 'vue-router';
+
+// Composables
+	const router = useRouter();
 
 // Data
 	const props = defineProps({
@@ -52,10 +75,6 @@
 			type: String,
 			default: '',
 		},
-		type: {
-			type: String,
-			default: '',
-		},
 		block: {
 			type: Boolean,
 			default: false,
@@ -73,10 +92,8 @@
 	const refCom = ref(null);
 
 	const impulse = ref(false);
-		
-	const computedType = computed(() => {
-		return props.type !== '' ? props.type : (props.href !== '' ? 'a' : 'button');
-	});
+
+	const computedType = props.href ? 'a' : 'button';
 
 	const classes = computed(() => {
 		let ar = [];
@@ -138,6 +155,15 @@
 			width	: refCom.value.offsetWidth,
 			height	: refCom.value.offsetHeight
 		};
+
+		// Handle navigate
+		if (computedType == 'a') {
+			if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+			e.preventDefault();
+
+			router.push(props.href);
+		}
 	}
 </script>
 
