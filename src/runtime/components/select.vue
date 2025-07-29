@@ -99,7 +99,6 @@ const classes = computed(() => {
 	if (props.error) 				ar.push('tag-error');
 	if (focus.value) 				ar.push('tag-focus');
 	if (props.disabled) 			ar.push('tag-disabled');
-	if (props.label) 				ar.push('tag-label');
 
 	return ar;
 });
@@ -208,37 +207,32 @@ onMounted(() => {
 		-ms-user-select: none;
 		user-select: none;
 
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
-
-		cursor: pointer;
-
 		padding-right: 45px;
 		padding-left: 10px;
+		width: 100%;
 		height: 100%;
-
-		cursor: pointer;
 
 		border: 1px solid @com-color-border;
 		border-radius: @com-border-radius-default;
 
-		label, strong {
+		cursor: pointer;
+
+		div, strong {
+			width: 100%;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
-
-			position: absolute;
-			left: 10px;
-			right: 30px;
 		}
 
 		strong {
-			transform: translateY(-50%);
-			top: 50%;
-			bottom: auto;
 			font-family: @com-font-header;
 			font-weight: @com-value-font-weight;
 			color: @com-color-header-text;
@@ -260,25 +254,6 @@ onMounted(() => {
 		}
 	}
 
-	&.tag-label {
-		.value {
-			label {
-				top: 3px;
-				margin: 0;
-				padding: 0 0 5px 0;
-				font-size: @com-text-small;
-				
-				color: @com-color-gray-text;
-			}
-
-			strong {
-				transform: none;
-				top: 20px;
-				bottom: 0;
-			}
-		}
-	}
-
 	&.tag-disabled {
 		opacity: 0.6;
 		cursor: not-allowed;
@@ -293,8 +268,6 @@ onMounted(() => {
 			border-color: transparent;
 			outline: @com-outline;
 		}
-
-
 	}
 
 	&.tag-error {
