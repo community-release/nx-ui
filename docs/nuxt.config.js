@@ -106,6 +106,7 @@ export default defineNuxtConfig({
 
 	modules: [
 		// 'nuxt-shiki',
+		'@unocss/nuxt',
 		'@nuxtjs/i18n',
 		'@pinia/nuxt',
 		'../src/module',

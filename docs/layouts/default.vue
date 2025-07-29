@@ -2,8 +2,8 @@
 	<section id="layout-default">
 		<bar-top />
 
-		<div id="wrapper">
-			<aside>
+		<div id="wrapper" :class="{'tag-with-menu': $currentPage.value !== 'index'}">
+			<aside v-if="$currentPage.value !== 'index'" >
 				<menu-aside />
 			</aside>
 
@@ -27,13 +27,15 @@ export default {
 #layout-default {
 
 	#wrapper {
-		display: grid;
-		grid-template-columns: 300px auto;
-		gap: var(--space-big);
-
 		margin: 0 auto;
 		padding: var(--space-default);
 		max-width: var(--content-width);
+
+		&.tag-with-menu {
+			display: grid;
+			grid-template-columns: 300px auto;
+			gap: var(--space-big);
+		}
 	}
 
 	aside {

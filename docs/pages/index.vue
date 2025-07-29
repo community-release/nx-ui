@@ -1,6 +1,16 @@
 <template>
 	<section>
-		<section-title>UI components</section-title>
+		<helper-typography>
+			<h1>@community-release/nx-ui</h1>
+
+			<p>
+				Highly customizible, responsive & accessible web UI for your Nuxt 3/4 application.
+			</p>
+		</helper-typography>
+
+		<div class="block-control pt-4">
+			<ui-button href="/components">View component</ui-button>
+		</div>
 	</section>
 </template>
 
