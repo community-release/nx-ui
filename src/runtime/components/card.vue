@@ -73,8 +73,8 @@ const props = defineProps({
 	},
 });
 
-const cardIs = (props.to || props.href) ? resolveComponent('NuxtLink') : 'div';
-const iconTitleIs = props.iconLink ? resolveComponent('NuxtLink') : 'b';
+const cardIs = (props.to || props.href) ? 'NuxtLink' : 'div';
+const iconTitleIs = props.iconLink ? 'NuxtLink' : 'b';
 </script>
 
 <style lang="less">
