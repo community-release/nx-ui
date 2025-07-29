@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.0.48
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.47...v0.0.48)
+
+### 🚀 Enhancements
+
+- **card:** Removed nuxt-link resolveComponent ([86d52e1](https://github.com/community-release/nx-ui/commit/86d52e1))
+- Updated button component tests ([efe2109](https://github.com/community-release/nx-ui/commit/efe2109))
+
+### 🩹 Fixes
+
+- **button:** Fix ssr-optimization error #1514 ([#1514](https://github.com/community-release/nx-ui/issues/1514))
+
+### 📖 Documentation
+
+- Improved index page design ([0a00336](https://github.com/community-release/nx-ui/commit/0a00336))
+
+### 🎨 Styles
+
+- **select:** Improved value vertical centering #1513 ([#1513](https://github.com/community-release/nx-ui/issues/1513))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.47
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.46...v0.0.47)
