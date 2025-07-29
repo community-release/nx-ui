@@ -1,9 +1,19 @@
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils'
 import C from '../../src/runtime/components/button/index.vue';
 
 describe('button component', async () => {
 	const text = 'hello world';
+
+	vi.mock('vue-router', () => {
+		return {
+			useRouter() {
+				return {
+					push: () => {}
+				};
+			}
+		};
+	});
 
 	const wrapper = mount(C, {
 		slots: {
@@ -14,7 +24,6 @@ describe('button component', async () => {
 			size: 'big',
 			variant: 'outline',
 			shape: 'circle',
-			type: 'blockquote',
 			block: true,
 			loading: true,
 			disabled: true,
@@ -44,10 +53,6 @@ describe('button component', async () => {
 
 	test('shape', async () => {
 		expect(html, `shape is not set`).toContain('tag-shape-circle');
-	});
-
-	test('type', async () => {
-		expect(html, `type is not set`).toContain('blockquote');
 	});
 
 	test('block', async () => {
