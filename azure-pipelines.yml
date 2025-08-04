@@ -13,24 +13,26 @@ steps:
   # Use node
   - task: UseNode@1
     inputs:
-      version: '18.x'
+      version: '22.x'
 
   # Cache pnpm dependencies
   - task: Cache@2
     inputs:
       key: 'pnpm | "$(Agent.OS)" | pnpm-lock.yaml'
+      restoreKeys: |
+        pnpm | $(Agent.OS)
       path: $(pnpm_config_cache)
     displayName: 'Cache pnpm dependencies'
 
   # Install pnpm
   - script: |
       corepack enable
-      corepack prepare pnpm@9.9.0 --activate
-    displayName: 'Install pnpm 9.9.0 using corepack'
+      corepack prepare pnpm@10.14.0 --activate
+    displayName: 'Install pnpm using corepack'
 
   # Setup pnpm
   - script: |
-      pnpm config set store-dir $(pnpm_config_cache)
+      pnpm config set store-dir "$(pnpm_config_cache)"
     displayName: "Setup pnpm"
 
   # Install Node packages
@@ -40,7 +42,7 @@ steps:
 
   # Build docs
   - script: |
-      pnpm run generate:production -prefix ./docs
+      pnpm --prefix ./docs run generate:production
     displayName: 'Build docs'
 
   # Run tests
