@@ -11,7 +11,7 @@ steps:
 # Use node
 - task: UseNode@1
   inputs:
-    version: '18.x'
+    version: '22.x'
 
 # Install Node packages
 - script: |
