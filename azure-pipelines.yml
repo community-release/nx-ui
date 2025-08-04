@@ -7,9 +7,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: nx-ui
-  - name: pnpm_config_cache
-    value: $(Pipeline.Workspace)/.pnpm-store
+  pnpm_config_cache: '$(Pipeline.Workspace)/.pnpm-store'
 
 steps:
   # Use node
