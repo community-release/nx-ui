@@ -122,6 +122,8 @@
 </script>
 
 <style lang="less">
+@import '../styles/components.less';
+
 // Misc
 @com-ani-ease: var(--ui-ani-ease);
 
@@ -141,6 +143,7 @@
 // Color
 @com-color-border-bolder: var(--ui-color-border-bolder);
 @com-color-bg: var(--ui-color-bg);
+@com-color-surface: @ui-input-background-color;
 @com-color-header-text: var(--ui-color-header-text);
 @com-color-gray-text: var(--ui-color-gray-text);
 @com-color-primary: var(--ui-color-primary);
@@ -167,7 +170,7 @@
 	height: @com-input-height-default;
 	border: 1px solid @com-color-border-bolder;
 	border-radius: @com-border-radius-default;
-	background: @com-color-bg;
+	background: @com-color-surface;
 	cursor: text;
 
 	.com-content {

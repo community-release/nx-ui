@@ -10,6 +10,10 @@ export default {
 		'user-position-color': 'var(--ui-color-primary)'
 	},
 	select: {
-		'value-font-weight': 'var(--ui-font-weight-medium)'
+		'value-font-weight': 'var(--ui-font-weight-medium)',
+		'background-color': 'var(--ui-color-surface)',
+	},
+	input: {
+		'background-color': 'var(--ui-color-bg)',
 	},
 }
