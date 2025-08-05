@@ -170,7 +170,7 @@ onMounted(() => {
 @com-color-gray-text: var(--ui-color-gray-text);
 @com-color-header-text: var(--ui-color-header-text);
 @com-color-primary: var(--ui-color-primary);
-@com-color-surface: var(--ui-color-surface);
+@com-color-surface: @ui-select-background-color;
 @com-color-red: var(--ui-color-red);
 @com-color-border: var(--ui-color-border-bolder);
 @com-color-error: var(--ui-color-error);
@@ -233,6 +233,7 @@ onMounted(() => {
 		}
 
 		strong {
+			padding: 0.1em 0;
 			font-family: @com-font-header;
 			font-weight: @com-value-font-weight;
 			color: @com-color-header-text;
