@@ -99,6 +99,7 @@
 	@com-color-gray-text: var(--ui-color-gray-text);
 	@com-color-error: var(--ui-color-error);
 
+	@com-text-default: var(--ui-text-default);
 	@com-text-medium: var(--ui-text-medium);
 	@com-text-small: var(--ui-text-small);
 
@@ -119,7 +120,7 @@
 
 		height: @com-input-height;
 		line-height: @com-input-height;
-		font-size: @com-text-small;
+		font-size: @com-text-default;
 		font-weight: 500;
 
 		color: @com-color-text;

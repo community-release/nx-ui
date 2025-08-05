@@ -66,6 +66,7 @@
 @com-space-small: var(--ui-space-small);
 @com-space-mini: var(--ui-space-mini);
 
+@com-text-default: var(--ui-text-default);
 @com-text-small: var(--ui-text-small);
 
 @com-color-border-bolder: var(--ui-color-border-bolder);
@@ -85,7 +86,7 @@
 	padding: @com-space-mini;
 	min-width: 200px;
 	line-height: 1.3;
-	font-size: @com-text-small;
+	font-size: @com-text-default;
 	color: var(--ui-tooltip-text-color);
 	background: var(--ui-tooltip-bg);
 	border-radius: @com-border-radius-default;

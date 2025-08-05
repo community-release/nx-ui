@@ -99,6 +99,7 @@
 	
 	@com-input-height: var(--ui-input-height-default);
 
+	@com-text-default: var(--ui-text-default);
 	@com-text-medium: var(--ui-text-medium);
 	@com-text-small: var(--ui-text-small);
 
@@ -109,20 +110,6 @@
 	position: relative;
 	display: inline-block;
 	text-align: left;
-
-	.error-wrap {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		padding: 0;
-		
-		font-size: 11px;
-		
-		color: @com-color-error;
-		background: transparent;
-
-		&:before, &:after { display: none; }
-	}
 	
 	> label {
 		position: relative;
@@ -134,7 +121,7 @@
 		
 		height: @com-input-height;
 		line-height: @com-input-height;
-		font-size: @com-text-small;
+		font-size: @com-text-default;
 		font-weight: 500;
 		color: @com-color-text;
 
