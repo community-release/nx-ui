@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.0.49
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.48...v0.0.49)
+
+### 🏡 Chore
+
+- Added packageManager to package.json ([d0d0ff8](https://github.com/community-release/nx-ui/commit/d0d0ff8))
+- Added docs to pnpm workspace ([dd66abf](https://github.com/community-release/nx-ui/commit/dd66abf))
+
+### 🤖 CI
+
+- Updated node version to v22 ([213c131](https://github.com/community-release/nx-ui/commit/213c131))
+- Replaced npm with pnpm ([2d5032f](https://github.com/community-release/nx-ui/commit/2d5032f))
+- Fix syntax error ([df9bd29](https://github.com/community-release/nx-ui/commit/df9bd29))
+- Fix syntax error ([4b2e374](https://github.com/community-release/nx-ui/commit/4b2e374))
+- Added pnpm_config_cache var ([bd8e0d4](https://github.com/community-release/nx-ui/commit/bd8e0d4))
+- Fixed pnpm_config_cache var syntax ([27947f2](https://github.com/community-release/nx-ui/commit/27947f2))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.48
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.47...v0.0.48)
