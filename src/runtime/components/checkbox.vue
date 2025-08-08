@@ -119,7 +119,6 @@
 		padding: 0 0 0 30px;
 
 		height: @com-input-height;
-		line-height: @com-input-height;
 		font-size: @com-text-default;
 		font-weight: 500;
 
