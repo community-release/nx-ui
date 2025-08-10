@@ -52,6 +52,8 @@ export default {
 		'color-border': 'var(--color-border)',
 		'color-border-bolder': 'var(--color-border-bolder)',
 
+		'color-overlay': 'var(--color-overlay)',
+
 		// Text
 		'text-large': '32px',
 		'text-big': '24px',

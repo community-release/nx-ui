@@ -37,6 +37,8 @@
 		"@vue/test-utils": "^2.4.6",
 		"@vuedoc/md": "^4.0.0-beta8",
 		"@vuedoc/parser": "^4.0.0-beta14",
+		"@vueuse/core": "^13.6.0",
+		"@vueuse/nuxt": "^13.6.0",
 		"changelogen": "^0.5.5",
 		"cross-env": "^7.0.3",
 		"happy-dom": "^14.12.0",

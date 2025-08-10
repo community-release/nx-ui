@@ -51,6 +51,8 @@ export default {
 	'color-bg-text': '#fff',
 	'color-text-on-bg': 'var(--color-text)',
 
+	'color-overlay': 'var(--color-overlay)',
+
 	'color-border': '#e8e8e8',
 	'color-border-bolder': '#e0e0e0',
 
@@ -70,6 +72,7 @@ export default {
 	'font-mono': 'Consolas, SF Mono',
 
 	// Font weight
+	'font-weight-bold': '700',
 	'font-weight-medium': '600',
 
 	// Padding

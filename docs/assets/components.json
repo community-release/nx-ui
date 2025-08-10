@@ -24,6 +24,10 @@
         "url": "/components/countdown"
     },
     {
+        "name": "file-input",
+        "url": "/components/file-input"
+    },
+    {
         "name": "filter",
         "url": "/components/filter"
     },
