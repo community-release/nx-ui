@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.50
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.49...v0.0.50)
+
+### 🚀 Enhancements
+
+- Added file-input component ([e3a4a83](https://github.com/community-release/nx-ui/commit/e3a4a83))
+
+### 🎨 Styles
+
+- **checkbox:** Removed line height ([341747e](https://github.com/community-release/nx-ui/commit/341747e))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.49
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.48...v0.0.49)
