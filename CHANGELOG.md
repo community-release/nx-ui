@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.51
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.50...v0.0.51)
+
+### 🩹 Fixes
+
+- **file-input:** V-moved value now correctly updates on files change, and return proper file list ([97b664d](https://github.com/community-release/nx-ui/commit/97b664d))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.50
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.49...v0.0.50)
