@@ -81,9 +81,10 @@
 	});
 
 	const filesList = ref([]);
+
 	watch(filesList, e => {
-		emit('update:modelValue', e);
-	});
+		emit('update:modelValue', unwrapFiles(e));
+	}, { deep: true });
 
 	const imagePreview = ref();
 
@@ -166,6 +167,10 @@
 		}
 
 		return result;
+	}
+
+	function unwrapFiles(ar) {
+		return ar.length ? ar.map(v => v.file) : [];
 	}
 
 // Hooks
