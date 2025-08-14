@@ -157,13 +157,13 @@
 		};
 
 		// Handle navigate
-		if (computedType == 'a') {
-			if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+		// if (computedType == 'a') {
+		// 	if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
 
-			e.preventDefault();
+		// 	e.preventDefault();
 
-			router.push(props.href);
-		}
+		// 	router.push(props.href);
+		// }
 	}
 </script>
 

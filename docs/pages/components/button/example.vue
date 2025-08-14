@@ -1,20 +1,43 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<UiButton 
-				ref="com"
-				:color="color" 
-				:size="size" 
-				:disabled="disabled" 
-				:block="block"
-				:loading="loading"
-				:shape="shape"
-				:variant="variant"
-				@click="console.log('button click', e)"
-				@comClick="console.log('button comClick', e)"
-			>
-				Button
-			</UiButton>
+			<ui-grid grid-template-columns="1fr 1fr">
+				<div>
+					<UiButton 
+						ref="com"
+						:color="color" 
+						:size="size" 
+						:disabled="disabled" 
+						:block="block"
+						:loading="loading"
+						:shape="shape"
+						:variant="variant"
+						@click="console.log('button click', e)"
+						@comClick="console.log('button comClick', e)"
+					>
+						Button
+					</UiButton>
+				</div>
+				
+				<div>
+					<UiButton 
+						ref="com"
+						:color="color" 
+						:size="size" 
+						:disabled="disabled" 
+						:block="block"
+						:loading="loading"
+						:shape="shape"
+						:variant="variant"
+						@click="console.log('button click', e)"
+						@comClick="console.log('button comClick', e)"
+						href="https://google.com"
+						target="_blank"
+					>
+						Link button
+					</UiButton>
+				</div>
+			</ui-grid>
 		</div>
 		<ui-grid>
 			<ui-select v-model="color" :options="colorList" label="color"></ui-select>
