@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.52
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.51...v0.0.52)
+
+### 🩹 Fixes
+
+- **button:** Fixed button with external link (external link was threated like lokal) ([52af55a](https://github.com/community-release/nx-ui/commit/52af55a))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.51
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.50...v0.0.51)
