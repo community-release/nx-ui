@@ -77,6 +77,10 @@
 					"drag-and-drop": "Or drag and drop file to upload."
 				};
 			}
+		},
+		multiple: {
+			type: Boolean,
+			default: false,
 		}
 	});
 
@@ -94,20 +98,18 @@
 	const { files, open: openFileDialogue, reset, onCancel, onChange: inputOnChange } = useFileDialog({
 		//accept: 'image/*', // Set to accept only image files
 		accept: allowedTypes, // Set to accept only image files
-		multiple: true,
+		multiple: props.multiple,
 	});
-	inputOnChange(e => { filesList.value.push( ...createFileInputFiles(e) ); });
+	inputOnChange(e => { handleInputUpdate(e); });
 
 	// Handle drag and drop zone
 	const refDropZone = ref();
 	const { isOverDropZone } = useDropZone(refDropZone, {
-		onDrop(e) {
-			filesList.value.push( ...createFileInputFiles(e) );
-		},
+		onDrop: handleInputUpdate,
 		// specify the types of data to be received.
 		dataTypes: allowedTypes,
 		// control multi-file drop
-		multiple: true,
+		multiple: props.multiple,
 		// whether to prevent default behavior for unhandled events
 		preventDefaultForUnhandled: false,
 	});
@@ -171,6 +173,13 @@
 
 	function unwrapFiles(ar) {
 		return ar.length ? ar.map(v => v.file) : [];
+	}
+
+	function handleInputUpdate(e) {
+		if (props.multiple)
+			filesList.value.push( ...createFileInputFiles(e) ); 
+		else
+			filesList.value = createFileInputFiles(e);
 	}
 
 // Hooks

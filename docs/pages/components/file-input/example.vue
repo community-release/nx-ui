@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<ui-file-input :dictionary="dictionary" v-model="files" />
+		<ui-file-input :dictionary="dictionary" v-model="files" multiple />
 
 		<br>
 
