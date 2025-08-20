@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.53
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.52...v0.0.53)
+
+### 🚀 Enhancements
+
+- **label:** Added additional description text to a label ([5f8fb98](https://github.com/community-release/nx-ui/commit/5f8fb98))
+- **file-input:** Added multiple/single mode ([252a078](https://github.com/community-release/nx-ui/commit/252a078))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.52
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.51...v0.0.52)
