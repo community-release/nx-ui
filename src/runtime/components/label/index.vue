@@ -2,7 +2,9 @@
 	<div>
 		<div class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
 			<component :is="isLegend ? 'legend' : 'label'" class="component-ui-label--text" :for="labelFor">
-				{{ text }} <span v-if="required" aria-hidden="true">*</span>
+				{{ text }} <span v-if="required" aria-hidden="true" class="required">*</span>
+
+				<span v-if="description" class="description" v-html="description"></span>
 			</component>
 			<slot />
 		</div>
@@ -16,6 +18,9 @@
 // Date
 	const props = defineProps({
 		text: {
+			default: '',
+		},
+		description: {
 			default: '',
 		},
 		fieldset: {
@@ -50,6 +55,7 @@
 @com-font-weight-medium: var(--ui-font-weight-medium);
 
 @com-color-header-text: var(--ui-color-header-text);
+@com-color-gray-text: var(--ui-color-gray-text);
 @com-color-red: var(--ui-color-red);
 
 @com-text-big: var(--ui-text-big);
@@ -65,6 +71,12 @@
 		font-weight: @com-font-weight-medium;
 		font-size: @com-text-default;
 		color: @com-color-header-text;
+
+		.description {
+			display: block;
+			font-weight: normal;
+			color: @com-color-gray-text;
+		}
 	}
 
 	// Text size
@@ -80,7 +92,7 @@
 	&.tag-weight-400 > .component-ui-label--text { font-weight: 400; }
 
 	// Required
-	&.tag-required .component-ui-label--text span {
+	&.tag-required .component-ui-label--text .required {
 		color: @com-color-red;
 		font-weight: bold;
 	}
