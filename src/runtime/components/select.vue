@@ -17,9 +17,18 @@
 				:disabled="disabled"
 				autocomplete="off"
 			>
-				<option v-for="option in options" :value="option.value" :key="option.value" :selected="option.value == modelValue">
-					{{ option.name }}
-				</option>
+				<template v-if="withGroups">
+					 <optgroup v-for="group of options" :label="group.name">
+						<option v-for="option in group.items" :value="option.value" :key="option.value" :selected="option.value == modelValue">
+							{{ option.name }}
+						</option>
+					</optgroup>
+				</template>
+				<template v-else>
+					<option v-for="option in options" :value="option.value" :key="option.value" :selected="option.value == modelValue">
+						{{ option.name }}
+					</option>
+				</template>
 			</select>
 		</div>
 	</div>
@@ -51,6 +60,10 @@ const props = defineProps({
 		type: Array,
 		default: () => []
 	},
+	withGroups: {
+		type: Boolean,
+		default: false
+	},
 	required: {
 		type: Boolean,
 		default: false
@@ -81,9 +94,23 @@ const valueName = computed(() => {
 	let result = '...';
 
 	const value = props.modelValue;
-	const option = props.options.find(option => option.value == value);
+	
+	// If it's options with groups
+	if (props.withGroups) {
+		for (let group of props.options) {
+			for (let o of group.items) {
+				if (o.value == value) {
+					return o.name;
+				}
+			}
+		}
 
-	if (typeof option !== 'undefined') { result = option.name; }
+	// If it's flat options
+	} else {
+		let option = props.options.find(option => option.value == value);
+
+		if (typeof option !== 'undefined') result = option.name;
+	}
 
 	return result;
 });

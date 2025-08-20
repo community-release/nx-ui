@@ -23,6 +23,19 @@
 					:error="error"
 				></ui-select>
 			</ui-label>
+
+			<ui-label text="With groups" label-for="select-example3" :required="required">
+				<ui-select
+					v-model="city2" 
+					input-id="select-example3"
+					label="Cities"
+					:options="citiesByCountriesList" 
+					:disabled="disabled"
+					:required="required"
+					:error="error"
+					with-groups
+				></ui-select>
+			</ui-label>
 		</ui-grid>
 		<ui-grid>
 			<ui-label text="Props" isLegend>
@@ -44,6 +57,35 @@ const citiesList = ref([
 	{name: 'Shanghai, China', value: '3'},
 	{name: 'São Paulo, Brazil', value: '4'},
 	{name: 'Mumbai, India', value: '5'},
+]);
+
+const city2 = ref('1');
+const citiesByCountriesList = ref([
+	{
+		name: 'Japan',
+		items: [
+			{name: 'Tokyo, Japan', value: '1'},
+		]
+	},
+	{
+		name: 'India',
+		items: [
+			{name: 'Delhi, India', value: '2'},
+			{name: 'Mumbai, India', value: '5'},
+		]
+	},
+	{
+		name: 'China',
+		items: [
+				{name: 'Shanghai, China', value: '3'},
+		]
+	},
+	{
+		name: 'Brazil',
+		items: [
+			{name: 'São Paulo, Brazil', value: '4'},
+		]
+	},
 ]);
 
 const required = ref(false);
