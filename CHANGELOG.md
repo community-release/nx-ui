@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.54
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.53...v0.0.54)
+
+### 🚀 Enhancements
+
+- **select:** Added support for options group ([37c6b68](https://github.com/community-release/nx-ui/commit/37c6b68))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.53
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.52...v0.0.53)
