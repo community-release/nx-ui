@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.55
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.54...v0.0.55)
+
+### 🚀 Enhancements
+
+- **file-input:** Added input-id prop ([718c096](https://github.com/community-release/nx-ui/commit/718c096))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.54
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.53...v0.0.54)
