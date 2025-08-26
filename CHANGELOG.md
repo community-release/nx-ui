@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.56
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.55...v0.0.56)
+
+### 🚀 Enhancements
+
+- **file-input:** Added error and disabled prop state ([ecdd591](https://github.com/community-release/nx-ui/commit/ecdd591))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.55
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.54...v0.0.55)
