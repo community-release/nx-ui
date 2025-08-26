@@ -1,5 +1,5 @@
 <template>
-	<div class="component-ui-file-input" :class="classes">
+	<div class="component-ui-file-input" :class="classes" :id="inputId">
 
 		<!-- Input -->
 		<div class="block-input">
@@ -81,7 +81,10 @@
 		multiple: {
 			type: Boolean,
 			default: false,
-		}
+		},
+		inputId: {
+			default: '',
+		},
 	});
 
 	const filesList = ref([]);
