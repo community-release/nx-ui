@@ -1,20 +1,30 @@
 <template>
-	<div>
-		<ui-file-input :dictionary="dictionary" v-model="files" multiple />
+	<ui-grid grid-template-columns="2fr 1fr">
+		<ui-grid>
+			<ui-file-input :dictionary="dictionary" v-model="files" multiple :disabled="disabled" :error="error"/>
 
-		<br>
+			<br>
 
-		<helper-typography>
-			<ul v-if="files.length">
-				<li v-for="item of files">
-					{{ item.name }} ({{ item.size }}) bytes
-				</li>
-			</ul>
-			<p v-else>
-				No files selected
-			</p>
-		</helper-typography>
-	</div>
+			<helper-typography>
+				<ul v-if="files.length">
+					<li v-for="item of files">
+						{{ item.name }} ({{ item.size }}) bytes
+					</li>
+				</ul>
+				<p v-else>
+					No files selected
+				</p>
+			</helper-typography>
+		</ui-grid>
+		<ui-grid>
+			<ui-label text="Props" isLegend>
+				<ui-grid>
+					<ui-checkbox v-model="disabled">disabled</ui-checkbox>
+					<ui-checkbox v-model="error">error</ui-checkbox>
+				</ui-grid>
+			</ui-label>
+		</ui-grid>
+	</ui-grid>
 </template>
 
 <i18n lang="json">
@@ -57,4 +67,7 @@
 			'drag-and-drop': t('drag-and-drop'),
 		};
 	});
+
+	const disabled = ref(false);
+	const error = ref(false);
 </script>

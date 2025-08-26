@@ -85,6 +85,14 @@
 		inputId: {
 			default: '',
 		},
+		error: {
+			type: Boolean,
+			default: false
+		},
+		disabled: {
+			type: Boolean,
+			default: false
+		},
 	});
 
 	const filesList = ref([]);
@@ -122,6 +130,8 @@
 
 		if (isOverDropZone.value) result.push('tag-drag-over');
 		if (!filesList.value.length) result.push('tag-empty');
+		if (props.error) result.push('tag-error');
+		if (props.disabled) result.push('tag-disabled');
 
 		return result;
 	});
@@ -195,7 +205,8 @@
 	@com-color-surface: var(--ui-color-surface);
 	@com-color-border-bolder: var(--ui-color-border-bolder);
 	@com-color-border: var(--ui-color-border);
-	@com-color-header-text:var(--ui-color-header-text);
+	@com-color-header-text: var(--ui-color-header-text);
+	@com-color-error: var(--ui-color-error);
 
 	@com-border-radius-m: var(--ui-border-radius-default);
 
@@ -358,6 +369,21 @@
 
 		.drag-and-drop {
 			display: grid;
+		}
+	}
+
+	// Disabled
+	&.tag-disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		
+		pointer-events: none;
+	}
+
+	// Error
+	&.tag-error {
+		.block-input {
+			border-color: @com-color-error;
 		}
 	}
 }
