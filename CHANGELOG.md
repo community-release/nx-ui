@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.57
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.56...v0.0.57)
+
+### 🩹 Fixes
+
+- **file-input:** Added aria-hidden for file preview #1613 ([#1613](https://github.com/community-release/nx-ui/issues/1613))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.56
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.55...v0.0.56)
