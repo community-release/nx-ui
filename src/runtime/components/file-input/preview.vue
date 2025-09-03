@@ -1,6 +1,6 @@
 <template>
 	<div class="component-ui-file-input-preview" @click="close" :class="classes">
-		<img :src="modelValue" />
+		<img :src="modelValue" alt="" aria-hidden="true" />
 	</div>
 </template>
 
