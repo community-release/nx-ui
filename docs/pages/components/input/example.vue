@@ -11,6 +11,9 @@
 					:disabled="disabled"
 					:required="required"
 					:error="error"
+
+					@blur="console.log('blur')"
+					@focus="console.log('focus')"
 				>
 				</ui-input>
 			</ui-label>

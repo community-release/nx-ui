@@ -17,10 +17,9 @@
 
 					@change="updateValue($event.target.value)"
 					@input="updateValue($event.target.value)"
-					@blur="handleBlur($event.target.value)"
+					@focus="handleFocusBlur(true, $event.target.value)"
+					@blur="handleFocusBlur(false, $event.target.value)"
 					@keyup.enter="updateValue($event.target.value, true, true)"
-
-					@focus="haveFocus = true"
 
 					formnovalidate
 					spellcheck="false"
@@ -38,7 +37,7 @@
 	import comProps from '#build/ui.input.mjs';
 
 // Misc
-	const emit = defineEmits(['input', 'enter', 'blur', 'update:modelValue']);
+	const emit = defineEmits(['input', 'enter', 'focus', 'blur', 'update:modelValue']);
 	const slots = useSlots();
 
 // Data
@@ -109,11 +108,11 @@
 		if (submit) emit('enter', validValue);
 	}
 
-	function handleBlur(v) {
-		haveFocus.value = false;
-
-		emit('blur', v);
-		updateValue(v);
+	function handleFocusBlur(focus, value) {
+		haveFocus.value = focus;
+		emit(focus ? 'focus' : 'blur', focus);
+		
+		if (!focus) updateValue(value);
 	}
 
 	const hasSlot = (name) => {
