@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.58
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.57...v0.0.58)
+
+### 🚀 Enhancements
+
+- **input:** Added focus event ([0715f75](https://github.com/community-release/nx-ui/commit/0715f75))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.57
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.56...v0.0.57)
