@@ -14,6 +14,9 @@
 
 					@blur="console.log('blur')"
 					@focus="console.log('focus')"
+
+					input.aria-autocomplete="list"
+					@keydown.down="handleInputKeydown"
 				>
 				</ui-input>
 			</ui-label>
@@ -53,4 +56,8 @@ const shapeList = ref([
 	{name: 'round-square', value: 'round-square'},
 	{name: 'square', value: 'square'},
 ]);
+
+function handleInputKeydown(e) {
+	console.log('handleInputKeydown', e);
+}
 </script>

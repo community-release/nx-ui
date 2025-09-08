@@ -20,9 +20,12 @@
 					@focus="handleFocusBlur(true, $event.target.value)"
 					@blur="handleFocusBlur(false, $event.target.value)"
 					@keyup.enter="updateValue($event.target.value, true, true)"
+					@keydown.down="emit('keydown.down', $event)"
 
 					formnovalidate
 					spellcheck="false"
+
+					v-bind="inputAttrs"
 				/>
 			</div>
 			<div class="slot-append" v-if="hasSlot('append')"><slot name="append"></slot></div>
@@ -32,13 +35,14 @@
 
 <script setup>
 // Import
-	import { ref, computed, useSlots  } from 'vue';
+	import { ref, computed, useSlots, useAttrs  } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import comProps from '#build/ui.input.mjs';
 
 // Misc
-	const emit = defineEmits(['input', 'enter', 'focus', 'blur', 'update:modelValue']);
+	const emit = defineEmits(['input', 'enter', 'focus', 'blur', 'keydown.down', 'update:modelValue']);
 	const slots = useSlots();
+	const attrs = useAttrs()
 
 // Data
 	const props = defineProps({
@@ -95,6 +99,15 @@
 
 		return ar;
 	});
+
+	const inputAttrs = {};
+	for (const key in attrs) {
+		if (key.startsWith('input.')) {
+			const k = key.slice(6) // All after "input."
+
+			inputAttrs[k] = attrs[key];
+		}
+	}
 
 // Methods
 	function updateValue(value, doTrim = false, submit = false) {
