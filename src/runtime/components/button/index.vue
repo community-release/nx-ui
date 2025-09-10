@@ -378,7 +378,7 @@
 	// Disabled
 	&.tag-disabled {
 		opacity: 0.6;
-		cursor: default;
+		cursor: not-allowed;
 		pointer-events: none;
 	}
 }
