@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.60
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.59...v0.0.60)
+
+### 🩹 Fixes
+
+- **typeahead-input:** Fixed delay of resilt count text, changed result count text ([65a4524](https://github.com/community-release/nx-ui/commit/65a4524))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.59
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.58...v0.0.59)
