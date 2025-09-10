@@ -335,7 +335,7 @@
 	 * - focus <input />
 	 */
 	function handleListItemClick(item) {
-		emit('update:modelValue', `${item.name} (${item.value})`);
+		emit('update:modelValue', item.name);
 		listHide();
 
 		selectInput();
@@ -441,7 +441,7 @@
 	watch(filteredList, (v) => {
 		clearTimeout(tA11y);
 		tA11y = setTimeout(() => {
-			a11yAnnotation.value = v.length ? props.dictionary['itemsFound'] +': '+ v.length : props.dictionary['noItemsFound'];
+			a11yAnnotation.value = v.length ? (props.dictionary['itemsFound'] +': '+ v.length) : props.dictionary['noItemsFound'];
 		}, 500);
 	});
 
