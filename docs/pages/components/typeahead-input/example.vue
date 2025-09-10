@@ -147,7 +147,7 @@ const dictionary = {
 	clear: 'Clear input',
 	close: 'Close',
 	submit: 'Ok',
-	itemsFound: `Found {n} options`,
+	itemsFound: `Results found`,
 	noItemsFound: `No items found`,
 };
 

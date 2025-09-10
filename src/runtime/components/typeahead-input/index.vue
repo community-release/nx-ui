@@ -144,7 +144,7 @@
 					clear: 'Clear input',
 					close: 'Close',
 					submit: 'Ok',
-					itemsFound: `Found {n} options`,
+					itemsFound: `Results found`,
 					noItemsFound: `No items found`,
 				};
 			}
@@ -435,13 +435,13 @@
 	}
 
 // ♿ Annotation for screen reader users, to annotate the number of results found
-	const a11yAnnotation = ref('');
+	const a11yAnnotation = ref('...');
 	let tA11y;
 	
 	watch(filteredList, (v) => {
 		clearTimeout(tA11y);
 		tA11y = setTimeout(() => {
-			a11yAnnotation.value = v.length ? props.dictionary['itemsFound'].replace('{n}', v.length) : props.dictionary['noItemsFound'];
+			a11yAnnotation.value = v.length ? props.dictionary['itemsFound'] +': '+ v.length : props.dictionary['noItemsFound'];
 		}, 500);
 	});
 
@@ -490,15 +490,13 @@
 }
 
 .component-ui-typeahead-input-grid {
-	
-
-	display: grid;
-	grid-template-columns: auto 50px;
+	display: flex;
 	gap: @com-space-micro;
-	
 
-	input:focus-visible {
-		outline: unset;
+	> .component-ui-input { flex: 1; }
+	> .component-ui-button {
+		flex: 0 0 auto;
+		padding: 0 @com-space-micro;
 	}
 
 	.component-ui-input .component-ui-button {
@@ -517,6 +515,10 @@
 		&:focus-visible {
 			outline-offset: -8px;
 		}
+	}
+
+	input:focus-visible {
+		outline: unset;
 	}
 }
 
