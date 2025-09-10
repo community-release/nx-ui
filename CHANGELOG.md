@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.0.59
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.58...v0.0.59)
+
+### 🚀 Enhancements
+
+- **input:** Added attr bind to input, added @keydown.down event ([28d7d30](https://github.com/community-release/nx-ui/commit/28d7d30))
+- **button:** Added not-allowed cursor for disabled state ([06e7abe](https://github.com/community-release/nx-ui/commit/06e7abe))
+- Added typeahead-input component ([e6f8e30](https://github.com/community-release/nx-ui/commit/e6f8e30))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.58
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.57...v0.0.58)
