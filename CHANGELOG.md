@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.61
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.60...v0.0.61)
+
+### 🩹 Fixes
+
+- **typeahead-input:** Removed value from selected item text ([45af7fc](https://github.com/community-release/nx-ui/commit/45af7fc))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.60
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.59...v0.0.60)
