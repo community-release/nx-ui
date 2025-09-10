@@ -76,6 +76,10 @@
         "url": "/components/text-spoiler"
     },
     {
+        "name": "typeahead-input",
+        "url": "/components/typeahead-input"
+    },
+    {
         "name": "static-map",
         "url": "/components/static-map"
     },

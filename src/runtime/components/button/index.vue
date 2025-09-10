@@ -44,7 +44,7 @@
 
 <script setup>
 // Imports
-	import { ref, computed, resolveComponent } from 'vue';
+	import { ref, computed } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import UiLoading from '../loading.vue';
 	import comProps from '#build/ui.button.mjs';
@@ -155,16 +155,12 @@
 			width	: refCom.value.offsetWidth,
 			height	: refCom.value.offsetHeight
 		};
-
-		// Handle navigate
-		// if (computedType == 'a') {
-		// 	if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-
-		// 	e.preventDefault();
-
-		// 	router.push(props.href);
-		// }
 	}
+
+	// Expose
+	defineExpose({
+		refCom
+	});
 </script>
 
 <style lang="less">

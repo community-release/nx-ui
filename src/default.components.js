@@ -16,4 +16,8 @@ export default {
 	input: {
 		'background-color': 'var(--ui-color-bg)',
 	},
+	'typeahead-input': {
+		'list-bg': 'var(--ui-color-bg)',
+		'list-border-radius': 'var(--ui-border-radius-small)',
+	},
 }

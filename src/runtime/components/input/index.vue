@@ -21,6 +21,8 @@
 					@blur="handleFocusBlur(false, $event.target.value)"
 					@keyup.enter="updateValue($event.target.value, true, true)"
 					@keydown.down="emit('keydown.down', $event)"
+					@keydown.tab="emit('keydown.tab', $event)"
+					@keydown.esc.prevent="emit('keydown.esc', $event)"
 
 					formnovalidate
 					spellcheck="false"
@@ -35,14 +37,17 @@
 
 <script setup>
 // Import
-	import { ref, computed, useSlots, useAttrs  } from 'vue';
+	import { ref, computed, useSlots, useAttrs } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import comProps from '#build/ui.input.mjs';
 
 // Misc
-	const emit = defineEmits(['input', 'enter', 'focus', 'blur', 'keydown.down', 'update:modelValue']);
+	const emit = defineEmits([
+		'input', 'enter', 'focus', 'blur', 'update:modelValue',
+		'keydown.down', 'keydown.tab', 'keydown.esc',
+	]);
 	const slots = useSlots();
-	const attrs = useAttrs()
+	const attrs = useAttrs();
 
 // Data
 	const props = defineProps({
@@ -116,7 +121,10 @@
 		if (value !== validValue)
 			refInput.value.value = validValue;
 
-		emit('update:modelValue', validValue);
+		if (props.modelValue !== validValue) {
+			emit('update:modelValue', validValue);
+			emit('input', validValue);
+		}
 
 		if (submit) emit('enter', validValue);
 	}
@@ -131,6 +139,11 @@
 	const hasSlot = (name) => {
 		return !!slots[name];
 	};
+
+// Expose
+	defineExpose({
+		refInput
+	});
 </script>
 
 <style lang="less">
