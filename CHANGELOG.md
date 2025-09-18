@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.62
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.61...v0.0.62)
+
+### 🚀 Enhancements
+
+- **impulse-indicator:** Added ease and duration properties ([a29e67a](https://github.com/community-release/nx-ui/commit/a29e67a))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.61
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.60...v0.0.61)
