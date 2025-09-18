@@ -5,7 +5,13 @@
 				v-for="item in impulseArray" 
 				:key="item.id" 
 				class="impulse"
-				:style="{top: item.top, left: item.left, background: item.background}"
+				:style="{
+					top: item.top, 
+					left: item.left, 
+					background: item.background, 
+					'animation-duration': item?.duration || 0.8,
+					'animation-timing-function': item?.ease || 'ease-in-out',
+				}"
 			></span>
 		</transition-group>
 	</div>
