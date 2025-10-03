@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.64
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.63...v0.0.64)
+
+### 🚀 Enhancements
+
+- **label:** Added tag prop ([049eaba](https://github.com/community-release/nx-ui/commit/049eaba))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.63
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.62...v0.0.63)
