@@ -1,12 +1,12 @@
 <template>
-	<section class="component-ui-loading" :class="{'tag-active': active}">
-		<svg width="32" height="32">
+	<div class="component-ui-loading" :class="{'tag-active': active}">
+		<svg width="32" height="32" aria-hidden="true">
 			<circle cx="16" cy="16" r="10" ref="progress" />
 		</svg>
 		<div class="text" v-if="slots?.default">
 			<slot />
 		</div>
-	</section>
+	</div>
 </template>
 
 <script setup>
