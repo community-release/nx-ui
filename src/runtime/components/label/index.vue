@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="component-ui-label" :class="[`tag-size-${size}`, `tag-weight-${weight}`, required ? 'tag-required' : '']">
-			<component :is="isLegend ? 'legend' : 'label'" class="component-ui-label--text" :for="labelFor">
+			<component :is="isLegend ? 'legend' : tag" class="component-ui-label--text" :for="labelFor">
 				{{ text }} <span v-if="required" aria-hidden="true" class="required">*</span>
 
 				<span v-if="description" class="description" v-html="description"></span>
@@ -30,9 +30,14 @@
 		labelFor: {
 			default: ''
 		},
+		// TODO: get rid of isLegend (check what projects use it)
 		isLegend: {
 			type: Boolean,
 			default: false
+		},
+		tag: {
+			type: String,
+			default: 'label'
 		},
 		size: {
 			type: String,

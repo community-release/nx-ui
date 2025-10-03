@@ -1,9 +1,9 @@
 <template>
-	<div class="component-ui-file-input" :class="classes" :id="inputId">
+	<div class="component-ui-file-input" :class="classes">
 
 		<!-- Input -->
 		<div class="block-input">
-			<ui-button class="btn-add" @click="openFileDialogue" color="surface" shape="square">
+			<ui-button :id="inputId" class="btn-add" @click="openFileDialogue" color="surface" shape="square">
 				<template #prepend>
 					<i class="icon-file ic ic-paperclip" aria-hidden="true"></i>
 				</template>
