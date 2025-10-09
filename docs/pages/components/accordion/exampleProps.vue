@@ -4,6 +4,7 @@
 			icon="/icons/question.svg" 
 			icon-dark="/icons/question-dark.svg" 
 			:list="list" 
+			@itemClick="handleClick"
 		></ui-accordion>
 	</div>
 </template>
@@ -23,4 +24,8 @@ const list = [
 		"text": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
 	},
 ];
+
+function handleClick(id) {
+	console.log('handleClick', id);
+}
 </script>

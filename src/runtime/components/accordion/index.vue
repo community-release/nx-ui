@@ -9,7 +9,7 @@
 
 <script setup>
 // Imports
-	import { ref, computed, provide } from 'vue';
+	import { ref, computed, provide, defineEmits } from 'vue';
 	import comProps from '#build/ui.accordion.mjs';
 	import UiAccordionItem from './accordion-item.vue';
 
@@ -43,6 +43,8 @@
 		},
 	});
 
+	const emit = defineEmits(['itemClick']);
+
 	const open = ref(props.open);
 	const counter = ref(0);
 
@@ -54,10 +56,19 @@
 		return props.iconDark !== '' ? `url(${props.iconDark})` : iconLightComputed.value;
 	});
 
+
+// Methods
+	function onClick(id) {
+		open.value = open.value === id ? -1 : id;
+		emit('itemClick', id);
+	}
+
+// Provide
 	provide('accordionData', {
 		counter,
 		open,
-		haveIcon: !!props.icon
+		haveIcon: !!props.icon,
+		onClick
 	});
 </script>
 

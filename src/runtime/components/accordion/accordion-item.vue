@@ -1,8 +1,9 @@
 <template>
 	<section class="component-ui-accordion-item" 
 		:class="{'tag-active': accordionData.open.value === id, 'tag-icon': accordionData.haveIcon}"
+		:data-id="id"
 	>
-		<div class="header" @click="accordionData.open.value = accordionData.open.value === id ? -1 : id">
+		<div class="header" @click="accordionData.onClick(id)">
 			<i class="icon"></i>
 			<div class="title">{{ title }}</div>
 			<div class="btn-toggle"></div>
