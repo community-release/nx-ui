@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.66
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.65...v0.0.66)
+
+### 🚀 Enhancements
+
+- **accordion:** Added itemClick event ([8b9c0ed](https://github.com/community-release/nx-ui/commit/8b9c0ed))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.65
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.64...v0.0.65)
