@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.67
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.66...v0.0.67)
+
+### 🚀 Enhancements
+
+- **accordion:** Added a11y support ([0df04bb](https://github.com/community-release/nx-ui/commit/0df04bb))
+
+### 📖 Documentation
+
+- Added version display ([30f9f6f](https://github.com/community-release/nx-ui/commit/30f9f6f))
+
+### ❤️ Contributors
+
+- Pavel Sokolov <community.release.org@gmail.com>
+
 ## v0.0.66
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.65...v0.0.66)
