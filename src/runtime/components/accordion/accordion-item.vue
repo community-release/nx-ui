@@ -3,12 +3,18 @@
 		:class="{'tag-active': accordionData.open.value === id, 'tag-icon': accordionData.haveIcon}"
 		:data-id="id"
 	>
-		<div class="header" @click="accordionData.onClick(id)">
+		<button 
+			:id="`acc-button-${cid}`"
+			class="header" 
+			@click="accordionData.onClick(id)" 
+			:aria-expanded="accordionData.open.value === id ? 'true' : 'false'"
+			:aria-controls="`acc-content-${cid}`"
+		>
 			<i class="icon"></i>
 			<div class="title">{{ title }}</div>
 			<div class="btn-toggle"></div>
-		</div>
-		<div class="text">
+		</button>
+		<div :id="`acc-content-${cid}`" class="text" role="region" :aria-labelledby="`acc-button-${cid}`">
 			<div><slot /></div>
 		</div>
 	</section>
@@ -16,7 +22,7 @@
 
 <script setup>
 // Import
-	import { inject } from 'vue'
+	import { inject } from 'vue';
 
 // Data
 	const accordionData = inject('accordionData');
@@ -25,6 +31,7 @@
 		text: String,
 	});
 	const id = accordionData.counter.value++;
+	const cid = accordionData.cid + id;
 </script>
 
 <style lang="less">
@@ -69,9 +76,18 @@
 	font-size: @com-text-medium;
 
 	.header {
+		// box-sizing: border-box;
+		display: block;
+		width: 100%;
 		position: relative;
 		padding: @com-space-small var(--ui-accordion-btn-padding) @com-space-small calc(var(--ui-accordion-icon-size) + @com-space-default);
 		margin-bottom: @com-space-mini;
+		
+		font: inherit;
+		text-align: left;
+
+		border: none;
+		background: transparent;
 		cursor: pointer;
 	}
 
