@@ -1,10 +1,14 @@
+import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import viteRawPlugin from 'vite-raw-plugin';
 import ui from './ui.config';
-import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PRODUCTION_BASE_PATH = '';
+
+const { version } = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8'));
+
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -119,6 +123,10 @@ export default defineNuxtConfig({
 			},
 		],
 	],
+
+	runtimeConfig: {
+		version
+	},
 
 	shiki: {
 		bundledLangs: ['vue', 'javascript'],

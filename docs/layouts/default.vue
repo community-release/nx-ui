@@ -14,6 +14,8 @@
 				</div>
 			</main>
 		</div>
+
+		<bar-footer />
 	</section>
 </template>
 
