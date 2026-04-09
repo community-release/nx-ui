@@ -1,70 +1,74 @@
 <template>
 	<div class="component-ui-spoiler" :class="{'tag-active': isShown}">
-		<div class="content">
+		<div :id="cid" class="content" :inert="!isShown">
 			<div>
 				<slot></slot>
 			</div>
 		</div>
-		<div class="title" @click="handleClick">{{ isShown ? hideText : showText }}</div>
+		<ui-button variant="flat" class="title" @click="handleClick" :aria-expanded="isShown.toString()" :aria-controls="cid">{{ isShown ? hideText : showText }}</ui-button>
 	</div>
 </template>
 
 <script setup>
-import { watch, ref } from 'vue';
+// Imports
+	import { watch, ref } from 'vue';
+	import uniq from './helpers/uniq';
 
 // Data
-const emit = defineEmits(['update:modelValue']);
-const props = defineProps({
-	showText: {
-		type: String,
-		default: 'Show'
-	},
-	hideText: {
-		type: String,
-		default: 'Hide'
-	},
-	modelValue: {
-		type: [Boolean, null],
-		default: null
+	const emit = defineEmits(['update:modelValue']);
+	const props = defineProps({
+		showText: {
+			type: String,
+			default: 'Show'
+		},
+		hideText: {
+			type: String,
+			default: 'Hide'
+		},
+		modelValue: {
+			type: [Boolean, null],
+			default: null
+		}
+	});
+
+	const cid = 'spoiler-' + uniq();
+	let isShown = ref(false);
+	let hasModel = props.modelValue !== null;
+	
+	if (hasModel) {
+		watch(() => props.modelValue, (v) => {
+			isShown.value = v;
+		}, { immediate: true });
 	}
-});
-
-let isShown = ref(false);
-let hasModel = props.modelValue !== null;
-
-if (hasModel) {
-	watch(() => props.modelValue, (v) => {
-		isShown.value = v;
-	}, { immediate: true });
-}
 
 // Methods
-function handleClick() {
-	if (hasModel) {
-		emit('update:modelValue', !isShown.value);
-	} else {
-		isShown.value = !isShown.value;
+	function handleClick() {
+		if (hasModel) {
+			emit('update:modelValue', !isShown.value);
+		} else {
+			isShown.value = !isShown.value;
+		}
 	}
-}
 </script>
 
 <style lang="less">
 .component-ui-spoiler {
-	@com-space-mini: var(--ui-space-mini);
+	@com-space-micro: var(--ui-space-micro);
 	@com-ani-ease: var(--ui-ani-ease);
 	@com-ani-time: var(--ui-ani-time);
 	@com-color-primary-text: var(--ui-color-primary-text);
 	@com-font-weight-medium: var(--ui-font-weight-medium);
 
 	> .title {
-		padding-top: @com-space-mini;
+		margin-left: calc(@com-space-micro * -1);
+	}
 
-		color: @com-color-primary-text;
-		font-weight: @com-font-weight-medium;
-		cursor: pointer;
+	> .title {
+		padding-inline: @com-space-micro;
 
-		-webkit-user-select: none;
-		user-select: none;
+		.button-content .slot-default {
+			padding-inline: 0;
+		}
 	}
 
 	> .content {
