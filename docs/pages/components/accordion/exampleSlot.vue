@@ -5,7 +5,12 @@
 			:open="1"
 		>
 			<ui-accordion-item title="Hello world 1">
-				<b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit, sed do eiusmod tempor
+				<p>
+					<b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit, sed do eiusmod tempor
+				</p>
+				<p>
+					<ui-button>click me</ui-button>
+				</p>
 			</ui-accordion-item>
 			<ui-accordion-item title="Hello world 2">
 				Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.

@@ -14,7 +14,7 @@
 			<div class="title">{{ title }}</div>
 			<div class="btn-toggle"></div>
 		</button>
-		<div :id="`acc-content-${cid}`" class="text" role="region" :aria-labelledby="`acc-button-${cid}`">
+		<div :id="`acc-content-${cid}`" class="text" role="region" :aria-labelledby="`acc-button-${cid}`" :inert="accordionData.open.value !== id">
 			<div><slot /></div>
 		</div>
 	</section>
