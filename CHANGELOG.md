@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.71
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.70...v0.0.71)
+
 ## v0.0.70
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.69...v0.0.70)
