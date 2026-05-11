@@ -77,6 +77,8 @@
 		selectedMarker,
 		clusterColor,
 		disabledClusterColor,
+		clusterMinDistance,
+		clusterDistance,
 		userCoord
 	} = storeToRefs(store);
 
@@ -174,8 +176,8 @@
 	 */
 	function createCluster(features) {
 		const clusterSource = new Cluster({
-			distance: 30,
-			minDistance: 15,
+			minDistance: clusterMinDistance.value,
+			distance: clusterDistance.value,
 			source: new VectorSource({
 				features // Markers
 			})

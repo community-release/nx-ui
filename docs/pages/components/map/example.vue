@@ -2,7 +2,7 @@
 	<ui-map height="60vh" max-height="1000px" :zoom="8" :zoomMin="1" :zoomMax="18" :coord="[24.106389, 56.948889]"
 		:markers="markers" :disabledMarkers="disabledMarkers" markerImage="/map-marker-violet.png"
 		markerActiveImage="/map-marker-green.png" markerDisabledImage="/map-marker-gray.png" @wheel="onMouseWheel"
-		@initialized="onMapInitialized">
+		@initialized="onMapInitialized" :clusterMinDistance="15" :clusterDistance="30">
 		<template #row="{ store }">
 			<!-- <ui-map-zoom :store="store">
 				<ui-map-device-zoom-switch :store="store">

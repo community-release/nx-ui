@@ -84,6 +84,20 @@ const props = defineProps({
 		default: comProps.disabledClusterColor,
 		type: String
 	},
+	/**
+	 * Min distance between clusters
+	 */
+	clusterMinDistance: {
+		default: 15,
+		type: Number
+	},
+	/**
+	 * Distance(in px) between points when they start group in cluster
+	 */
+	clusterDistance: {
+		default: 30,
+		type: Number
+	},
 });
 
 store.coord = props.coord;
@@ -97,6 +111,8 @@ store.markerActiveImage = props.markerActiveImage;
 store.markerDisabledImage = props.markerDisabledImage;
 store.clusterColor = props.clusterColor;
 store.disabledClusterColor = props.disabledClusterColor;
+store.clusterMinDistance = props.clusterMinDistance;
+store.clusterDistance = props.clusterDistance;
 
 watch(() => props.disabledMarkers, (v) => {
 	store.setDisabledMarkers(v);

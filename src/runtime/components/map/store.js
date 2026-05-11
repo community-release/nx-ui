@@ -36,6 +36,8 @@ export const useMapStore = defineStore('map', {
 			disabledMarkers: [],
 			clusterColor: '',
 			disabledClusterColor: '',
+			clusterMinDistance: 15,
+			clusterDistance: 30,
 
 			userCoord: []
 		}
