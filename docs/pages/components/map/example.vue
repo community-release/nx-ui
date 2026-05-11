@@ -2,7 +2,7 @@
 	<ui-map height="60vh" max-height="1000px" :zoom="8" :zoomMin="1" :zoomMax="18" :coord="[24.106389, 56.948889]"
 		:markers="markers" :disabledMarkers="disabledMarkers" markerImage="/map-marker-violet.png"
 		markerActiveImage="/map-marker-green.png" markerDisabledImage="/map-marker-gray.png" @wheel="onMouseWheel"
-		@initialized="onMapInitialized" :clusterMinDistance="15" :clusterDistance="30">
+		@initialized="onMapInitialized" :clusterMinDistance="15" :clusterDistance="30" clusterColor="#4b3aaa" disabledClusterColor="#5f6761">
 		<template #row="{ store }">
 			<!-- <ui-map-zoom :store="store">
 				<ui-map-device-zoom-switch :store="store">
@@ -45,6 +45,9 @@ const markers = [
 			24.12778506,
 			56.96157621
 		],
+		"marker": "/map-marker-a.png",
+		"markerActive": "/map-marker-a-active.png",
+		"markerDisabled": "/map-marker-a-disabled.png",
 	},
 	{
 		"id": "cfla5iiz9",
@@ -55,6 +58,9 @@ const markers = [
 			24.1081432,
 			57.0314181
 		],
+		"marker": "/map-marker-b.png",
+		"markerActive": "/map-marker-b-active.png",
+		"markerDisabled": "/map-marker-b-disabled.png",
 	},
 	{
 		"id": "l7p95h4b8",
@@ -65,6 +71,9 @@ const markers = [
 			24.071860755676,
 			56.937342828933
 		],
+		"marker": "/map-marker-c.png",
+		"markerActive": "/map-marker-c-active.png",
+		"markerDisabled": "/map-marker-c-disabled.png",
 	},
 	{
 		"id": "f1hvfze6b",
@@ -74,7 +83,10 @@ const markers = [
 		"coord": [
 			24.177260841125,
 			56.958010529539
-		]
+		],
+		"marker": "/map-marker-a.png",
+		"markerActive": "/map-marker-a-active.png",
+		"markerDisabled": "/map-marker-a-disabled.png"
 	},
 	{
 		"id": "19",
@@ -85,6 +97,9 @@ const markers = [
 			26.52737,
 			55.8678524
 		],
+		"marker": "/map-marker-a.png",
+		"markerActive": "/map-marker-a-active.png",
+		"markerDisabled": "/map-marker-a-disabled.png",
 	},
 	{
 		"id": "20",
@@ -95,6 +110,9 @@ const markers = [
 			26.52485390000004,
 			55.8717117
 		],
+		"marker": "/map-marker-b.png",
+		"markerActive": "/map-marker-b-active.png",
+		"markerDisabled": "/map-marker-b-disabled.png",
 	},
 	{
 		"id": "21",
@@ -105,6 +123,9 @@ const markers = [
 			26.5274284,
 			55.9012161
 		],
+		"marker": "/map-marker-b.png",
+		"markerActive": "/map-marker-b-active.png",
+		"markerDisabled": "/map-marker-b-disabled.png",
 	},
 ];
 

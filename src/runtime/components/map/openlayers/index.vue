@@ -162,7 +162,14 @@
 		for (let item of markers.value) {
 			const feature = new Feature(new Point(fromLonLat(item.coord)));
 
-			feature.attributes = { id: item.id }; // Add payload data to markers
+			// Add payload data to markers
+			feature.attributes = { 
+				id: item.id, 
+				marker: item?.marker || 'default',
+				markerActive: item?.markerActive || 'active', 
+				markerDisabled: item?.markerDisabled || 'disabled'
+			};
+
 			result.push(feature);
 		}
 
@@ -227,6 +234,18 @@
 			});
 		}
 
+		// Iterate all markers
+		for (let item of markers.value) {
+			if (!(item.marker in styleCache))
+				styleCache[item.marker] = new Style({ image: new Icon({ src: item.marker }) });
+
+			if (!(item.markerActive in styleCache))
+				styleCache[item.markerActive] = new Style({ image: new Icon({ src: item.markerActive }) });
+
+			if (!(item.markerDisabled in styleCache))
+				styleCache[item.markerDisabled] = new Style({ image: new Icon({ src: item.markerDisabled }) });
+		}
+
 		// Markers style function
 		function style(feature) {
 			const allFeatures = feature.get('features');
@@ -236,11 +255,11 @@
 
 			// If one
 			if (size == 1) {
-				const markerId = allFeatures[0].attributes.id;
-				const isDisabled = disabledMarkers.value.includes(markerId);
-				const isSelected = markerId === selectedMarker.value?.id;
+				const markerAttr = allFeatures[0].attributes;
+				const isDisabled = disabledMarkers.value.includes(markerAttr.id);
+				const isSelected = markerAttr.id === selectedMarker.value?.id;
 
-				style = styleCache[isSelected ? 'active' : (isDisabled ? 'disabled' : 'default')];
+				style = styleCache[isSelected ? markerAttr.markerActive : (isDisabled ? markerAttr.markerDisabled : markerAttr.marker)];
 			
 			// If cluster
 			} else {
