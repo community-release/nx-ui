@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.72
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.71...v0.0.72)
+
+### 🚀 Enhancements
+
+- **map:** Cluster minDistance and distance are now can be set via map props ([da5c4b2](https://github.com/community-release/nx-ui/commit/da5c4b2))
+- **map:** Added ability to set marker image individualy for a marker ([0e0b8c9](https://github.com/community-release/nx-ui/commit/0e0b8c9))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.71
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.70...v0.0.71)
