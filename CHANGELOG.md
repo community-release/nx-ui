@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.74
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.73...v0.0.74)
+
+### 🚀 Enhancements
+
+- **map:** Added map click event ([6788d27](https://github.com/community-release/nx-ui/commit/6788d27))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.73
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.72...v0.0.73)
