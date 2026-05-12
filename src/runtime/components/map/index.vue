@@ -1,6 +1,6 @@
 <template>
 	<section class="component-ui-map">
-		<component :is="mapEngines[props.engine]" @initialized="emit('initialized', $event)">
+		<component :is="mapEngines[props.engine]" @initialized="emit('initialized', $event)" @mapClick="emit('mapClick', $event)">
 			<slot :store="store"></slot>
 			<div class="slot-row">
 				<slot name="row" :store="store"></slot>
@@ -17,7 +17,7 @@ import comProps from '#build/ui.map.mjs';
 // // Data
 const nuxtApp = useNuxtApp();
 const store = useMapStore(nuxtApp.$pinia);
-const emit = defineEmits(['initialized']);
+const emit = defineEmits(['initialized', 'mapClick']);
 
 const mapEngines = {
 	openlayers: defineAsyncComponent(() => import(`./openlayers/index.vue`))

@@ -36,7 +36,7 @@
 
 	import Map from 'ol/Map.js';
 	import View from 'ol/View.js';
-	import { fromLonLat } from 'ol/proj.js';
+	import { fromLonLat, toLonLat  } from 'ol/proj.js';
 	import {
 		defaults as defaultInteractions,
 		MouseWheelZoom as mouseWheelZoomInteraction,
@@ -47,7 +47,7 @@
 
 
 // Data
-	const emit = defineEmits(['initialized']);
+	const emit = defineEmits(['initialized', 'mapClick']);
 	const refMap = ref(null);
 	let map = null;
 	let view = null;
@@ -382,6 +382,12 @@
 
 		// Handle map marker click
 		map.on('click', (e) => {
+			const coords = toLonLat(e.coordinate);
+			const longitude = coords[0];
+			const latitude = coords[1];
+
+			emit('mapClick', {latitude, longitude});
+			
 			cluster.getFeatures(e.pixel).then((clickedFeatures) => {
 				let clickedOnMarker = false;
 
