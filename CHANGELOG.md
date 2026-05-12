@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.73
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.72...v0.0.73)
+
+### 💅 Refactors
+
+- Updated file-input component registration ([fc52991](https://github.com/community-release/nx-ui/commit/fc52991))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.72
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.71...v0.0.72)
