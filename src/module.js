@@ -92,5 +92,15 @@ export default defineNuxtModule({
 			name: 'ui-map-location-nearest',
 			global: false,
 		});
+		addComponent({
+			filePath: resolve('./runtime/components/file-input/index'),
+			name: 'ui-file-input',
+			global: false,
+		});
+		addComponent({
+			filePath: resolve('./runtime/components/file-input/preview'),
+			name: 'ui-file-input-preview',
+			global: false,
+		});
 	},
 });
