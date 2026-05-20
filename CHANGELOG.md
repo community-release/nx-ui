@@ -426,7 +426,7 @@
 
 ### 🎨 Styles
 
-- **button:** Default border size now equal --ui-border-radius-default ([e432645](https://github.com/community-release/nx-ui/commit/e432645))
+- **button:** Default border size now equal --ui-border-radius-m ([e432645](https://github.com/community-release/nx-ui/commit/e432645))
 
 ### ❤️ Contributors
 

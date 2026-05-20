@@ -1,5 +1,5 @@
 <template>
-	<ui-grid grid-template-columns="1fr 1fr" gap="var(--space-default)">
+	<ui-grid grid-template-columns="1fr 1fr" gap="var(--space-m)">
 		<ui-checkbox v-model="showTooltip">
 			Show tooltip
 		</ui-checkbox>
@@ -19,8 +19,8 @@ const showTooltip = ref(false);
 <style lang="less">
 .tooltip-output {
 	position: relative;
-	height: var(--input-height-default);
-	width: var(--input-height-default);
+	height: var(--input-height-m);
+	width: var(--input-height-m);
 	background:  var(--color-primary);
 	border-radius: var(--border-radius);
 }

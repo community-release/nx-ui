@@ -55,40 +55,40 @@
 </script>
 
 <style lang="less">
-@com-space-micro: var(--ui-space-micro);
+@com-space-2xs: var(--ui-space-2xs);
 
 @com-font-weight-medium: var(--ui-font-weight-medium);
 
 @com-color-header-text: var(--ui-color-header-text);
-@com-color-gray-text: var(--ui-color-gray-text);
+@com-color-muted-text: var(--ui-color-muted-text);
 @com-color-red: var(--ui-color-red);
 
-@com-text-big: var(--ui-text-big);
-@com-text-medium: var(--ui-text-medium);
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
+@com-text-xl: var(--ui-text-xl);
+@com-text-l: var(--ui-text-l);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
 
 .component-ui-label {
 	.component-ui-label--text {
 		position: relative;
 		display: block;
-		padding-bottom: @com-space-micro;
+		padding-bottom: @com-space-2xs;
 		font-weight: @com-font-weight-medium;
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 		color: @com-color-header-text;
 
 		.description {
 			display: block;
 			font-weight: normal;
-			color: @com-color-gray-text;
+			color: @com-color-muted-text;
 		}
 	}
 
 	// Text size
-	&.tag-size-big > .component-ui-label--text { font-size: @com-text-big; }
-	&.tag-size-medium > .component-ui-label--text { font-size: @com-text-medium; }
-	&.tag-size-default > .component-ui-label--text { font-size: @com-text-default; }
-	&.tag-size-small > .component-ui-label--text { font-size: @com-text-small; }
+	&.tag-size-xl > .component-ui-label--text { font-size: @com-text-xl; }
+	&.tag-size-l > .component-ui-label--text { font-size: @com-text-l; }
+	&.tag-size-m > .component-ui-label--text { font-size: @com-text-m; }
+	&.tag-size-s > .component-ui-label--text { font-size: @com-text-s; }
 
 	// Text weight
 	&.tag-weight-700 > .component-ui-label--text { font-weight: 700; }

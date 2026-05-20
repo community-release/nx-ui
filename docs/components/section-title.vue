@@ -6,10 +6,10 @@
 
 <style lang="less">
 .component-section-title {
-	padding-bottom: var(--space-big);
+	padding-bottom: var(--space-xl);
 
 	font-weight: bold;
-	font-size: var(--text-big);
+	font-size: var(--text-xl);
 	color: var(--color-header-text);
 }
 </style>

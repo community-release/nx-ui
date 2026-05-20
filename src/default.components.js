@@ -1,10 +1,10 @@
 export default {
 	accordion: {
-		'title-font-size': 'var(--ui-text-medium)',
-		'text-font-size': 'var(--ui-text-default)',
+		'title-font-size': 'var(--ui-text-l)',
+		'text-font-size': 'var(--ui-text-m)',
 	},
 	button: {
-		'border-radius': 'var(--ui-input-height-large)'
+		'border-radius': 'var(--ui-input-height-2xl)'
 	},
 	map: {
 		'user-position-color': 'var(--ui-color-primary)'
@@ -18,6 +18,6 @@ export default {
 	},
 	'typeahead-input': {
 		'list-bg': 'var(--ui-color-bg)',
-		'list-border-radius': 'var(--ui-border-radius-small)',
+		'list-border-radius': 'var(--ui-border-radius-s)',
 	},
 }

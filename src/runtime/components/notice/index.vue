@@ -24,7 +24,7 @@ const { items } = storeToRefs(store);
 </script>
 
 <style lang="less">
-@com-space-default: var(--ui-space-default);
+@com-space-m: var(--ui-space-m);
 
 .list-enter-active,
 .list-leave-active {
@@ -47,9 +47,9 @@ const { items } = storeToRefs(store);
 .component-ui-notice {
 	transform: translateX(-50%);
 	position: fixed;
-	bottom: @com-space-default;
+	bottom: @com-space-m;
 	left: 50%;
-	padding: 0 @com-space-default;
+	padding: 0 @com-space-m;
 
 	width: 500px;
 	max-width: 100%;

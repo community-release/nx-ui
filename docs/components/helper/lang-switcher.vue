@@ -22,8 +22,8 @@
 <style lang="less">
 .component-lang-switcher {
 	a {
-		opacity: 0.5;
-		margin-right: @space-default;
+		opacity: 0.7;
+		margin-right: @space-m;
 		text-transform: uppercase;
 
 

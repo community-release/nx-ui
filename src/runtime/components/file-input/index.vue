@@ -208,15 +208,15 @@
 	@com-color-header-text: var(--ui-color-header-text);
 	@com-color-error: var(--ui-color-error);
 
-	@com-border-radius-m: var(--ui-border-radius-default);
+	@com-border-radius-m: var(--ui-border-radius-m);
 
-	@com-space-default: var(--ui-space-default);
-	@com-space-mini: var(--ui-space-mini);
-	@com-space-small: var(--ui-space-small);
+	@com-space-m: var(--ui-space-m);
+	@com-space-xs: var(--ui-space-xs);
+	@com-space-s: var(--ui-space-s);
 
-	@com-text-large: var(--ui-text-large);
-	@com-text-default: var(--ui-text-default);
-	@com-text-small: var(--ui-text-small);
+	@com-text-2xl: var(--ui-text-2xl);
+	@com-text-m: var(--ui-text-m);
+	@com-text-s: var(--ui-text-s);
 
 	@com-font-weight-bold: var(--ui-font-weight-bold);
 
@@ -231,7 +231,7 @@
 			border-radius: @com-border-radius-m 0 0 @com-border-radius-m;
 
 			.ic {
-				font-size: @com-text-large;
+				font-size: @com-text-2xl;
 			}
 		}
 
@@ -239,8 +239,8 @@
 			border-radius: 0 @com-border-radius-m @com-border-radius-m 0;
 
 			.ic {
-				padding-left: @com-space-mini;
-				font-size: @com-text-default;
+				padding-left: @com-space-xs;
+				font-size: @com-text-m;
 			}
 		}
 
@@ -252,13 +252,13 @@
 		}
 
 		.status-text {
-			padding-right: @com-space-default;
+			padding-right: @com-space-m;
 		}
 	}
 
 	.block-filelist {
 		position: relative;
-		margin-top: @com-space-mini;
+		margin-top: @com-space-xs;
 		border-radius: @com-border-radius-m;
 		border: 1px dashed @com-color-border-bolder;
 
@@ -267,7 +267,7 @@
 			grid-template-columns: 80px 1fr 80px;
 
 			.preview {
-				padding: @com-space-mini;
+				padding: @com-space-xs;
 
 				.file {
 					overflow: hidden;
@@ -277,7 +277,7 @@
 					height: 70px;
 
 					text-transform: uppercase;
-					font-size: @com-text-small;
+					font-size: @com-text-s;
 					font-weight: @com-font-weight-bold;
 					border-radius: @com-border-radius-m;
 					background-color: @com-color-surface;
@@ -317,7 +317,7 @@
 
 				.size {
 					font-style: italic;
-					font-size: @com-text-small;
+					font-size: @com-text-s;
 				}
 			}
 
@@ -327,7 +327,7 @@
 				align-items: center;
 
 				.component-ui-button {
-					font-size: @com-text-small;
+					font-size: @com-text-s;
 					height: 100%;
 				}
 			}
@@ -340,7 +340,7 @@
 
 		display: none;
 		place-items: center;
-		padding: @com-space-small;
+		padding: @com-space-s;
 		text-align: center;
 		cursor: pointer;
 	}
@@ -396,14 +396,14 @@
 		@com-color-border: var(--ui-color-border);
 		@com-color-header-text:var(--ui-color-header-text);
 
-		@com-border-radius-m: var(--ui-border-radius-default);
+		@com-border-radius-m: var(--ui-border-radius-m);
 
-		@com-space-mini: var(--ui-space-mini);
-		@com-space-small: var(--ui-space-small);
+		@com-space-xs: var(--ui-space-xs);
+		@com-space-s: var(--ui-space-s);
 
-		@com-text-large: var(--ui-text-large);
-		@com-text-default: var(--ui-text-default);
-		@com-text-small: var(--ui-text-small);
+		@com-text-2xl: var(--ui-text-2xl);
+		@com-text-m: var(--ui-text-m);
+		@com-text-s: var(--ui-text-s);
 
 		@com-font-weight-bold: var(--ui-font-weight-bold);
 
@@ -429,20 +429,20 @@
 		@com-color-border: var(--ui-color-border);
 		@com-color-header-text:var(--ui-color-header-text);
 
-		@com-border-radius-m: var(--ui-border-radius-default);
+		@com-border-radius-m: var(--ui-border-radius-m);
 
-		@com-space-mini: var(--ui-space-mini);
-		@com-space-small: var(--ui-space-small);
+		@com-space-xs: var(--ui-space-xs);
+		@com-space-s: var(--ui-space-s);
 
-		@com-text-large: var(--ui-text-large);
-		@com-text-default: var(--ui-text-default);
-		@com-text-small: var(--ui-text-small);
+		@com-text-2xl: var(--ui-text-2xl);
+		@com-text-m: var(--ui-text-m);
+		@com-text-s: var(--ui-text-s);
 
 		@com-font-weight-bold: var(--ui-font-weight-bold);
 
 		.block-input {
 			.component-ui-button {
-				font-size: @com-text-small;
+				font-size: @com-text-s;
 			}
 		}
 
@@ -456,13 +456,13 @@
 				}
 
 				.details {
-					font-size: @com-text-small;
+					font-size: @com-text-s;
 				}
 			}
 		}
 
 		.drag-and-drop {
-			font-size: @com-text-small;
+			font-size: @com-text-s;
 		}
 	}
 }

@@ -41,13 +41,13 @@
 
 <style lang="less">
 .component-preview {
-	padding: var(--space-default);
+	padding: var(--space-m);
 	border: 1px solid var(--color-border);
 	border-radius: var(--border-radius);
 
 	.component-preview--title {
 		font-weight: bold;
-		font-size: var(--text-medium);
+		font-size: var(--text-l);
 		color: var(--color-header-text);
 	}
 
@@ -56,15 +56,15 @@
 		grid-template-columns: 1fr 1fr; // base columns and their sizes
   		grid-auto-flow: column; // tells to add new children as new columns
  		grid-auto-columns: 1fr; // tells the size of the dynamic columns
-		gap: var(--space-mini);
+		gap: var(--space-xs);
 
-		margin-top: var(--space-default);
+		margin-top: var(--space-m);
 	}
 
 	.component-preview--example {
 		overflow: hidden;
-		margin-top: var(--space-default);
-		padding: var(--space-default);
+		margin-top: var(--space-m);
+		padding: var(--space-m);
 		border-top: 1px solid var(--color-border);
 		border-radius: var(--border-radius);
 		color: @theme-dark-color-text;
@@ -76,8 +76,8 @@
 	}
 
 	.component-preview--component {
-		margin-top: var(--space-default);
-		padding-top: var(--space-default);
+		margin-top: var(--space-m);
+		padding-top: var(--space-m);
 		border-top: 1px solid var(--color-border);
 	}
 }

@@ -35,14 +35,14 @@ const menu = [
 .component-menu-aside {
 	.menu {
 		// li {
-		// 	padding-bottom: var(--space-small);
+		// 	padding-bottom: var(--space-s);
 		// }
 
 		.category {
 			display: block;
 			font-weight: bold;
 			color: var(--color-header-text);
-			padding-bottom: var(--space-small);
+			padding-bottom: var(--space-s);
 		}
 
 		.submenu {
@@ -61,7 +61,7 @@ const menu = [
 			}
 
 			li {
-				padding-left: var(--space-default);
+				padding-left: var(--space-m);
 			}
 
 			a {
@@ -71,7 +71,7 @@ const menu = [
 					opacity: 0;
 					transform: translateY(-50%);
 					position: absolute;
-					left: calc(calc(var(--space-default) * -1) + 3px);
+					left: calc(calc(var(--space-m) * -1) + 3px);
 					top: 50%;
 
 					width: 1px;
@@ -85,8 +85,8 @@ const menu = [
 		a {
 			position: relative;
 			display: block;
-			color: var(--color-gray-text);
-			padding: var(--space-mini) 0;
+			color: var(--color-muted-text);
+			padding: var(--space-xs) 0;
 			//background: cadetblue;
 
 			&:hover {

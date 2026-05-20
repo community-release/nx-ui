@@ -209,8 +209,8 @@ function onMapClick(e) {
 <style>
 .map-marker-info {
 	overflow: auto;
-	padding: var(--space-default);
+	padding: var(--space-m);
 	background: var(--color-surface);
-	border-radius: var(--ui-border-radius-default);
+	border-radius: var(--ui-border-radius-m);
 }
 </style>

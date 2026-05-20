@@ -18,14 +18,14 @@
 </template>
 
 <script setup>
-const gap = ref('default');
+const gap = ref('m');
 const gapList = ref([
-	{name: 'large', value: 'large'},
-	{name: 'big', value: 'big'},
-	{name: 'medium', value: 'medium'},
-	{name: 'default', value: 'default'},
-	{name: 'small', value: 'small'},
-	{name: 'mini', value: 'mini'},
+	{name: '2xl', value: '2xl'},
+	{name: 'xl', value: 'xl'},
+	{name: 'l', value: 'l'},
+	{name: 'm', value: 'm'},
+	{name: 's', value: 's'},
+	{name: 'xs', value: 'xs'},
 ]);
 
 const gridTemplateColumns = ref('1fr 1fr 1fr');

@@ -46,10 +46,10 @@ const hasSlot = (name) => {
 </script>
 
 <style lang="less">
-@com-input-height: var(--ui-input-height-default);
+@com-input-height: var(--ui-input-height-m);
 
 @com-map-padding: var(--ui-map-padding);
-@com-space-mini: var(--ui-space-mini);
+@com-space-xs: var(--ui-space-xs);
 
 .component-ui-map-location {
 	pointer-events: none !important;
@@ -67,7 +67,7 @@ const hasSlot = (name) => {
 		grid-template-columns: 1fr; // base columns and their sizes
   		grid-auto-flow: column; // tells to add new children as new columns
  		grid-auto-columns: 1fr; // tells the size of the dynamic columns
-		gap: @com-space-mini;
+		gap: @com-space-xs;
 
 		inset: 0 0 auto 0;
 		max-width: 100%;
@@ -99,7 +99,7 @@ const hasSlot = (name) => {
 
 	&.tag-slot-header-and-default {
 		.location-slot-default {
-			inset: calc(@com-input-height + @com-space-mini) 0 0 0;
+			inset: calc(@com-input-height + @com-space-xs) 0 0 0;
 		}
 	}
 }

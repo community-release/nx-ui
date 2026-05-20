@@ -66,14 +66,14 @@ function handleClick() {
 
 <style lang="less">
 .component-ui-text-spoiler {
-	@com-space-mini: var(--ui-space-mini);
+	@com-space-xs: var(--ui-space-xs);
 	@com-ani-ease: var(--ui-ani-ease);
 	@com-ani-time: var(--ui-ani-time);
 	@com-color-primary-text: var(--ui-color-primary-text);
 	@com-font-weight-medium: var(--ui-font-weight-medium);
 
 	> .title {
-		padding-top: @com-space-mini;
+		padding-top: @com-space-xs;
 
 		color: @com-color-primary-text;
 		font-weight: @com-font-weight-medium;

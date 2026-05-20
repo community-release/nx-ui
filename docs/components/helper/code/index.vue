@@ -29,8 +29,8 @@
 
 <style lang="less">
 .component-helper-code {
-	margin-bottom: var(--space-default);
-	padding: var(--space-default);
+	margin-bottom: var(--space-m);
+	padding: var(--space-m);
 	background: var(--color-surface);
 	border-radius: var(--border-radius);
 

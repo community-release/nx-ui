@@ -14,7 +14,7 @@ export default {
 		},
 		gap: {
 			type: [String, Object],
-			default: 'var(--ui-space-default)'
+			default: 'var(--ui-space-m)'
 		},
 		gridTemplateColumns: {
 			type: [String, Object],

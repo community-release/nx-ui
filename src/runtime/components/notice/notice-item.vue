@@ -34,16 +34,16 @@
 </script>
 
 <style lang="less">
-@com-border-radius-default: var(--ui-border-radius-default);
+@com-border-radius-m: var(--ui-border-radius-m);
 
 @com-color-secondary: var(--ui-color-secondary);
 @com-color-border: var(--ui-color-border);
 @com-color-surface: var(--ui-color-surface);
 @com-color-header-text: var(--ui-color-header-text);
-@com-color-gray-text: var(--ui-color-gray-text);
+@com-color-muted-text: var(--ui-color-muted-text);
 
-@com-space-medium: var(--ui-space-medium);
-@com-space-mini: var(--ui-space-mini);
+@com-space-l: var(--ui-space-l);
+@com-space-xs: var(--ui-space-xs);
 
 @com-bs-2: var(--ui-bs-2);
 
@@ -64,11 +64,11 @@
 	transition: all 0.5s ease;
 
 	position: relative;
-	margin-top: @com-space-mini;
-	padding: @com-space-medium;
+	margin-top: @com-space-xs;
+	padding: @com-space-l;
 
 	border: 1px solid @com-color-border;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 	background: @com-color-surface;
 	box-shadow: @com-bs-2;
 
@@ -105,7 +105,7 @@
 			transform-origin: 50%;
 			
 			fill: none;
-			stroke: @com-color-gray-text;
+			stroke: @com-color-muted-text;
 			stroke: @com-color-secondary;
 			stroke-width: 1px;
 

@@ -32,10 +32,10 @@ const props = defineProps({
 @com-color-header-text: var(--ui-color-header-text);
 
 // Text size
-@com-text-small: var(--ui-text-small);
+@com-text-s: var(--ui-text-s);
 
 // Padding
-@com-space-micro: var(--ui-space-micro);
+@com-space-2xs: var(--ui-space-2xs);
 
 @keyframes ui-loading-circle {
 	0% {
@@ -60,7 +60,7 @@ const props = defineProps({
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: @com-space-micro;
+	gap: @com-space-2xs;
 
 	svg {
 		transition: opacity 0.15s;

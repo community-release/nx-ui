@@ -59,14 +59,14 @@ const loading = ref(false);
 const focus = ref(false);
 const refCom = useTemplateRef('com');
 
-const size = ref('default');
+const size = ref('m');
 const sizeList = ref([
-	{name: 'large', value: 'large'},
-	{name: 'big', value: 'big'},
-	{name: 'medium', value: 'medium'},
-	{name: 'default', value: 'default'},
-	{name: 'small', value: 'small'},
-	{name: 'mini', value: 'mini'},
+	{name: '2xl', value: '2xl'},
+	{name: 'xl', value: 'xl'},
+	{name: 'l', value: 'l'},
+	{name: 'm', value: 'm'},
+	{name: 's', value: 's'},
+	{name: 'xs', value: 'xs'},
 ]);
 
 const color = ref('primary');

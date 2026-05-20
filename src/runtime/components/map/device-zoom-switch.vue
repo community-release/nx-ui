@@ -46,8 +46,8 @@ function handleClick(e) {
 </script>
 
 <style lang="less">
-@com-size: var(--ui-input-height-default);
-@com-border-radius-default: var(--ui-border-radius-default);
+@com-size: var(--ui-input-height-m);
+@com-border-radius-m: var(--ui-border-radius-m);
 @com-ani-time: var(--ui-ani-time);
 @com-ani-ease: var(--ui-ani-ease);
 
@@ -65,7 +65,7 @@ function handleClick(e) {
 
 	background: @com-color-surface;
 	box-shadow: @com-bs-1;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 	cursor: pointer;
 
 	&:before,

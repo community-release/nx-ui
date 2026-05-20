@@ -27,7 +27,7 @@ function onClick(e) {
 	position: relative;
 	height: 100px;
 	
-	font-size: var(--text-medium);
+	font-size: var(--text-l);
 	font-family: var(--font-header);
 
 	color: var(--color-text-on-primary);

@@ -30,13 +30,13 @@ export default {
 
 	#wrapper {
 		margin: 0 auto;
-		padding: var(--space-default);
+		padding: var(--space-m);
 		max-width: var(--content-width);
 
 		&.tag-with-menu {
 			display: grid;
 			grid-template-columns: 300px auto;
-			gap: var(--space-big);
+			gap: var(--space-xl);
 		}
 	}
 
@@ -49,7 +49,7 @@ export default {
 	}
 
 	.page {
-		margin-top: var(--space-big);
+		margin-top: var(--space-xl);
 	}
 }
 

@@ -24,7 +24,7 @@
 .component-bar-top {
 	.mix-clear;
 
-	padding: @space-default 0;
+	padding: @space-m 0;
 	line-height: 50px;
 
 	.logo {
@@ -37,7 +37,7 @@
 		height: 50px;
 		line-height: 40px;
 
-		font-size: @text-small;
+		font-size: @text-s;
 
 		color: var(--color-header-text);
 
@@ -48,11 +48,11 @@
 
 	.menu {
 		float: right;
-		margin-right: @space-large;
+		margin-right: @space-2xl;
 
 		a {
-			opacity: 0.5;
-			margin-right: @space-default;
+			opacity: 0.7;
+			margin-right: @space-m;
 		}
 
 		a.router-link-active {
@@ -63,7 +63,7 @@
 
 	.component-lang-switcher {
 		float: right;
-		margin-right: @space-large;
+		margin-right: @space-2xl;
 	}
 
 	.component-theme-switcher {

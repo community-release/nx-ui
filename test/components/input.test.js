@@ -10,7 +10,7 @@ describe('input component', async () => {
 		props: {
 			modelValue: value,
 			placeholder: 'my placeholder',
-			size: 'default',
+			size: 'm',
 			shape: 'square',
 		}
 	});
@@ -50,11 +50,11 @@ describe('input component', async () => {
 	});
 
 	test('size', async () => {
-    	expect(html, `size should be default`).toContain('tag-size-default');
+    	expect(html, `size should be default`).toContain('tag-size-m');
 
-		await wrapper.setProps({ size: 'big' });
+		await wrapper.setProps({ size: 'xl' });
 
-		expect(wrapper.html(), `size should be big`).toContain('tag-size-big');
+		expect(wrapper.html(), `size should be xl`).toContain('tag-size-xl');
 	});
 
 	test('shape', async () => {

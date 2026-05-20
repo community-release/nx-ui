@@ -1,6 +1,6 @@
 <template>
 	<section id="page-components">
-		<ui-grid grid-template-columns="repeat(3, 1fr)" gap="var(--space-default)">
+		<ui-grid grid-template-columns="repeat(3, 1fr)" gap="var(--space-m)">
 			<nuxt-link-locale v-for="item of components" class="component" :to="item.url">
 				ui-{{ item.name }}
 			</nuxt-link-locale>
@@ -21,7 +21,7 @@ useHead({
 <style lang="less">
 #page-components {
 	.component {
-		padding: var(--space-default);
+		padding: var(--space-m);
 
 		font-weight: bold;
 		color: var(--color-header-text);

@@ -184,17 +184,17 @@ onMounted(() => {
 <style lang="less">
 @import (less) './styles/components.less';
 
-@com-space-micro: var(--ui-space-micro);
-@com-input-height-default: var(--ui-input-height-default);
+@com-space-2xs: var(--ui-space-2xs);
+@com-input-height-m: var(--ui-input-height-m);
 
 @com-font-header: var(--ui-font-header);
 @com-value-font-weight: @ui-select-value-font-weight;
 
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
 
 @com-color-text: var(--ui-color-text);
-@com-color-gray-text: var(--ui-color-gray-text);
+@com-color-muted-text: var(--ui-color-muted-text);
 @com-color-header-text: var(--ui-color-header-text);
 @com-color-primary: var(--ui-color-primary);
 @com-color-surface: @ui-select-background-color;
@@ -202,7 +202,7 @@ onMounted(() => {
 @com-color-border: var(--ui-color-border-bolder);
 @com-color-error: var(--ui-color-error);
 
-@com-border-radius-default: var(--ui-border-radius-default);
+@com-border-radius-m: var(--ui-border-radius-m);
 @com-bs-1: var(--ui-bs-1);
 
 // Ally
@@ -211,7 +211,7 @@ onMounted(() => {
 .component-ui-select {
 	position: relative;
 	text-align: left;
-	font-size: @com-text-default;
+	font-size: @com-text-m;
 	line-height: 1.1;
 
 	.wrapper {
@@ -221,7 +221,7 @@ onMounted(() => {
 			opacity: 0;
 			padding-right: 45px;
 			padding-left: 10px;
-			height: @com-input-height-default;
+			height: @com-input-height-m;
 			width: 100%;
 
 			cursor: pointer;
@@ -248,7 +248,7 @@ onMounted(() => {
 		height: 100%;
 
 		border: 1px solid @com-color-border;
-		border-radius: @com-border-radius-default;
+		border-radius: @com-border-radius-m;
 
 		cursor: pointer;
 

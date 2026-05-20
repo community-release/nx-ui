@@ -1,9 +1,9 @@
 <template>
 	<div class="component-ui-map-zoom">
 		<div class="prepend"><slot /></div>
-		<ui-button @click="store.zoomIn" class="plus" color="gray" block variant="flat" size="small" shape="square">+</ui-button>
+		<ui-button @click="store.zoomIn" class="plus" color="gray" block variant="flat" size="s" shape="square">+</ui-button>
 		<div class="separator"></div>
-		<ui-button @click="store.zoomOut" class="minus" color="gray" block variant="flat" size="small" shape="square">-</ui-button>
+		<ui-button @click="store.zoomOut" class="minus" color="gray" block variant="flat" size="s" shape="square">-</ui-button>
 	</div>
 </template>
 
@@ -12,12 +12,12 @@ const props = defineProps(['store']);
 </script>
 
 <style lang="less">
-@com-width: var(--ui-input-height-default);
-@com-border-radius-default: var(--ui-border-radius-default);
+@com-width: var(--ui-input-height-m);
+@com-border-radius-m: var(--ui-border-radius-m);
 
 // Padding
 @com-map-padding: var(--ui-map-padding);
-@com-space-mini: var(--ui-space-mini);
+@com-space-xs: var(--ui-space-xs);
 
 // Colors
 @com-color-surface: var(--ui-color-surface);
@@ -27,7 +27,7 @@ const props = defineProps(['store']);
 @com-bs-1: var(--ui-bs-1);
 
 // Font-size
-@com-text-large: var(--ui-text-large);
+@com-text-2xl: var(--ui-text-2xl);
 
 .component-ui-map-zoom {
 	position: absolute;
@@ -39,29 +39,29 @@ const props = defineProps(['store']);
 
 	background: @com-color-surface;
 	box-shadow: @com-bs-1;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 
 	.prepend {
 		position: absolute;
 		bottom: 100%;
 		left: 0;
 		right: 0;
-		margin-bottom: @com-space-mini;
+		margin-bottom: @com-space-xs;
 	}
 
 	.component-ui-button {
 		height: @com-width;
-		font-size: @com-text-large;
+		font-size: @com-text-2xl;
 	}
 
 	.component-ui-button.plus .button-bg {
-		border-top-left-radius: @com-border-radius-default;
-		border-top-right-radius: @com-border-radius-default;
+		border-top-left-radius: @com-border-radius-m;
+		border-top-right-radius: @com-border-radius-m;
 	}
 
 	.component-ui-button.minus .button-bg {
-		border-bottom-left-radius: @com-border-radius-default;
-		border-bottom-right-radius: @com-border-radius-default;
+		border-bottom-left-radius: @com-border-radius-m;
+		border-bottom-right-radius: @com-border-radius-m;
 	}
 
 	.separator {

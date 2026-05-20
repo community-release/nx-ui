@@ -11,7 +11,7 @@ const runtimeConfig = useRuntimeConfig()
 
 <style lang="less">
 footer {
-	padding: var(--space-medium);
+	padding: var(--space-l);
 	text-align: center;
 }
 </style>

@@ -15,8 +15,7 @@ import { useMapStore } from './store';
 import comProps from '#build/ui.map.mjs';
 
 // // Data
-const nuxtApp = useNuxtApp();
-const store = useMapStore(nuxtApp.$pinia);
+const store = useMapStore();
 const emit = defineEmits(['initialized', 'mapClick']);
 
 const mapEngines = {
@@ -122,11 +121,11 @@ watch(() => props.disabledMarkers, (v) => {
 <style lang="less">
 @com-content-width: var(--ui-content-width);
 
-@com-space-default: var(--ui-space-default);
-@com-space-mini: var(--ui-space-mini);
+@com-space-m: var(--ui-space-m);
+@com-space-xs: var(--ui-space-xs);
 
 .component-ui-map {
-	--ui-map-padding: @com-space-default;
+	--ui-map-padding: @com-space-m;
 
 	position: relative;
 	height: v-bind(height);
@@ -142,7 +141,7 @@ watch(() => props.disabledMarkers, (v) => {
 
 		position: relative;
 		margin: 0 auto;
-		padding: 0 @com-space-default;
+		padding: 0 @com-space-m;
 		width: 100%;
 		max-width: @com-content-width;
 		min-width: 320px;
@@ -157,7 +156,7 @@ watch(() => props.disabledMarkers, (v) => {
 
 @media only screen and (max-width: 620px) {
 	.component-ui-map {
-		--ui-map-padding: @com-space-mini;
+		--ui-map-padding: @com-space-xs;
 	}
 }
 </style>

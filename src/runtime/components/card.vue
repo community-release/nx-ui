@@ -79,54 +79,54 @@ const iconTitleIs = props.iconLink ? 'NuxtLink' : 'b';
 
 <style lang="less">
 // Variables
-@com-border-radius-default: var(--ui-border-radius-big);
+@com-border-radius-m: var(--ui-border-radius-l);
 
 // Text size
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
 
 // Font family
 @com-font-header: var(--ui-font-header);
 
 // Font size
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
 
 // Color
 @com-color-header-text: var(--ui-color-header-text);
-@com-color-gray-text: var(--ui-color-gray-text);
+@com-color-muted-text: var(--ui-color-muted-text);
 @com-color-surface: var(--ui-color-surface);
 @com-color-text: var(--ui-color-text);
 @com-color-primary: var(--ui-color-primary);
 
 // Padding
-@com-space-big: var(--ui-space-big);
-@com-space-medium: var(--ui-space-medium);
-@com-space-default: var(--ui-space-default);
-@com-space-small: var(--ui-space-small);
-@com-space-micro: var(--ui-space-micro);
-@com-space-mini: var(--ui-space-mini);
+@com-space-xl: var(--ui-space-xl);
+@com-space-l: var(--ui-space-l);
+@com-space-m: var(--ui-space-m);
+@com-space-s: var(--ui-space-s);
+@com-space-2xs: var(--ui-space-2xs);
+@com-space-xs: var(--ui-space-xs);
 
 .component-ui-card {
-	--ui-card-padding: @com-space-default;
+	--ui-card-padding: @com-space-m;
 
 	position: relative;
 
 	color: @com-color-header-text;
 	background: @com-color-surface;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 
 	.ui-card-image {
-		padding: @com-space-big @com-space-big @com-space-mini @com-space-big;
+		padding: @com-space-xl @com-space-xl @com-space-xs @com-space-xl;
 		overflow: hidden;
-		border-top-left-radius: @com-border-radius-default;
-		border-top-right-radius: @com-border-radius-default;
+		border-top-left-radius: @com-border-radius-m;
+		border-top-right-radius: @com-border-radius-m;
 	}
 
 	.ui-card-icon {
 		display: grid;
 		grid-template-columns: 50px auto;
-		gap: @com-space-default;
+		gap: @com-space-m;
 		align-items: center;
 		padding: var(--ui-card-padding) 0 0 30px;
 		height: 80px;
@@ -140,7 +140,7 @@ const iconTitleIs = props.iconLink ? 'NuxtLink' : 'b';
 		}
 
 		a, b {
-			padding-right: @com-space-mini;
+			padding-right: @com-space-xs;
 			font-weight: 600;
 			color: @com-color-header-text;
 		}
@@ -148,9 +148,9 @@ const iconTitleIs = props.iconLink ? 'NuxtLink' : 'b';
 
 	.ui-card-title {
 		display: block;
-		padding: var(--ui-card-padding) var(--ui-card-padding) @com-space-micro var(--ui-card-padding);
+		padding: var(--ui-card-padding) var(--ui-card-padding) @com-space-2xs var(--ui-card-padding);
 		font-family: @com-font-header;
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 		color: @com-color-header-text;
 
 		strong {
@@ -172,15 +172,15 @@ const iconTitleIs = props.iconLink ? 'NuxtLink' : 'b';
 		}
 
 		.ui-card-subtitle {
-			font-size: @com-text-small;
-			color: @com-color-gray-text;
+			font-size: @com-text-s;
+			color: @com-color-muted-text;
 		}
 	}
 
 	.ui-card-content {
 		padding: 0 var(--ui-card-padding) var(--ui-card-padding) var(--ui-card-padding);
 		line-height: 1.5;
-		font-size: @com-text-small;
+		font-size: @com-text-s;
 		color: @com-color-text;
 	}
 }

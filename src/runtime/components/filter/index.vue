@@ -89,10 +89,10 @@ function genUpdatedValue(id) {
 
 <style lang="less">
 .component-ui-filter {
-	@com-space-default: var(--ui-space-default);
-	@com-space-small: var(--ui-space-small);
+	@com-space-m: var(--ui-space-m);
+	@com-space-s: var(--ui-space-s);
 
-	@com-input-height-small: var(--ui-input-height-small);
+	@com-input-height-s: var(--ui-input-height-s);
 
 	--active-color: v-bind(activeColor);
 	--active-bg: v-bind(activeBg);
@@ -101,8 +101,8 @@ function genUpdatedValue(id) {
 	overflow-y: hidden;
 	white-space: nowrap;
 
-	margin-inline: calc(@com-space-default * -1);
-	padding: @com-space-default;
+	margin-inline: calc(@com-space-m * -1);
+	padding: @com-space-m;
 
 	span {
 		user-select: none;
@@ -110,11 +110,11 @@ function genUpdatedValue(id) {
 		display: inline-flex;
 
 		vertical-align: top;
-		margin-right: @com-space-small;
-		padding: 0 @com-space-small;
+		margin-right: @com-space-s;
+		padding: 0 @com-space-s;
 
-		height: @com-input-height-small;
-		line-height: @com-input-height-small;
+		height: @com-input-height-s;
+		line-height: @com-input-height-s;
 
 		border-radius: 30px;
 		cursor: pointer;

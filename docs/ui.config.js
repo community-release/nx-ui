@@ -4,24 +4,25 @@ export default {
 		'content-width': '1400px',
 
 		// Border radius
-		'border-radius-big': '18px',
-		'border-radius-default': '9px',
-		'border-radius-small': '5px',
+		'border-radius-l': '18px',
+		'border-radius-m': '9px',
+		'border-radius-s': '5px',
 		
 		// Inputs height
-		'input-height-large': 'var(--input-height-large)',
-		'input-height-big': 'var(--input-height-big)',
-		'input-height-medium': 'var(--input-height-medium)',
-		'input-height-default': 'var(--input-height-default)',
-		'input-height-small': 'var(--input-height-small)',
-		'input-height-mini': 'var(--input-height-mini)',
+		'input-height-2xl': 'var(--input-height-2xl)',
+		'input-height-xl': 'var(--input-height-xl)',
+		'input-height-l': 'var(--input-height-l)',
+		'input-height-m': 'var(--input-height-m)',
+		'input-height-s': 'var(--input-height-s)',
+		'input-height-xs': 'var(--input-height-xs)',
 
 		// Line height
 		'text-line-height': 1.4,
 
 		// Colors
-		'color-text': 'var(--color-text)',
 		'color-header-text': 'var(--color-header-text)',
+		'color-text': 'var(--color-text)',
+		'color-muted-text': 'var(--color-muted-text)',
 
 		'color-primary': 'var(--color-primary)',
 		'color-primary-text': 'var(--color-primary-text)',
@@ -55,12 +56,12 @@ export default {
 		'color-overlay': 'var(--color-overlay)',
 
 		// Text
-		'text-large': '32px',
-		'text-big': '24px',
-		'text-medium': '18px',
-		'text-default': '16px',
-		'text-small': '14px',
-		'text-mini': '12px',
+		'text-2xl': '32px',
+		'text-xl': '24px',
+		'text-l': '18px',
+		'text-m': '16px',
+		'text-s': '14px',
+		'text-xs': '12px',
 
 		// Font
 		'font-text': 'var(--font-text)',
@@ -70,14 +71,14 @@ export default {
 		'font-mono': 'var(--font-mono)',
 
 		// Space
-		'space-extra-large': '100px',
-		'space-large': '50px',
-		'space-big': '32px',
-		'space-medium': '25px',
-		'space-default': '20px',
-		'space-small': '15px',
-		'space-mini': '10px',
-		'space-micro': '5px',
+		'space-3xl': '100px',
+		'space-2xl': '50px',
+		'space-xl': '32px',
+		'space-l': '25px',
+		'space-m': '20px',
+		'space-s': '15px',
+		'space-xs': '10px',
+		'space-2xs': '5px',
 
 		// Box shadow
 		'bs-1': 'var(--bs-1)',

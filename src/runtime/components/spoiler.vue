@@ -53,18 +53,18 @@
 
 <style lang="less">
 .component-ui-spoiler {
-	@com-space-micro: var(--ui-space-micro);
+	@com-space-2xs: var(--ui-space-2xs);
 	@com-ani-ease: var(--ui-ani-ease);
 	@com-ani-time: var(--ui-ani-time);
 	@com-color-primary-text: var(--ui-color-primary-text);
 	@com-font-weight-medium: var(--ui-font-weight-medium);
 
 	> .title {
-		margin-left: calc(@com-space-micro * -1);
+		margin-left: calc(@com-space-2xs * -1);
 	}
 
 	> .title {
-		padding-inline: @com-space-micro;
+		padding-inline: @com-space-2xs;
 
 		.button-content .slot-default {
 			padding-inline: 0;

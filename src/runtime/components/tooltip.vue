@@ -63,15 +63,15 @@
 @com-ani-time: var(--ui-ani-time);
 @com-ani-ease: var(--ui-ani-ease);
 
-@com-space-small: var(--ui-space-small);
-@com-space-mini: var(--ui-space-mini);
+@com-space-s: var(--ui-space-s);
+@com-space-xs: var(--ui-space-xs);
 
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
 
 @com-color-border-bolder: var(--ui-color-border-bolder);
 
-@com-border-radius-default: var(--ui-border-radius-default);
+@com-border-radius-m: var(--ui-border-radius-m);
 @com-bs-1: var(--ui-bs-1);
 
 .component-ui-tooltip {
@@ -83,13 +83,13 @@
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
-	padding: @com-space-mini;
+	padding: @com-space-xs;
 	min-width: 200px;
 	line-height: 1.3;
-	font-size: @com-text-default;
+	font-size: @com-text-m;
 	color: var(--ui-tooltip-text-color);
 	background: var(--ui-tooltip-bg);
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 	border: 1px solid @com-color-border-bolder;
 	box-shadow: @com-bs-1;
 
@@ -103,7 +103,7 @@
 	}
 
 	&.tag-location-top {
-		transform: translate3d(-50%, calc(@com-space-small * -1), 0);
+		transform: translate3d(-50%, calc(@com-space-s * -1), 0);
 		bottom: 100%;
 		left: 50%;
 
@@ -117,7 +117,7 @@
 	}
 
 	&.tag-location-left {
-		transform: translate3d(calc(@com-space-small * -1), -50%, 0);
+		transform: translate3d(calc(@com-space-s * -1), -50%, 0);
 		top: 50%;
 		right: 100%;
 

@@ -95,15 +95,15 @@
 	@com-color-error: var(--ui-color-error);
 	@com-color-text: var(--ui-color-text);
 	@com-color-header-text: var(--ui-color-header-text);
-	@com-color-gray-text: var(--ui-color-gray-text);
+	@com-color-muted-text: var(--ui-color-muted-text);
 	
-	@com-input-height: var(--ui-input-height-default);
+	@com-input-height: var(--ui-input-height-m);
 
-	@com-text-default: var(--ui-text-default);
-	@com-text-medium: var(--ui-text-medium);
-	@com-text-small: var(--ui-text-small);
+	@com-text-m: var(--ui-text-m);
+	@com-text-l: var(--ui-text-l);
+	@com-text-s: var(--ui-text-s);
 
-	@com-space-micro: var(--ui-space-micro);
+	@com-space-2xs: var(--ui-space-2xs);
 
 	@com-ani-time: var(--ui-ani-time);
 
@@ -121,7 +121,7 @@
 		
 		height: @com-input-height;
 		line-height: @com-input-height;
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 		font-weight: 500;
 		color: @com-color-text;
 
@@ -153,7 +153,7 @@
 			font-size: 10px;
 
 			border-radius: 50%;
-			border: 1px solid @com-color-gray-text;
+			border: 1px solid @com-color-muted-text;
 
 			color: @com-color-text-on-primar;
 

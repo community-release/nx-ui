@@ -153,38 +153,38 @@
 @com-ani-ease: var(--ui-ani-ease);
 
 // Input height
-@com-input-height-large: var(--ui-input-height-large);
-@com-input-height-big: var(--ui-input-height-big);
-@com-input-height-medium: var(--ui-input-height-medium);
-@com-input-height-default: var(--ui-input-height-default);
-@com-input-height-small: var(--ui-input-height-small);
-@com-input-height-mini: var(--ui-input-height-mini);
+@com-input-height-2xl: var(--ui-input-height-2xl);
+@com-input-height-xl: var(--ui-input-height-xl);
+@com-input-height-l: var(--ui-input-height-l);
+@com-input-height-m: var(--ui-input-height-m);
+@com-input-height-s: var(--ui-input-height-s);
+@com-input-height-xs: var(--ui-input-height-xs);
 
 // Border radius
-@com-border-radius-default: var(--ui-border-radius-default);
-@com-border-radius-small: var(--ui-border-radius-small);
-@com-border-radius-round: var(--ui-input-height-large);
+@com-border-radius-m: var(--ui-border-radius-m);
+@com-border-radius-s: var(--ui-border-radius-s);
+@com-border-radius-round: var(--ui-input-height-2xl);
 
 // Color
 @com-color-border-bolder: var(--ui-color-border-bolder);
 @com-color-bg: var(--ui-color-bg);
 @com-color-surface: @ui-input-background-color;
 @com-color-header-text: var(--ui-color-header-text);
-@com-color-gray-text: var(--ui-color-gray-text);
+@com-color-muted-text: var(--ui-color-muted-text);
 @com-color-primary: var(--ui-color-primary);
 @com-color-error: var(--ui-color-error);
 
 // Space
-@com-space-small: var(--ui-space-small);
-@com-space-mini: var(--ui-space-mini;);
+@com-space-s: var(--ui-space-s);
+@com-space-xs: var(--ui-space-xs;);
 
 // Font
 @com-font-text: var(--ui-font-text);
 
 // Text size
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
-@com-text-mini: var(--ui-text-mini);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
+@com-text-xs: var(--ui-text-xs);
 
 // Ally
 @com-outline: var(--ui-outline);
@@ -192,9 +192,9 @@
 .component-ui-input {
 	overflow: hidden;
 	position: relative;
-	height: @com-input-height-default;
+	height: @com-input-height-m;
 	border: 1px solid @com-color-border-bolder;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 	background: @com-color-surface;
 	cursor: text;
 
@@ -223,12 +223,12 @@
 		box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
 		
 		display: block;
-		padding: 0 @com-space-mini;
+		padding: 0 @com-space-xs;
 		width: 100%;
 		height: 100%;
 		
 		font-family: @com-font-text;
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 		color: @com-color-header-text;
 
 		background: transparent;
@@ -240,27 +240,31 @@
 		border-radius: @com-border-radius-round;
 	}
 	&.tag-shape-round-square {
-		border-radius: @com-border-radius-small;
+		border-radius: @com-border-radius-s;
 	}
 	&.tag-shape-square {
 		border-radius: 0;
 	}
 
 	// Size
-	&.tag-size-large { height: @com-input-height-large; }
-	&.tag-size-big { height: @com-input-height-big; }
-	&.tag-size-medium { height: @com-input-height-medium; }
-	&.tag-size-small {
-		//padding: 0 @com-space-small;
-		height: @com-input-height-small;
-		font-size: @com-text-small;
+	&.tag-size-2xl { height: @com-input-height-2xl; }
+	&.tag-size-xl { height: @com-input-height-xl; }
+	&.tag-size-l { height: @com-input-height-l; }
+	&.tag-size-m {
+		//padding: 0 @com-space-s;
+		height: @com-input-height-m;
+		font-size: @com-text-s;
 	}
 
-	&.tag-size-mini {
-		//padding: 0 10px;
-		height: @com-input-height-mini;
+	&.tag-size-s {
+		height: @com-input-height-s;
+		font-size: @com-text-s;
+	}
 
-		font-size: @com-text-mini;
+	&.tag-size-xs {
+		//padding: 0 10px;
+		height: @com-input-height-xs;
+		font-size: @com-text-xs;
 
 		.loading-indicator {
 			transform: translate3d(-50%, -50%, 0) scale(0.6);

@@ -51,17 +51,17 @@
 @com-text-line-height: var(--ui-text-line-height);
 
 // Padding
-@com-space-default: var(--ui-space-default);
-@com-space-small: var(--ui-space-small);
-@com-space-mini: var(--ui-space-mini);
+@com-space-m: var(--ui-space-m);
+@com-space-s: var(--ui-space-s);
+@com-space-xs: var(--ui-space-xs);
 
 // Colors
 @com-color-border: var(--ui-color-border);
 @com-color-header-text: var(--ui-color-header-text);
 
 // Text
-@com-text-medium: var(--ui-text-medium);
-@com-text-default: var(--ui-text-default);
+@com-text-l: var(--ui-text-l);
+@com-text-m: var(--ui-text-m);
 
 // Font
 @com-font-header: var(--ui-font-header);
@@ -70,18 +70,18 @@
 	--ui-accordion-icon-size: 0;
 	--ui-accordion-btn-padding: @com-btn-padding;
 
-	padding-bottom: @com-space-small;
-	margin-top: @com-space-small;
+	padding-bottom: @com-space-s;
+	margin-top: @com-space-s;
 	border-bottom: 1px solid @com-color-border;
-	font-size: @com-text-medium;
+	font-size: @com-text-l;
 
 	.header {
 		// box-sizing: border-box;
 		display: block;
 		width: 100%;
 		position: relative;
-		padding: @com-space-small var(--ui-accordion-btn-padding) @com-space-small calc(var(--ui-accordion-icon-size) + @com-space-default);
-		margin-bottom: @com-space-mini;
+		padding: @com-space-s var(--ui-accordion-btn-padding) @com-space-s calc(var(--ui-accordion-icon-size) + @com-space-m);
+		margin-bottom: @com-space-xs;
 		
 		font: inherit;
 		text-align: left;
@@ -149,7 +149,7 @@
 		display: grid;
 		grid-template-rows: 0fr;
 		line-height: @com-text-line-height;
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 
 		div {
 			overflow: hidden;
@@ -190,7 +190,7 @@
 		}
 		--ui-accordion-btn-padding: @com-btn-padding-small;
 
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 
 		.icon {
 			width: 26px;

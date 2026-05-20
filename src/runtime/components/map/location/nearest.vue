@@ -115,15 +115,15 @@
 <style lang="less">
 @import url(../../styles/mixins.less);
 
-@com-height: var(--ui-input-height-default);
+@com-height: var(--ui-input-height-m);
 
-@com-border-radius-default: var(--ui-border-radius-default);
-@com-space-default: var(--ui-space-default);
-@com-space-mini: var(--ui-space-mini);
-@com-space-micro: var(--ui-space-micro);
+@com-border-radius-m: var(--ui-border-radius-m);
+@com-space-m: var(--ui-space-m);
+@com-space-xs: var(--ui-space-xs);
+@com-space-2xs: var(--ui-space-2xs);
 
-@com-text-medium: var(--ui-text-medium);
-@com-text-small: var(--ui-text-small);
+@com-text-l: var(--ui-text-l);
+@com-text-s: var(--ui-text-s);
 
 @com-color-bg: var(--ui-color-bg);
 @com-color-primary: var(--ui-color-primary);
@@ -134,7 +134,7 @@
 .component-ui-map-location-nearest {
 	height: @com-height;
 	background: @com-color-bg;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 
 	position: relative;
 	display: flex;
@@ -144,7 +144,7 @@
 		position: relative;
 		flex: 0 0 38px;
 		line-height: @com-height;
-		font-size: @com-text-medium;
+		font-size: @com-text-l;
 		color: @com-color-primary;
 
 		.component-ui-loading {
@@ -168,10 +168,10 @@
 
 	.label {
 		display: flex;
-		padding-right: @com-space-micro;
+		padding-right: @com-space-2xs;
 		align-items: center;
 		line-height: 1.1;
-		font-size: @com-text-small;
+		font-size: @com-text-s;
 
 		span {
 			.mix-multiline-text-overflow(2);

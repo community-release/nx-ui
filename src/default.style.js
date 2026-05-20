@@ -2,17 +2,17 @@ export default {
 	'content-width': '1400px', // website content width
 
 	// Border radius
-	'border-radius-big': '18px',
-	'border-radius-default': '8px',
-	'border-radius-small': '3px',
+	'border-radius-l': '18px',
+	'border-radius-m': '8px',
+	'border-radius-s': '3px',
 	
 	// Inputs height
-	'input-height-large': '60px',
-	'input-height-big': '52px',
-	'input-height-medium': '48px',
-	'input-height-default': '42px',
-	'input-height-small': '32px',
-	'input-height-mini': '24px',
+	'input-height-2xl': '60px',
+	'input-height-xl': '52px',
+	'input-height-l': '48px',
+	'input-height-m': '42px',
+	'input-height-s': '32px',
+	'input-height-xs': '24px',
 
 	// Line height
 	'text-line-height': 1.4,
@@ -20,6 +20,7 @@ export default {
 	// Colors
 	'color-text': 'rgba(0,0,0,0.8)',
 	'color-header-text': 'rgba(0,0,0,1)',
+	'color-muted-text': 'rgba(56,60,68, 1)',
 
 	'color-primary': 'blue',
 	'color-primary-text': 'blue',
@@ -30,7 +31,7 @@ export default {
 	'color-text-on-secondary': '#fff',
 
 	'color-gray': 'rgba(56,60,68, 0.8)',
-	'color-gray-text': 'rgba(56,60,68, 1)',
+	'color-gray-text': 'var(--color-muted-text)',
 	'color-text-on-gray': '#fff',
 
 	'color-red': 'red',
@@ -57,12 +58,12 @@ export default {
 	'color-border-bolder': '#e0e0e0',
 
 	// Text
-	'text-large': '32px',
-	'text-big': '24px',
-	'text-medium': '18px',
-	'text-default': '16px',
-	'text-small': '14px',
-	'text-mini': '12px',
+	'text-2xl': '32px',
+	'text-xl': '24px',
+	'text-l': '18px',
+	'text-m': '16px',
+	'text-s': '14px',
+	'text-xs': '12px',
 
 	// Font
 	'font-text': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";',
@@ -76,14 +77,14 @@ export default {
 	'font-weight-medium': '600',
 
 	// Padding
-	'space-extra-large': '100px',
-	'space-large': '50px',
-	'space-big': '32px',
-	'space-medium': '25px',
-	'space-default': '20px',
-	'space-small': '15px',
-	'space-mini': '10px',
-	'space-micro': '5px',
+	'space-3xl': '100px',
+	'space-2xl': '50px',
+	'space-xl': '32px',
+	'space-l': '25px',
+	'space-m': '20px',
+	'space-s': '15px',
+	'space-xs': '10px',
+	'space-2xs': '5px',
 
 	// Box shadow
 	'bs-1': '0 3px 8px rgba(13,72,177, 0.03), 0 6px 16px rgba(13,72,177, 0.03)',

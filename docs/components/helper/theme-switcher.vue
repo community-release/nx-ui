@@ -12,8 +12,8 @@
 <style lang="less">
 .component-theme-switcher {
 	span {
-		opacity: 0.5;
-		margin-right: @space-default;
+		opacity: 0.7;
+		margin-right: @space-m;
 		text-transform: uppercase;
 		color: var(--color-primary-text);
 		cursor: pointer;

@@ -21,7 +21,7 @@ describe('button component', async () => {
 		},
 		props: {
 			href: 'some/href/123',
-			size: 'big',
+			size: 'xl',
 			variant: 'outline',
 			shape: 'circle',
 			block: true,
@@ -44,7 +44,7 @@ describe('button component', async () => {
 	});
 
 	test('size', async () => {
-		expect(html, `size is not set`).toContain('tag-size-big');
+		expect(html, `size is not set`).toContain('tag-size-xl');
 	});
 
 	test('variant', async () => {

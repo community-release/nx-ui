@@ -13,6 +13,7 @@
 				:required="required"
 				:disabled="disabled"
 				:placeholder="placeholder"
+				:size="size"
 				@input="handleInputTyping"
 				@focus="handleInputFocus(true)"
 				@blur="handleInputFocus(false)"
@@ -27,6 +28,7 @@
 						variant="flat" 
 						shape="square"
 						:color="color" 
+						:size="size"
 
 						@click.stop="toggleList(true)"
 						@keydown.down.prevent="selectFirstListItem"
@@ -43,7 +45,8 @@
 					<ui-button 
 						variant="flat" 
 						shape="square"
-						:color="color" 
+						:color="color"
+						:size="size" 
 
 						@click.stop="emit('update:modelValue', '')"
 
@@ -54,7 +57,7 @@
 					</ui-button>
 				</template>
 			</ui-input>
-			<ui-button shape="default" :disabled="disabled" :color="color">{{ dictionary['submit'] }}</ui-button>
+			<ui-button shape="default" :disabled="disabled" :color="color" :size="size">{{ dictionary['submit'] }}</ui-button>
 		</div>
 
 		<Teleport to="body">
@@ -134,7 +137,7 @@
 		},
 		size: {
 			type: String,
-			default: 'medium'
+			default: 'm'
 		},
 		dictionary: {
 			type: Object,
@@ -463,17 +466,17 @@
 <style lang="less">
 @import '../styles/components.less';
 
-@com-text-small: var(--ui-text-small);
+@com-text-s: var(--ui-text-s);
 
-@com-input-height-default: var(--ui-input-height-default);
+@com-input-height-m: var(--ui-input-height-m);
 
 @com-color-primary:  var(--ui-color-primary);
 @com-color-text-on-primary: var(--ui-color-text-on-primary);
 @com-color-surface: @ui-typeahead-input-list-bg;
 @com-color-border: var(--ui-color-border);
 
-@com-space-mini: var(--ui-space-mini);
-@com-space-micro: var(--ui-space-micro);
+@com-space-xs: var(--ui-space-xs);
+@com-space-2xs: var(--ui-space-2xs);
 
 @com-border-radius: @ui-typeahead-input-list-border-radius;
 
@@ -491,19 +494,19 @@
 
 .component-ui-typeahead-input-grid {
 	display: flex;
-	gap: @com-space-micro;
+	gap: @com-space-2xs;
 
 	> .component-ui-input { flex: 1; }
 	> .component-ui-button {
 		flex: 0 0 auto;
-		padding: 0 @com-space-micro;
+		padding: 0 @com-space-2xs;
 	}
 
 	.component-ui-input .component-ui-button {
 		padding: 0;
-		width: @com-input-height-default;
+		width: @com-input-height-m;
 		height: 100%;
-		font-size: @com-text-small;
+		font-size: @com-text-s;
 
 		.slot-default {
 			position: relative;
@@ -538,7 +541,7 @@
 	}
 
 	li {
-		padding: @com-space-micro @com-space-mini;
+		padding: @com-space-2xs @com-space-xs;
 		cursor: pointer;
 
 		&:hover,
@@ -550,11 +553,11 @@
 
 	.component-ui-typeahead-input-list--header {
 		text-align: center;
-		padding: @com-space-mini;
+		padding: @com-space-xs;
 	}
 
 	.component-ui-typeahead-input-list--footer {
-		padding: @com-space-mini;
+		padding: @com-space-xs;
 	}
 }
 </style>

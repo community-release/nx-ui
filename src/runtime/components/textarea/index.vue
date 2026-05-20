@@ -106,28 +106,28 @@
 @com-ani-ease: var(--ui-ani-ease);
 
 // Border radius
-@com-border-radius-default: var(--ui-border-radius-default);
-@com-border-radius-default-big: var(--ui-border-radius-big);
+@com-border-radius-m: var(--ui-border-radius-m);
+@com-border-radius-l: var(--ui-border-radius-l);
 
 // Colors
 @com-color-primary: var(--ui-color-primary);
 @com-color-bg: var(--ui-color-bg);
 @com-color-border-bolder: var(--ui-color-border-bolder);
 @com-color-header-text: var(--ui-color-header-text);
-@com-color-gray-text: var(--ui-color-gray-text);
+@com-color-muted-text: var(--ui-color-muted-text);
 @com-color-error: var(--ui-color-error);
 
 // Padding
-@com-space-default: var(--ui-space-default);
-@com-space-mini: var(--ui-space-mini);
-@com-space-small: var(--ui-space-small);
+@com-space-m: var(--ui-space-m);
+@com-space-xs: var(--ui-space-xs);
+@com-space-s: var(--ui-space-s);
 
 // Font
 @com-font-text: var(--ui-font-text);
 
 // Text size
-@com-text-default: var(--ui-text-default);
-@com-text-small: var(--ui-text-small);
+@com-text-m: var(--ui-text-m);
+@com-text-s: var(--ui-text-s);
 
 // Ally
 @com-outline: var(--ui-outline);
@@ -140,16 +140,16 @@
 		box-sizing: border-box;
 		
 		display: block;
-		padding: @com-space-mini;
+		padding: @com-space-xs;
 		width: 100%;
 		height: 100px;
 		
 		font-family: @com-font-text;
-		font-size: @com-text-default;
+		font-size: @com-text-m;
 		color: @com-color-header-text;
 
 		border: 1px solid @com-color-border-bolder;
-		border-radius: @com-border-radius-default;
+		border-radius: @com-border-radius-m;
 		background:  @com-color-bg;
 	}
 
@@ -160,7 +160,7 @@
 
 	// Shapes
 	&.tag-shape-round-square textarea {
-		border-radius: @com-border-radius-default-big;
+		border-radius: @com-border-radius-l;
 	}
 	&.tag-shape-square textarea {
 		border-radius: 0;

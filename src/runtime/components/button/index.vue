@@ -176,12 +176,12 @@
 	--button-background: v-bind(styles.background);
 
 	// Input height
-	@com-input-height-large: var(--ui-input-height-large);
-	@com-input-height-big: var(--ui-input-height-big);
-	@com-input-height-medium: var(--ui-input-height-medium);
-	@com-input-height-default: var(--ui-input-height-default);
-	@com-input-height-small: var(--ui-input-height-small);
-	@com-input-height-mini: var(--ui-input-height-mini);
+	@com-input-height-2xl: var(--ui-input-height-2xl);
+	@com-input-height-xl: var(--ui-input-height-xl);
+	@com-input-height-l: var(--ui-input-height-l);
+	@com-input-height-m: var(--ui-input-height-m);
+	@com-input-height-s: var(--ui-input-height-s);
+	@com-input-height-xs: var(--ui-input-height-xs);
 
 	// Animation
 	@com-ani-time: var(--ui-ani-time);
@@ -195,19 +195,19 @@
 	@com-color-border-bolder: var(--ui-color-border-bolder);
 
 	// Border radius
-	@com-border-radius-default: var(--ui-border-radius-default);
-	@com-border-radius-small: var(--ui-border-radius-small);
-	@com-border-radius-round: var(--ui-input-height-large);
+	@com-border-radius-m: var(--ui-border-radius-m);
+	@com-border-radius-s: var(--ui-border-radius-s);
+	@com-border-radius-round: var(--ui-input-height-2xl);
 
 	// Padding
-	@com-space-default: var(--ui-space-default);
-	@com-space-small: var(--ui-space-small);
-	@com-space-mini: var(--ui-space-mini);
+	@com-space-m: var(--ui-space-m);
+	@com-space-s: var(--ui-space-s);
+	@com-space-xs: var(--ui-space-xs);
 
 	// Text
-	@com-text-default: var(--ui-text-default);
-	@com-text-small: var(--ui-text-small);
-	@com-text-mini: var(--ui-text-mini);
+	@com-text-m: var(--ui-text-m);
+	@com-text-s: var(--ui-text-s);
+	@com-text-xs: var(--ui-text-xs);
 
 	// Font
 	@com-font-header: var(--ui-font-header);
@@ -222,17 +222,17 @@
 	display: inline-block;
 	vertical-align: top;
 
-	padding: 0 @com-space-default;
-	height: @com-input-height-default;
+	padding: 0 @com-space-m;
+	height: @com-input-height-m;
 	line-height: 1.1;
 
 	text-align: center;
-	font-size: @com-text-default;
+	font-size: @com-text-m;
 	font-weight: normal;
 
 	cursor: pointer;
 	border: 1px solid transparent;
-	border-radius: @com-border-radius-default;
+	border-radius: @com-border-radius-m;
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -264,7 +264,7 @@
 		font-family: @com-font-header;
 
 		.slot-default {
-			padding: 0 @com-space-mini;
+			padding: 0 @com-space-xs;
 			line-height: 1;
 		}
 
@@ -310,20 +310,20 @@
 	// Shapes
 	&.tag-shape-circle {
 		padding: 0 !important;
-		width: @com-input-height-default;
+		width: @com-input-height-m;
 		border-radius: 50%;
 
-		&.tag-size-large { width: @com-input-height-large; }
-		&.tag-size-big { width: @com-input-height-big; }
-		&.tag-size-medium { width: @com-input-height-big; }
-		&.tag-size-small { width: @com-input-height-small; }
-		&.tag-size-mini { width: @com-input-height-mini; }
+		&.tag-size-2xl { width: @com-input-height-2xl; }
+		&.tag-size-xl { width: @com-input-height-xl; }
+		&.tag-size-l { width: @com-input-height-xl; }
+		&.tag-size-s { width: @com-input-height-s; }
+		&.tag-size-xs { width: @com-input-height-xs; }
 	}
 	&.tag-shape-round {
 		border-radius: @com-border-radius-round;
 	}
 	&.tag-shape-round-square {
-		border-radius: @com-border-radius-small;
+		border-radius: @com-border-radius-s;
 	}
 	&.tag-shape-square {
 		border-radius: 0;
@@ -332,39 +332,39 @@
 	// Block
 	&.tag-block {
 		display: block;
-		padding: 0 @com-space-mini;
+		padding: 0 @com-space-xs;
 		width: 100%;
 	}
 
 	// Size
-	&.tag-size-large {
-		height: @com-input-height-large;
+	&.tag-size-2xl {
+		height: @com-input-height-2xl;
 	}
 
-	&.tag-size-big {
-		height: @com-input-height-big;
+	&.tag-size-xl {
+		height: @com-input-height-xl;
 	}
 
-	&.tag-size-medium {
-		height: @com-input-height-medium;
+	&.tag-size-l {
+		height: @com-input-height-l;
 	}
 
-	&.tag-size-small {
-		padding: 0 @com-space-small;
-		height: @com-input-height-small;
+	&.tag-size-s {
+		padding: 0 @com-space-s;
+		height: @com-input-height-s;
 
-		font-size: @com-text-small;
+		font-size: @com-text-s;
 
 		.loading-indicator {
 			transform: translate3d(-50%, -50%, 0) scale(0.8);
 		}
 	}
 
-	&.tag-size-mini {
+	&.tag-size-xs {
 		padding: 0 10px;
-		height: @com-input-height-mini;
+		height: @com-input-height-xs;
 
-		font-size: @com-text-mini;
+		font-size: @com-text-xs;
 
 		.loading-indicator {
 			transform: translate3d(-50%, -50%, 0) scale(0.6);
