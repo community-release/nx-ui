@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.75
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.74...v0.0.75)
+
+### 💅 Refactors
+
+- Updated variables names ([b14923f](https://github.com/community-release/nx-ui/commit/b14923f))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.74
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.73...v0.0.74)
