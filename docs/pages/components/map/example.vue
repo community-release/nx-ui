@@ -62,9 +62,9 @@ const markers = [
 			24.12778506,
 			56.96157621
 		],
-		"marker": "/map-marker-a.png",
-		"markerActive": "/map-marker-a-active.png",
-		"markerDisabled": "/map-marker-a-disabled.png",
+		// "marker": "/map-marker-a.png",
+		// "markerActive": "/map-marker-a-active.png",
+		// "markerDisabled": "/map-marker-a-disabled.png",
 	},
 	{
 		"id": "cfla5iiz9",
@@ -75,9 +75,9 @@ const markers = [
 			24.1081432,
 			57.0314181
 		],
-		"marker": "/map-marker-b.png",
-		"markerActive": "/map-marker-b-active.png",
-		"markerDisabled": "/map-marker-b-disabled.png",
+		// "marker": "/map-marker-b.png",
+		// "markerActive": "/map-marker-b-active.png",
+		// "markerDisabled": "/map-marker-b-disabled.png",
 	},
 	{
 		"id": "l7p95h4b8",
@@ -88,9 +88,9 @@ const markers = [
 			24.071860755676,
 			56.937342828933
 		],
-		"marker": "/map-marker-c.png",
-		"markerActive": "/map-marker-c-active.png",
-		"markerDisabled": "/map-marker-c-disabled.png",
+		// "marker": "/map-marker-c.png",
+		// "markerActive": "/map-marker-c-active.png",
+		// "markerDisabled": "/map-marker-c-disabled.png",
 	},
 	{
 		"id": "f1hvfze6b",
@@ -114,9 +114,9 @@ const markers = [
 			26.52737,
 			55.8678524
 		],
-		"marker": "/map-marker-a.png",
-		"markerActive": "/map-marker-a-active.png",
-		"markerDisabled": "/map-marker-a-disabled.png",
+		// "marker": "/map-marker-a.png",
+		// "markerActive": "/map-marker-a-active.png",
+		// "markerDisabled": "/map-marker-a-disabled.png",
 	},
 	{
 		"id": "20",
@@ -127,9 +127,9 @@ const markers = [
 			26.52485390000004,
 			55.8717117
 		],
-		"marker": "/map-marker-b.png",
-		"markerActive": "/map-marker-b-active.png",
-		"markerDisabled": "/map-marker-b-disabled.png",
+		// "marker": "/map-marker-b.png",
+		// "markerActive": "/map-marker-b-active.png",
+		// "markerDisabled": "/map-marker-b-disabled.png",
 	},
 	{
 		"id": "21",
@@ -140,9 +140,9 @@ const markers = [
 			26.5274284,
 			55.9012161
 		],
-		"marker": "/map-marker-b.png",
-		"markerActive": "/map-marker-b-active.png",
-		"markerDisabled": "/map-marker-b-disabled.png",
+		// "marker": "/map-marker-b.png",
+		// "markerActive": "/map-marker-b-active.png",
+		// "markerDisabled": "/map-marker-b-disabled.png",
 	},
 ];
 

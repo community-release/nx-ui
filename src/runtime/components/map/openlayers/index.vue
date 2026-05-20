@@ -236,13 +236,13 @@
 
 		// Iterate all markers
 		for (let item of markers.value) {
-			if (!(item.marker in styleCache))
+			if (item?.marker && !(item.marker in styleCache))
 				styleCache[item.marker] = new Style({ image: new Icon({ src: item.marker }) });
 
-			if (!(item.markerActive in styleCache))
+			if (item?.markerActive && !(item.markerActive in styleCache))
 				styleCache[item.markerActive] = new Style({ image: new Icon({ src: item.markerActive }) });
 
-			if (!(item.markerDisabled in styleCache))
+			if (item?.markerDisabled && !(item.markerDisabled in styleCache))
 				styleCache[item.markerDisabled] = new Style({ image: new Icon({ src: item.markerDisabled }) });
 		}
 
