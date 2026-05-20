@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.76
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.75...v0.0.76)
+
+### 🩹 Fixes
+
+- **map:** Removed initialization of marker images that do not exists ([b91e39f](https://github.com/community-release/nx-ui/commit/b91e39f))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.75
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.74...v0.0.75)
