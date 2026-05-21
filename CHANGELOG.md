@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.77
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.76...v0.0.77)
+
+### 💅 Refactors
+
+- Input-height -> input-size ([7f1c41d](https://github.com/community-release/nx-ui/commit/7f1c41d))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.76
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.75...v0.0.76)
