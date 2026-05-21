@@ -92,7 +92,7 @@ function genUpdatedValue(id) {
 	@com-space-m: var(--ui-space-m);
 	@com-space-s: var(--ui-space-s);
 
-	@com-input-height-s: var(--ui-input-height-s);
+	@com-input-size-s: var(--ui-input-size-s);
 
 	--active-color: v-bind(activeColor);
 	--active-bg: v-bind(activeBg);
@@ -113,8 +113,8 @@ function genUpdatedValue(id) {
 		margin-right: @com-space-s;
 		padding: 0 @com-space-s;
 
-		height: @com-input-height-s;
-		line-height: @com-input-height-s;
+		height: @com-input-size-s;
+		line-height: @com-input-size-s;
 
 		border-radius: 30px;
 		cursor: pointer;

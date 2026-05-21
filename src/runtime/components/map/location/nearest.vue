@@ -115,7 +115,7 @@
 <style lang="less">
 @import url(../../styles/mixins.less);
 
-@com-height: var(--ui-input-height-m);
+@com-height: var(--ui-input-size-m);
 
 @com-border-radius-m: var(--ui-border-radius-m);
 @com-space-m: var(--ui-space-m);

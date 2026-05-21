@@ -7,12 +7,12 @@ export default {
 	'border-radius-s': '3px',
 	
 	// Inputs height
-	'input-height-2xl': '60px',
-	'input-height-xl': '52px',
-	'input-height-l': '48px',
-	'input-height-m': '42px',
-	'input-height-s': '32px',
-	'input-height-xs': '24px',
+	'input-size-2xl': '60px',
+	'input-size-xl': '52px',
+	'input-size-l': '48px',
+	'input-size-m': '42px',
+	'input-size-s': '32px',
+	'input-size-xs': '24px',
 
 	// Line height
 	'text-line-height': 1.4,

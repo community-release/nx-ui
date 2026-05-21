@@ -46,7 +46,7 @@ function handleClick(e) {
 </script>
 
 <style lang="less">
-@com-size: var(--ui-input-height-m);
+@com-size: var(--ui-input-size-m);
 @com-border-radius-m: var(--ui-border-radius-m);
 @com-ani-time: var(--ui-ani-time);
 @com-ani-ease: var(--ui-ani-ease);

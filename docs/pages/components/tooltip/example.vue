@@ -19,8 +19,8 @@ const showTooltip = ref(false);
 <style lang="less">
 .tooltip-output {
 	position: relative;
-	height: var(--input-height-m);
-	width: var(--input-height-m);
+	height: var(--input-size-m);
+	width: var(--input-size-m);
 	background:  var(--color-primary);
 	border-radius: var(--border-radius);
 }

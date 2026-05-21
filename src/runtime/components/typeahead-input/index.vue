@@ -468,7 +468,7 @@
 
 @com-text-s: var(--ui-text-s);
 
-@com-input-height-m: var(--ui-input-height-m);
+@com-input-size-m: var(--ui-input-size-m);
 
 @com-color-primary:  var(--ui-color-primary);
 @com-color-text-on-primary: var(--ui-color-text-on-primary);
@@ -504,7 +504,7 @@
 
 	.component-ui-input .component-ui-button {
 		padding: 0;
-		width: @com-input-height-m;
+		width: @com-input-size-m;
 		height: 100%;
 		font-size: @com-text-s;
 

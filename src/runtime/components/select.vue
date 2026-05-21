@@ -185,7 +185,7 @@ onMounted(() => {
 @import (less) './styles/components.less';
 
 @com-space-2xs: var(--ui-space-2xs);
-@com-input-height-m: var(--ui-input-height-m);
+@com-input-size-m: var(--ui-input-size-m);
 
 @com-font-header: var(--ui-font-header);
 @com-value-font-weight: @ui-select-value-font-weight;
@@ -221,7 +221,7 @@ onMounted(() => {
 			opacity: 0;
 			padding-right: 45px;
 			padding-left: 10px;
-			height: @com-input-height-m;
+			height: @com-input-size-m;
 			width: 100%;
 
 			cursor: pointer;

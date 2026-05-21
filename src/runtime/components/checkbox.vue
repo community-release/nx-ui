@@ -103,7 +103,7 @@
 	@com-text-l: var(--ui-text-l);
 	@com-text-s: var(--ui-text-s);
 
-	@com-input-height: var(--ui-input-height-m);
+	@com-input-size: var(--ui-input-size-m);
 
 	@com-space-2xs: var(--ui-space-2xs);
 
@@ -118,7 +118,7 @@
 		margin: 0;
 		padding: 0 0 0 30px;
 
-		height: @com-input-height;
+		height: @com-input-size;
 		font-size: @com-text-m;
 		font-weight: 500;
 

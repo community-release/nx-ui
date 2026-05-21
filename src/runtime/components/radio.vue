@@ -97,7 +97,7 @@
 	@com-color-header-text: var(--ui-color-header-text);
 	@com-color-muted-text: var(--ui-color-muted-text);
 	
-	@com-input-height: var(--ui-input-height-m);
+	@com-input-size: var(--ui-input-size-m);
 
 	@com-text-m: var(--ui-text-m);
 	@com-text-l: var(--ui-text-l);
@@ -119,8 +119,8 @@
 		margin: 0;
 		padding: 0 0 0 30px;
 		
-		height: @com-input-height;
-		line-height: @com-input-height;
+		height: @com-input-size;
+		line-height: @com-input-size;
 		font-size: @com-text-m;
 		font-weight: 500;
 		color: @com-color-text;

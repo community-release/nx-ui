@@ -9,12 +9,12 @@ export default {
 		'border-radius-s': '5px',
 		
 		// Inputs height
-		'input-height-2xl': 'var(--input-height-2xl)',
-		'input-height-xl': 'var(--input-height-xl)',
-		'input-height-l': 'var(--input-height-l)',
-		'input-height-m': 'var(--input-height-m)',
-		'input-height-s': 'var(--input-height-s)',
-		'input-height-xs': 'var(--input-height-xs)',
+		'input-size-2xl': 'var(--input-size-2xl)',
+		'input-size-xl': 'var(--input-size-xl)',
+		'input-size-l': 'var(--input-size-l)',
+		'input-size-m': 'var(--input-size-m)',
+		'input-size-s': 'var(--input-size-s)',
+		'input-size-xs': 'var(--input-size-xs)',
 
 		// Line height
 		'text-line-height': 1.4,

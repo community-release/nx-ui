@@ -46,7 +46,7 @@ const hasSlot = (name) => {
 </script>
 
 <style lang="less">
-@com-input-height: var(--ui-input-height-m);
+@com-input-size: var(--ui-input-size-m);
 
 @com-map-padding: var(--ui-map-padding);
 @com-space-xs: var(--ui-space-xs);
@@ -71,7 +71,7 @@ const hasSlot = (name) => {
 
 		inset: 0 0 auto 0;
 		max-width: 100%;
-		height: @com-input-height;
+		height: @com-input-size;
 	}
 
 	.location-slot-default {
@@ -99,7 +99,7 @@ const hasSlot = (name) => {
 
 	&.tag-slot-header-and-default {
 		.location-slot-default {
-			inset: calc(@com-input-height + @com-space-xs) 0 0 0;
+			inset: calc(@com-input-size + @com-space-xs) 0 0 0;
 		}
 	}
 }

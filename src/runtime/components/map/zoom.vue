@@ -12,7 +12,7 @@ const props = defineProps(['store']);
 </script>
 
 <style lang="less">
-@com-width: var(--ui-input-height-m);
+@com-width: var(--ui-input-size-m);
 @com-border-radius-m: var(--ui-border-radius-m);
 
 // Padding

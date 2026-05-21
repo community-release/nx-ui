@@ -153,17 +153,17 @@
 @com-ani-ease: var(--ui-ani-ease);
 
 // Input height
-@com-input-height-2xl: var(--ui-input-height-2xl);
-@com-input-height-xl: var(--ui-input-height-xl);
-@com-input-height-l: var(--ui-input-height-l);
-@com-input-height-m: var(--ui-input-height-m);
-@com-input-height-s: var(--ui-input-height-s);
-@com-input-height-xs: var(--ui-input-height-xs);
+@com-input-size-2xl: var(--ui-input-size-2xl);
+@com-input-size-xl: var(--ui-input-size-xl);
+@com-input-size-l: var(--ui-input-size-l);
+@com-input-size-m: var(--ui-input-size-m);
+@com-input-size-s: var(--ui-input-size-s);
+@com-input-size-xs: var(--ui-input-size-xs);
 
 // Border radius
 @com-border-radius-m: var(--ui-border-radius-m);
 @com-border-radius-s: var(--ui-border-radius-s);
-@com-border-radius-round: var(--ui-input-height-2xl);
+@com-border-radius-round: var(--ui-input-size-2xl);
 
 // Color
 @com-color-border-bolder: var(--ui-color-border-bolder);
@@ -192,7 +192,7 @@
 .component-ui-input {
 	overflow: hidden;
 	position: relative;
-	height: @com-input-height-m;
+	height: @com-input-size-m;
 	border: 1px solid @com-color-border-bolder;
 	border-radius: @com-border-radius-m;
 	background: @com-color-surface;
@@ -247,23 +247,23 @@
 	}
 
 	// Size
-	&.tag-size-2xl { height: @com-input-height-2xl; }
-	&.tag-size-xl { height: @com-input-height-xl; }
-	&.tag-size-l { height: @com-input-height-l; }
+	&.tag-size-2xl { height: @com-input-size-2xl; }
+	&.tag-size-xl { height: @com-input-size-xl; }
+	&.tag-size-l { height: @com-input-size-l; }
 	&.tag-size-m {
 		//padding: 0 @com-space-s;
-		height: @com-input-height-m;
+		height: @com-input-size-m;
 		font-size: @com-text-s;
 	}
 
 	&.tag-size-s {
-		height: @com-input-height-s;
+		height: @com-input-size-s;
 		font-size: @com-text-s;
 	}
 
 	&.tag-size-xs {
 		//padding: 0 10px;
-		height: @com-input-height-xs;
+		height: @com-input-size-xs;
 		font-size: @com-text-xs;
 
 		.loading-indicator {

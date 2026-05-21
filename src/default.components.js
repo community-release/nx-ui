@@ -4,7 +4,7 @@ export default {
 		'text-font-size': 'var(--ui-text-m)',
 	},
 	button: {
-		'border-radius': 'var(--ui-input-height-2xl)'
+		'border-radius': 'var(--ui-input-size-2xl)'
 	},
 	map: {
 		'user-position-color': 'var(--ui-color-primary)'
