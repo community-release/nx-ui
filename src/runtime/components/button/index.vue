@@ -147,10 +147,7 @@
 	});
 	const buttonBgStyle = computed(() => {
 		return {
-			// Лучше поддержка браузеров но хуже результат
-			// 'background': (props.variant === 'flat' || props.variant === 'outline') ? `transparent` : `color-mix(in srgb, var(--ui-color-${props.color}) 95%, black)`
-
-			// Лучше результат но хуже поддержка браузеров
+			// Лучше результат но хуже поддержка браузеров чем при использование color-mix
 			'background': (props.variant === 'flat' || props.variant === 'outline') ? `transparent` : `oklch(from var(--ui-color-${props.color}) ${props.hoverColorTransform})`
 		}
 	});
