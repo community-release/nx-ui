@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.79
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.78...v0.0.79)
+
+### 🩹 Fixes
+
+- Removed code comment that break uno.css usage ([17ba08f](https://github.com/community-release/nx-ui/commit/17ba08f))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.78
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.77...v0.0.78)
