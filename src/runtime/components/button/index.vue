@@ -173,6 +173,8 @@
 </script>
 
 <style lang="less">
+@import (less) '../styles/components.less';
+
 .component-ui-button {
 	--button-hover-text-color: #fff;
 	--button-hover-background: #fff;
@@ -220,6 +222,7 @@
 
 	// Font
 	@com-font-header: var(--ui-font-header);
+	@com-font-weight: @ui-button-font-weight;
 
 	// Box shadow
 	@com-bs-1: var(--ui-bs-1);
@@ -269,7 +272,7 @@
 		
 		position: relative;
 		height: 100%;
-		font-weight: 600;
+		font-weight: @com-font-weight;
 		font-family: @com-font-header;
 
 		.slot-default {

@@ -1,7 +1,7 @@
 import defaultComponentsStyle from '../default.components';
 
 export default (options) => {
-	let result = '';
+	let result = '// This file is generated, do not edit. Styles can be edit in default.components.js\n';
 
 	const components = options?.componentsStyle ? options.componentsStyle : {};
 	
