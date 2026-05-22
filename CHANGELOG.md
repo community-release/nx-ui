@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.78
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.77...v0.0.78)
+
+### 🚀 Enhancements
+
+- **button:** Added better hover styles control, hoverColorTransform & hoverFlatColor ([12532a6](https://github.com/community-release/nx-ui/commit/12532a6))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.77
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.76...v0.0.77)
