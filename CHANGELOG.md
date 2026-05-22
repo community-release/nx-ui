@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.80
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.79...v0.0.80)
+
+### 🚀 Enhancements
+
+- **button:** Added button-font-weight user setting ([a162afd](https://github.com/community-release/nx-ui/commit/a162afd))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.79
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.78...v0.0.79)
