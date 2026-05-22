@@ -62,7 +62,7 @@
 		"dev": "nuxi dev docs --host --port 7012",
 		"build": "nuxi build docs",
 		"prepare": "nuxt-module-build build && nuxt-module-build prepare && nuxi prepare docs",
-		"release": "npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+		"release": "npm login && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
 		"test": "vitest run",
 		"test:watch": "vitest watch",
 		"test:com": "vitest components run",

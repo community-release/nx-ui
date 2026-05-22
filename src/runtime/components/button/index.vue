@@ -59,6 +59,14 @@
 			type: String,
 			default: comProps.color,
 		},
+		hoverColorTransform: {
+			type: String,
+			default: comProps.hoverColorTransform,
+		},
+		hoverFlatColor: {
+			type: String,
+			default: comProps.hoverFlatColor,
+		},
 		size: {
 			type: String,
 			default: comProps.size,
@@ -128,7 +136,7 @@
 		let color = `var(--ui-color-text-on-${props.color})`;
 
 		if (props.variant === 'flat' || props.variant === 'outline') {
-			background = `var(--ui-color-surface)`;
+			background = `var(--ui-color-${props.hoverFlatColor})`;
 			color = `var(--ui-color-${props.color}-text)`;
 		}
 
@@ -139,7 +147,11 @@
 	});
 	const buttonBgStyle = computed(() => {
 		return {
-			'background': (props.variant === 'flat' || props.variant === 'outline') ? `var(--ui-color-${props.color.value})` : 'rgba(66,88,120, 0.075)'
+			// Лучше поддержка браузеров но хуже результат
+			// 'background': (props.variant === 'flat' || props.variant === 'outline') ? `transparent` : `color-mix(in srgb, var(--ui-color-${props.color}) 95%, black)`
+
+			// Лучше результат но хуже поддержка браузеров
+			'background': (props.variant === 'flat' || props.variant === 'outline') ? `transparent` : `oklch(from var(--ui-color-${props.color}) ${props.hoverColorTransform})`
 		}
 	});
 

@@ -1,5 +1,7 @@
 {
 	"color": "primary",
+	"hoverColorTransform": "max(0, calc(l - 0.05)) c h",
+	"hoverFlatColor": "surface",
 	"shape": "",
 	"size": "default",
 	"variant": "solid"
