@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.81
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.80...v0.0.81)
+
+### 🚀 Enhancements
+
+- **button:** Added 'to' prop support that make it act as nuxt-link ([60a77a7](https://github.com/community-release/nx-ui/commit/60a77a7))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.80
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.79...v0.0.80)
