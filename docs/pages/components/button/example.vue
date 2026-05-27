@@ -14,6 +14,7 @@
 						:variant="variant"
 						@click="console.log('button click', e)"
 						@comClick="console.log('button comClick', e)"
+						:to="$localePath('/')"
 					>
 						Button
 					</UiButton>

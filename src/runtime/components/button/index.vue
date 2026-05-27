@@ -1,14 +1,15 @@
 <template>
-	<a
-		v-if="computedType == 'a'"
+	<component
+		:is="computedType"
 		class="component-ui component-ui-button"
 		:href="href"
+		:to="to"
 		:class="classes" 
 		:style="styles" 
 		@click="handleClick"
 		ref="refCom"
 	>
-		<div class="button-bg" :style="buttonBgStyle"></div>
+		<div class="button-bg"  :style="buttonBgStyle"></div>
 
 		<ui-impulse-indicator :impulse="impulse" />
 
@@ -19,32 +20,12 @@
 		</span>
 
 		<ui-loading class="loading-indicator" :active="loading"></ui-loading>
-	</a>
-	<button
-		v-else
-		class="component-ui component-ui-button"
-		:class="classes" 
-		:style="styles" 
-		@click="handleClick"
-		ref="refCom"
-	>
-		<div class="button-bg" :style="buttonBgStyle"></div>
-
-		<ui-impulse-indicator :impulse="impulse" />
-
-		<span class="button-content">
-			<span><slot name="prepend"></slot></span>
-			<span class="slot-default"><slot></slot></span>
-			<span><slot name="append"></slot></span>
-		</span>
-
-		<ui-loading class="loading-indicator" :active="loading"></ui-loading>
-	</button>
+	</component>
 </template>
 
 <script setup>
 // Imports
-	import { ref, computed } from 'vue';
+	import { ref, computed, resolveComponent } from 'vue';
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import UiLoading from '../loading.vue';
 	import comProps from '#build/ui.button.mjs';
@@ -81,7 +62,11 @@
 		},
 		href: {
 			type: String,
-			default: '',
+			default: null,
+		},
+		to: {
+			type: String,
+			default: null,
 		},
 		block: {
 			type: Boolean,
@@ -98,10 +83,10 @@
 	});
 
 	const refCom = ref(null);
-
 	const impulse = ref(false);
+	const NuxtLinkComponent = resolveComponent('NuxtLink');
 
-	const computedType = props.href ? 'a' : 'button';
+	const computedType = props.to ? NuxtLinkComponent : (props.href ? 'a' : 'button');
 
 	const classes = computed(() => {
 		let ar = [];
@@ -156,7 +141,7 @@
 	function handleClick(e) {
 		if (props.disabled || props.loading) return;
 
-		let rect = refCom.value.getBoundingClientRect();
+		let rect = refCom.value?.$el ? refCom.value?.$el?.getBoundingClientRect() : refCom.value?.getBoundingClientRect();
 
 		impulse.value = {
 			left	: e.clientX - rect.left,

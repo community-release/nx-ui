@@ -9,7 +9,7 @@
 		</helper-typography>
 
 		<div class="block-control pt-4">
-			<ui-button href="/components">View component</ui-button>
+			<ui-button :to="$localePath('/components')">View component</ui-button>
 		</div>
 	</section>
 </template>
