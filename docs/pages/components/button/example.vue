@@ -12,8 +12,7 @@
 						:loading="loading"
 						:shape="shape"
 						:variant="variant"
-						@click="console.log('button click', e)"
-						@comClick="console.log('button comClick', e)"
+						@click="console.log('button click', $event)"
 						:to="$localePath('/')"
 					>
 						Button
@@ -30,8 +29,7 @@
 						:loading="loading"
 						:shape="shape"
 						:variant="variant"
-						@click="console.log('button click', e)"
-						@comClick="console.log('button comClick', e)"
+						@click="console.log('button click', $event)"
 						href="https://google.com"
 						target="_blank"
 					>

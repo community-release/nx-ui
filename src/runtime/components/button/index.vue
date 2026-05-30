@@ -62,11 +62,11 @@
 		},
 		href: {
 			type: String,
-			default: null,
+			default: undefined,
 		},
 		to: {
 			type: String,
-			default: null,
+			default: undefined,
 		},
 		block: {
 			type: Boolean,
