@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.82
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.81...v0.0.82)
+
+### 🩹 Fixes
+
+- **button:** Fixed href and to props default value, they are now undefined ([0953d9d](https://github.com/community-release/nx-ui/commit/0953d9d))
+- **impulse-indicator:** Fixed animation-duration default value, was missing 's' (seconds) ([64b565c](https://github.com/community-release/nx-ui/commit/64b565c))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.81
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.80...v0.0.81)
