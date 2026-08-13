@@ -88,7 +88,10 @@
 		if (value !== validValue)
 			refInput.value.value = validValue;
 
-		emit('update:modelValue', validValue);
+		if (props.modelValue !== validValue) {
+			emit('update:modelValue', validValue);
+			emit('input', validValue);
+		}
 
 		if (submit) emit('enter', validValue);
 	}
