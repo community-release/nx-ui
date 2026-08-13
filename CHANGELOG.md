@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.83
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.82...v0.0.83)
+
+### 🩹 Fixes
+
+- **textarea:** Added missing input event ([fad2220](https://github.com/community-release/nx-ui/commit/fad2220))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.82
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.81...v0.0.82)
