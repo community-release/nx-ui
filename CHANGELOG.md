@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.84
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.83...v0.0.84)
+
+### 🩹 Fixes
+
+- **button:** Added handleClick additional check for target exist ([cb4d8dc](https://github.com/community-release/nx-ui/commit/cb4d8dc))
+- **map/device-zoom-switch:** Added handleClick additional check for target exist ([688aa75](https://github.com/community-release/nx-ui/commit/688aa75))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.83
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.82...v0.0.83)
