@@ -55,7 +55,6 @@ export default {
 
 			if ('event' in options) {
 				let target = ('target' in options) ? options.target : event.target;
-
 				let rect = target.getBoundingClientRect();
 
 				options.left = options.event.clientX - rect.left;

@@ -23,23 +23,19 @@ const impulse = ref(false);
 
 // Methods
 function handleClick(e) {
-	// if (props.store.deviceZoom) {
-	// 	setTimeout(() => {
-	// 		props.store.setDeviceZoom();
-	// 	}, 1000);
-	// } else {
-	// 	props.store.setDeviceZoom();
-	// }
-
 	props.store.setDeviceZoom();
 
-	const rect = refRoot.value.getBoundingClientRect();
+	// Make sure that target exists
+	const target = refRoot?.value?.$el || refRoot?.value;
+	if (!target) return;
+
+	const rect = target.getBoundingClientRect();
 
 	impulse.value = {
 		left	: e.clientX - rect.left,
 		top		: e.clientY - rect.top,
-		width	: refRoot.value.offsetWidth,
-		height	: refRoot.value.offsetHeight
+		width	: target.offsetWidth,
+		height	: target.offsetHeight
 	};
 }
 
