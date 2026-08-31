@@ -141,13 +141,17 @@
 	function handleClick(e) {
 		if (props.disabled || props.loading) return;
 
-		let rect = refCom.value?.$el ? refCom.value?.$el?.getBoundingClientRect() : refCom.value?.getBoundingClientRect();
+		// Make sure that target exists
+		const target = refCom?.value?.$el || refCom?.value;
+		if (!target) return;
+
+		let rect = target.getBoundingClientRect();
 
 		impulse.value = {
 			left	: e.clientX - rect.left,
 			top		: e.clientY - rect.top,
-			width	: refCom.value.offsetWidth,
-			height	: refCom.value.offsetHeight
+			width	: target.offsetWidth,
+			height	: target.offsetHeight
 		};
 	}
 
