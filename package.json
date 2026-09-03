@@ -51,9 +51,6 @@
 		"vue-docgen-cli": "^4.79.0",
 		"vue-tsc": "^2.0.24"
 	},
-	"peerDependencies": {
-		"vue-router": "^4.5.0"
-	},
 	"resolutions": {
 		"string-width": "4.2.3"
 	},
