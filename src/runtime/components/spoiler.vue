@@ -11,8 +11,7 @@
 
 <script setup>
 // Imports
-	import { watch, ref } from 'vue';
-	import uniq from './helpers/uniq';
+	import { watch, ref, useId } from 'vue';
 
 // Data
 	const emit = defineEmits(['update:modelValue']);
@@ -31,7 +30,7 @@
 		}
 	});
 
-	const cid = 'spoiler-' + uniq();
+	const cid = 'spoiler-' + useId();
 	let isShown = ref(false);
 	let hasModel = props.modelValue !== null;
 	

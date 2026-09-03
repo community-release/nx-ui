@@ -9,8 +9,7 @@
 
 <script setup>
 // Imports
-	import { ref, computed, provide, defineEmits } from 'vue';
-	import uniq from '../helpers/uniq';
+	import { ref, computed, provide, useId } from 'vue';
 	import comProps from '#build/ui.accordion.mjs';
 	import UiAccordionItem from './accordion-item.vue';
 
@@ -48,7 +47,7 @@
 
 	const open = ref(props.open);
 	const counter = ref(0);
-	const cid = uniq();
+	const cid = useId();
 
 	const iconLightComputed = computed(() => {
 		return props.icon !== '' ? `url(${props.icon})` : 'none';

@@ -29,10 +29,6 @@
 	import UiImpulseIndicator from '../impulse-indicator.vue';
 	import UiLoading from '../loading.vue';
 	import comProps from '#build/ui.button.mjs';
-	import { useRouter } from 'vue-router';
-
-// Composables
-	const router = useRouter();
 
 // Data
 	const props = defineProps({

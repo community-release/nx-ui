@@ -1,5 +1,7 @@
 import { describe, test, expect } from 'vitest';
 import { mount } from '@vue/test-utils'
+import { renderToString } from 'vue/server-renderer';
+import { createSSRApp } from 'vue';
 import C from '../../src/runtime/components/accordion/index.vue';
 
 describe('accordion component', async () => {
@@ -14,11 +16,19 @@ describe('accordion component', async () => {
 		}
 	});
 	const html = wrapper.html();
+	const ids = html => [...html.matchAll(/id="([^"]+)"/g)].map(m => m[1]);
 
 	test('component is mounted', async () => {
     	expect(html, 'component html is not found').toContain('accordion');
     	expect(html, `component slot should contain "item1"`).toContain('item1');
     	expect(html, `component slot should contain "item2"`).toContain('item2');
     	expect(html, `component slot should contain "item3"`).toContain('item3');
+	});
+
+	test('ids match between server and client render', async () => {
+		const props = { list: [{ title: 'item1', text: 'lorem' }] };
+		const ssr = await renderToString(createSSRApp(C, props));
+
+		expect(ids(mount(C, { props }).html())).toEqual(ids(ssr));
 	});
 });
