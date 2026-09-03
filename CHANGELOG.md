@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.85
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.84...v0.0.85)
+
+### 💅 Refactors
+
+- Removed peer dependency vue-router ([18bcbfc](https://github.com/community-release/nx-ui/commit/18bcbfc))
+- Replaced uniqId helper with vue useId helper, to resolve ssr id mismatch ([f119548](https://github.com/community-release/nx-ui/commit/f119548))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.84
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.83...v0.0.84)
