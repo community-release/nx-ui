@@ -55,6 +55,10 @@ export default {
 
 		'color-overlay': 'var(--color-overlay)',
 
+		'color-test': 'pink',
+		'color-test-text': 'red',
+		'color-text-on-test': 'white',
+
 		// Text
 		'text-2xl': '32px',
 		'text-xl': '24px',

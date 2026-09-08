@@ -74,6 +74,7 @@ const colorList = ref([
 	{name: 'secondary', value: 'secondary'},
 	{name: 'surface', value: 'surface'},
 	{name: 'red', value: 'red'},
+	{name: 'test', value: 'test'},
 ]);
 
 const shape = ref('');
