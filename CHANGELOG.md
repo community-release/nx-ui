@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.86
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.85...v0.0.86)
+
+### 🚀 Enhancements
+
+- Added ability to define and use any custom colors from ui.config ([9786d08](https://github.com/community-release/nx-ui/commit/9786d08))
+
+### ❤️ Contributors
+
+- Tirius <tirius.dev@gmail.com>
+
 ## v0.0.85
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.84...v0.0.85)
