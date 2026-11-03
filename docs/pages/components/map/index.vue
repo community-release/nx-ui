@@ -48,19 +48,28 @@
 				For example free <a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> styles:
 				<code>positron</code>, <code>bright</code>, <code>liberty</code>.
 			</p>
-			<pre>{{ vectorExample }}</pre>
 			<p>
 				Vector tiles are rendered in the same <code>ui-map-tiles</code> layer, so tiles filter works too.
 				Style support (<code>ol-mapbox-style</code>) is loaded only when <code>tilesStyle</code> is set.
 				Check the tiles provider terms, most of them require attribution.
 			</p>
+			<p>Each map has its own state, so several maps can be used on the same page.</p>
 		</helper-typography>
+		<br>
+		<component-preview title="Example (vector tiles)" :example="ExampleVectorRaw">
+			<template #default>
+				<ExampleVector />
+			</template>
+		</component-preview>
 	</section>
 </template>
 
 <script setup>
 import ExampleRaw from './example.vue?raw';
 import Example from './example.vue';
+
+import ExampleVectorRaw from './exampleVector.vue?raw';
+import ExampleVector from './exampleVector.vue';
 
 const { t } = useI18n();
 
@@ -83,12 +92,6 @@ const configExample = `componentsStyle: {
 const cssExample = `.my-map .ui-map-tiles {
 	filter: grayscale(1);
 }`;
-
-const vectorExample = `<ui-map
-	tilesStyle="https://tiles.openfreemap.org/styles/positron"
-	:coord="[24.106389, 56.948889]"
-	:zoom="12"
-/>`;
 
 useHead({
 	title: t('breadcrumbs.map')
