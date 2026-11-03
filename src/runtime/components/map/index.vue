@@ -97,6 +97,14 @@ const props = defineProps({
 		default: 30,
 		type: Number
 	},
+	/**
+	 * Vector tiles style (MapLibre/Mapbox style URL or object).
+	 * When not set, OpenStreetMap raster tiles are used
+	 */
+	tilesStyle: {
+		default: null,
+		type: [String, Object]
+	},
 });
 
 store.coord = props.coord;
@@ -112,6 +120,7 @@ store.clusterColor = props.clusterColor;
 store.disabledClusterColor = props.disabledClusterColor;
 store.clusterMinDistance = props.clusterMinDistance;
 store.clusterDistance = props.clusterDistance;
+store.tilesStyle = props.tilesStyle;
 
 watch(() => props.disabledMarkers, (v) => {
 	store.setDisabledMarkers(v);

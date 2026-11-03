@@ -30,7 +30,7 @@
 		Icon
 	} from 'ol/style.js';
 	import { Cluster, OSM, Vector as VectorSource } from 'ol/source.js';
-	import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer.js';
+	import { Tile as TileLayer, Vector as VectorLayer, VectorTile as VectorTileLayer } from 'ol/layer.js';
 	import { boundingExtent } from 'ol/extent.js';
 	import Overlay from 'ol/Overlay.js';
 
@@ -79,6 +79,7 @@
 		disabledClusterColor,
 		clusterMinDistance,
 		clusterDistance,
+		tilesStyle,
 		userCoord
 	} = storeToRefs(store);
 
@@ -309,17 +310,41 @@
 		});
 	}
 
+	/**
+	 * Create tiles layer: vector tiles when tilesStyle is set, OSM raster tiles otherwise.
+	 * Own className renders tiles in a separate canvas, so tiles can be styled without affecting markers
+	 */
+	function createTilesLayer() {
+		if (!tilesStyle.value) {
+			return new TileLayer({
+				className: 'ui-map-tiles',
+				source: new OSM(),
+			});
+		}
+
+		const layer = new VectorTileLayer({
+			className: 'ui-map-tiles',
+			declutter: true,
+		});
+
+		// Loaded on demand, so projects with raster tiles do not download it
+		import('ol-mapbox-style').then(({ applyStyle, applyBackground }) => {
+			applyStyle(layer, tilesStyle.value);
+			applyBackground(layer, tilesStyle.value);
+		}).catch((err) => {
+			console.error('ui-map: failed to apply tiles style', err);
+		});
+
+		return layer;
+	}
+
 	/** Init map */
 	function initMap() {
 		features = createMarkers();
 
 		cluster = createCluster(features);
 
-		const raster = new TileLayer({
-			// Own className renders tiles in a separate canvas, so tiles can be styled without affecting markers
-			className: 'ui-map-tiles',
-			source: new OSM(),
-		});
+		const raster = createTilesLayer();
 
 		view = new View({
 			center: fromLonLat(coord.value),

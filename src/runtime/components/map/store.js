@@ -38,6 +38,7 @@ export const useMapStore = defineStore('map', {
 			disabledClusterColor: '',
 			clusterMinDistance: 15,
 			clusterDistance: 30,
+			tilesStyle: null, // vector tiles style url or object, OSM raster tiles if null
 
 			userCoord: []
 		}
