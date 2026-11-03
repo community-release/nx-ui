@@ -37,6 +37,24 @@
 			<p>Current filter:</p>
 			<pre>{{ tilesFilters[tilesFilter] }}</pre>
 		</helper-typography>
+
+		<br><br>
+
+		<helper-typography>
+			<h3>Vector tiles</h3>
+			<p>
+				By default the map uses OpenStreetMap raster tiles. Pass <code>tilesStyle</code> with a
+				MapLibre/Mapbox style URL or object to use vector tiles, where every layer color can be changed.
+				For example free <a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> styles:
+				<code>positron</code>, <code>bright</code>, <code>liberty</code>.
+			</p>
+			<pre>{{ vectorExample }}</pre>
+			<p>
+				Vector tiles are rendered in the same <code>ui-map-tiles</code> layer, so tiles filter works too.
+				Style support (<code>ol-mapbox-style</code>) is loaded only when <code>tilesStyle</code> is set.
+				Check the tiles provider terms, most of them require attribution.
+			</p>
+		</helper-typography>
 	</section>
 </template>
 
@@ -65,6 +83,12 @@ const configExample = `componentsStyle: {
 const cssExample = `.my-map .ui-map-tiles {
 	filter: grayscale(1);
 }`;
+
+const vectorExample = `<ui-map
+	tilesStyle="https://tiles.openfreemap.org/styles/positron"
+	:coord="[24.106389, 56.948889]"
+	:zoom="12"
+/>`;
 
 useHead({
 	title: t('breadcrumbs.map')
