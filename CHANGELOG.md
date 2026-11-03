@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.88
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.87...v0.0.88)
+
+### 🚀 Enhancements
+
+- **map:** Added tiles-filter style option, tiles are rendered in separate canvas ([e9a09ba](https://github.com/community-release/nx-ui/commit/e9a09ba))
+
+### 📖 Documentation
+
+- **map:** Added tiles filter example ([a5078f2](https://github.com/community-release/nx-ui/commit/a5078f2))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.87
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.86...v0.0.87)
