@@ -6,10 +6,28 @@ import {
 	addTemplate,
 	createResolver,
 } from '@nuxt/kit';
+import { createRequire } from 'node:module';
+import path from 'node:path';
 
 import generateStyle from './utils/generateStyle';
 import generateComponentsDefaults from './utils/generateComponentsDefaults';
 import readComponentsProps from './utils/readComponentsProps';
+
+const PACKAGE_NAME = '@community-release/nx-ui';
+
+/**
+ * Check if package can be resolved from project root
+ * @param {string} rootDir
+ * @param {string} name
+ */
+function isResolvable(rootDir, name) {
+	try {
+		createRequire(path.join(rootDir, 'package.json')).resolve(name);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
 
 export default defineNuxtModule({
 	meta: {
@@ -21,6 +39,17 @@ export default defineNuxtModule({
 	setup(options, nuxt) {
 		const { resolve } = createResolver(import.meta.url);
 		const srcDir = resolve('./');
+
+		// Dev server only: pre-bundle CommonJS pbf (used by map vector tiles via ol-mapbox-style),
+		// otherwise it fails to load in projects. Production build is not affected.
+		// Nested path works only when nx-ui is installed as project dependency
+		if (isResolvable(nuxt.options.rootDir, PACKAGE_NAME)) {
+			nuxt.hook('vite:extendConfig', (config) => {
+				config.optimizeDeps ||= {};
+				config.optimizeDeps.include ||= [];
+				config.optimizeDeps.include.push(`${PACKAGE_NAME} > ol > pbf`);
+			});
+		}
 
 		// Add templates
 		addTemplate({
