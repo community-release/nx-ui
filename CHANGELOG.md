@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.92
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.91...v0.0.92)
+
+### 🩹 Fixes
+
+- **map:** Pre-bundle pbf in dev, vector tiles failed to load in projects ([465e163](https://github.com/community-release/nx-ui/commit/465e163))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.91
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.90...v0.0.91)
