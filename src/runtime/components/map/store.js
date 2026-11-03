@@ -13,9 +13,14 @@
  * @property {MapCoord} coord
  */
 
-import { defineStore } from 'pinia';
+import { defineStore, getActivePinia } from 'pinia';
 
-export const useMapStore = defineStore('map', {
+/**
+ * Key to provide/inject map store to map child components
+ */
+export const MAP_STORE_KEY = Symbol('ui-map-store');
+
+const storeOptions = {
     state: () => {
         return {
 			cameraDuration: 0,
@@ -190,4 +195,24 @@ export const useMapStore = defineStore('map', {
 			}
 		}
 	},
-});
+};
+
+/**
+ * Create separate store for map instance, so several maps can be used on the same page
+ * @param {string} id - unique map id
+ */
+export function createMapStore(id) {
+	return defineStore(`ui-map-${id}`, storeOptions)();
+}
+
+/**
+ * Dispose map store and remove its state from pinia
+ * @param {object} store - store created by createMapStore
+ */
+export function disposeMapStore(store) {
+	const id = store.$id;
+	const pinia = getActivePinia();
+
+	store.$dispose();
+	if (pinia) delete pinia.state.value[id];
+}

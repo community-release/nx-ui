@@ -5,8 +5,8 @@
 </template>
 
 <script setup>
-import { computed, watch } from 'vue';
-import { useMapStore } from '../store';
+import { computed, watch, inject } from 'vue';
+import { MAP_STORE_KEY } from '../store';
 
 const model = defineModel();
 const props = defineProps({
@@ -16,8 +16,15 @@ const props = defineProps({
 	label: {
 		default: '',
 	},
+	/**
+	 * Map store, required only when component is used outside of ui-map
+	 */
+	store: {
+		type: Object,
+		default: null,
+	},
 });
-const store = useMapStore();
+const store = props.store || inject(MAP_STORE_KEY);
 
 const selectedCity = computed(() => {
 	let cityData = null;

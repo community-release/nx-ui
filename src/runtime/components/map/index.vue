@@ -10,12 +10,15 @@
 </template>
 
 <script setup>
-import { watch, computed, defineAsyncComponent } from 'vue';
-import { useMapStore } from './store';
+import { watch, computed, defineAsyncComponent, provide, useId, onUnmounted } from 'vue';
+import { createMapStore, disposeMapStore, MAP_STORE_KEY } from './store';
 import comProps from '#build/ui.map.mjs';
 
 // // Data
-const store = useMapStore();
+// Each map has own store, so several maps can be used on the same page
+const store = createMapStore(useId());
+provide(MAP_STORE_KEY, store);
+onUnmounted(() => disposeMapStore(store));
 const emit = defineEmits(['initialized', 'mapClick']);
 
 const mapEngines = {

@@ -2,7 +2,7 @@
 	<div class="component-ui-map-openlayer component-ui-map-engine" :class="{'tag-user-position': userCoord.length}">
 		<div class="map" ref="refMap"></div>
 		<div style="display:none">
-			<div id="user-position-marker"></div>
+			<div class="user-position-marker" ref="refUserPosition"></div>
 		</div>
 		<slot />
 	</div>
@@ -13,11 +13,11 @@
 
 // Imports
 	// Vue
-	import { ref, watch, onMounted } from 'vue';
+	import { ref, watch, onMounted, inject } from 'vue';
 
 	// Pinia store
 	import { storeToRefs } from 'pinia';
-	import { useMapStore } from '../store';
+	import { MAP_STORE_KEY } from '../store';
 
 	// Openlayers
 	import Feature from 'ol/Feature.js';
@@ -49,6 +49,7 @@
 // Data
 	const emit = defineEmits(['initialized', 'mapClick']);
 	const refMap = ref(null);
+	const refUserPosition = ref(null);
 	let map = null;
 	let view = null;
 	let interactions = null;
@@ -58,8 +59,8 @@
 	let cluster = null;
 	let userPositionMarker = null;
 
-	// Store
-	const store = useMapStore();
+	// Store of this map instance, provided by ui-map
+	const store = inject(MAP_STORE_KEY);
 	const {
 		cameraDuration,
 		requestCoordChange,
@@ -385,7 +386,7 @@
 		userPositionMarker = new Overlay({
 			position: fromLonLat(coord.value),
 			positioning: 'center-center',
-			element: document.getElementById('user-position-marker'),
+			element: refUserPosition.value,
 			stopEvent: false,
 		});
 		map.addOverlay(userPositionMarker);
@@ -548,14 +549,14 @@
 		filter: @com-tiles-filter;
 	}
 
-	#user-position-marker {
+	.user-position-marker {
 		.mix-pulsar;
 
 		display: none;
 	}
 
 	&.tag-user-position {
-		#user-position-marker {
+		.user-position-marker {
 			display: block;
 		}
 	}

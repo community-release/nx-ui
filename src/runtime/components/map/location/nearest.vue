@@ -9,9 +9,9 @@
 
 <script setup>
 // Import
-	import { ref } from 'vue';
+	import { ref, inject } from 'vue';
 	import UiLoading from '../../loading.vue';
-	import { useMapStore } from '../store';
+	import { MAP_STORE_KEY } from '../store';
 	import wait from '../../helpers/wait'; 
 
 // Data
@@ -28,9 +28,16 @@
 			required: true,
 			type: Array
 		},
+		/**
+		 * Map store, required only when component is used outside of ui-map
+		 */
+		store: {
+			type: Object,
+			default: null,
+		},
 	});
 	const emit = defineEmits(['error']);
-	const store = useMapStore();
+	const store = props.store || inject(MAP_STORE_KEY);
 	const loading = ref(false);
 	let cachedPosition = null;
 	let cachedTime = 0;
