@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.89
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.88...v0.0.89)
+
+### 🚀 Enhancements
+
+- **map:** Added tilesStyle prop for vector tiles with custom style ([48d0d1b](https://github.com/community-release/nx-ui/commit/48d0d1b))
+- **map:** Each map has own store, several maps can be used on the same page ([1551c81](https://github.com/community-release/nx-ui/commit/1551c81))
+
+### 📖 Documentation
+
+- **map:** Added vector tiles section ([c981584](https://github.com/community-release/nx-ui/commit/c981584))
+- **map:** Added live vector tiles example as second map ([d69ccc5](https://github.com/community-release/nx-ui/commit/d69ccc5))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.88
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.87...v0.0.88)
