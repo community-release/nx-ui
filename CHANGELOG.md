@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.87
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.86...v0.0.87)
+
+### 🩹 Fixes
+
+- **map/zoom:** Replaced +/- text with svg icons, fixed square hover corners, added dictionary prop for aria-labels ([526c7a7](https://github.com/community-release/nx-ui/commit/526c7a7))
+- **map/device-zoom-switch:** Fixed icon edge artifact in firefox ([c438f90](https://github.com/community-release/nx-ui/commit/c438f90))
+
+### 📖 Documentation
+
+- **map:** Enabled zoom controls in map example ([ac29fd0](https://github.com/community-release/nx-ui/commit/ac29fd0))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.86
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.85...v0.0.86)
