@@ -316,6 +316,8 @@
 		cluster = createCluster(features);
 
 		const raster = new TileLayer({
+			// Own className renders tiles in a separate canvas, so tiles can be styled without affecting markers
+			className: 'ui-map-tiles',
 			source: new OSM(),
 		});
 
@@ -429,6 +431,7 @@
 <style lang="less">
 @import (less) '../../styles/components.less';
 @com-user-position-color: @ui-map-user-position-color;
+@com-tiles-filter: @ui-map-tiles-filter;
 
 @keyframes pulsar {
 	from {
@@ -514,6 +517,10 @@
 		position: absolute;
 		inset: 0;
 		background: #add19e;
+	}
+
+	.ui-map-tiles {
+		filter: @com-tiles-filter;
 	}
 
 	#user-position-marker {

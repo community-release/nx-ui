@@ -9,7 +9,9 @@ export default function() {
 			'font-weight': 'var(--ui-font-weight-medium)',
 		},
 		map: {
-			'user-position-color': 'var(--ui-color-primary)'
+			'user-position-color': 'var(--ui-color-primary)',
+			// CSS filter for map tiles (does not affect markers), e.g. 'grayscale(1)'
+			'tiles-filter': 'none',
 		},
 		select: {
 			'value-font-weight': 'var(--ui-font-weight-medium)',
