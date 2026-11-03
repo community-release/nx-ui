@@ -79,13 +79,11 @@ function handleClick(e) {
 		transition: opacity @com-ani-time @com-ani-ease;
 		opacity: 0.6;
 
-		transform: translate3d(-50%, -50%, 0);
-		top: 50%;
-		left: 50%;
+		transform: none;
+		inset: 0;
 
-		width: 30px;
-		height: 30px;
 		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48cGF0aCBkPSJNMjI0IDBoLTY0QzcxLjYyIDAgMCA3MS42MyAwIDE2MHYxOTJjMCA4OC4zOCA3MS42MyAxNjAgMTYwIDE2MGg2NGM4OC4zOCAwIDE2MC03MS42MyAxNjAtMTYwVjE2MEMzODQgNzEuNjIgMzEyLjQgMCAyMjQgMFptMTI4IDM1MmMtLjEyNSA3MC42My01Ny4zOCAxMjcuOS0xMjggMTI4aC02NGMtNzAuNjMtLjEyNS0xMjcuOS01Ny4zOC0xMjgtMTI4VjE2MGMuMTI1LTcwLjYzIDU3LjM4LTEyNy45IDEyOC0xMjhoNjRjNzAuNjMuMTI1IDEyNy45IDU3LjM4IDEyOCAxMjh6Ii8+PHBhdGggZD0ibTE5Mi43NzggOTIuNDM4LTU5LjYyNyA1OS4wOTdoMTE5Ljc3MnptLTYxLjcwMSAxMTIuNjE5IDYyLjczOCA2MS44ODQgNTkuMTA4LTYwLjc3eiIvPjwvc3ZnPg==");
+		background-size: 20px;
 	}
 
 	.icon-state {
