@@ -21,14 +21,14 @@
 		@mapClick="onMapClick"
 	>
 		<template #row="{ store }">
-			<!-- <ui-map-zoom :store="store">
+			<ui-map-zoom :store="store">
 				<ui-map-device-zoom-switch :store="store">
 					<ui-tooltip v-if="!store.deviceZoom" v-model="showZoomTooltip" location="left"
 						textColor="var(--color-secondary)" bg="var(--color-bg)">
 						"Click to enable mouse wheel or touch manipulations"
 					</ui-tooltip>
 				</ui-map-device-zoom-switch>
-			</ui-map-zoom> -->
+			</ui-map-zoom>
 
 			<!-- <ui-map-location _showDefaultSlot="store.selectedMarker">
 				<template #header>
