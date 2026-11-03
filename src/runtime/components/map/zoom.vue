@@ -1,19 +1,60 @@
 <template>
 	<div class="component-ui-map-zoom">
 		<div class="prepend"><slot /></div>
-		<ui-button @click="store.zoomIn" class="plus" color="gray" block variant="flat" size="s" shape="square">+</ui-button>
+		<ui-button
+			@click="store.zoomIn"
+			class="plus"
+			color="gray"
+			block
+			variant="flat"
+			size="s"
+			shape="square"
+			:aria-label="dictionary.zoomIn"
+		>
+			<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+		</ui-button>
 		<div class="separator"></div>
-		<ui-button @click="store.zoomOut" class="minus" color="gray" block variant="flat" size="s" shape="square">-</ui-button>
+		<ui-button
+			@click="store.zoomOut"
+			class="minus"
+			color="gray"
+			block
+			variant="flat"
+			size="s"
+			shape="square"
+			:aria-label="dictionary.zoomOut"
+		>
+			<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+		</ui-button>
 	</div>
 </template>
 
 <script setup>
-const props = defineProps(['store']);
+const props = defineProps({
+	store: {
+		required: true,
+		type: Object
+	},
+	/**
+	 * Buttons labels for screen readers
+	 */
+	dictionary: {
+		type: Object,
+		default() {
+			return {
+				zoomIn: 'Zoom in',
+				zoomOut: 'Zoom out',
+			};
+		}
+	},
+});
 </script>
 
 <style lang="less">
 @com-width: var(--ui-input-size-m);
 @com-border-radius-m: var(--ui-border-radius-m);
+@com-ani-time: var(--ui-ani-time);
+@com-ani-ease: var(--ui-ani-ease);
 
 // Padding
 @com-map-padding: var(--ui-map-padding);
@@ -25,9 +66,6 @@ const props = defineProps(['store']);
 
 // Box shadow
 @com-bs-1: var(--ui-bs-1);
-
-// Font-size
-@com-text-2xl: var(--ui-text-2xl);
 
 .component-ui-map-zoom {
 	position: absolute;
@@ -51,17 +89,35 @@ const props = defineProps(['store']);
 
 	.component-ui-button {
 		height: @com-width;
-		font-size: @com-text-2xl;
+
+		// Same look as device-zoom-switch icon: black, 0.6 opacity, ~2px line, full opacity on hover
+		svg {
+			transition: opacity @com-ani-time @com-ani-ease;
+			opacity: 0.6;
+
+			display: block;
+			width: 20px;
+			height: 20px;
+
+			fill: none;
+			stroke: #000;
+			stroke-width: 2.4; // 2px at 20px size
+			stroke-linecap: round;
+		}
+
+		&:hover svg,
+		&:focus-visible svg {
+			opacity: 1;
+		}
 	}
 
-	.component-ui-button.plus .button-bg {
-		border-top-left-radius: @com-border-radius-m;
-		border-top-right-radius: @com-border-radius-m;
+	// Hover background is painted on the button itself, so round the button, not only .button-bg
+	.component-ui-button.plus {
+		border-radius: @com-border-radius-m @com-border-radius-m 0 0;
 	}
 
-	.component-ui-button.minus .button-bg {
-		border-bottom-left-radius: @com-border-radius-m;
-		border-bottom-right-radius: @com-border-radius-m;
+	.component-ui-button.minus {
+		border-radius: 0 0 @com-border-radius-m @com-border-radius-m;
 	}
 
 	.separator {
