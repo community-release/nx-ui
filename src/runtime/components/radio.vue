@@ -90,7 +90,7 @@
 <style lang="less">
 .component-ui-radio {
 	@com-color-primary: var(--ui-color-primary);
-	@com-color-text-on-primar: var(--ui-color-text-on-primary);
+	@com-color-text-on-primary: var(--ui-color-text-on-primary);
 	@com-color-border: var(--ui-color-border);
 	@com-color-error: var(--ui-color-error);
 	@com-color-text: var(--ui-color-text);
@@ -155,7 +155,7 @@
 			border-radius: 50%;
 			border: 1px solid @com-color-muted-text;
 
-			color: @com-color-text-on-primar;
+			color: @com-color-text-on-primary;
 
 			&:before {
 				content: '';
