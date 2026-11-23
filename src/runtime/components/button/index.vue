@@ -260,12 +260,27 @@
 		font-weight: @com-font-weight;
 		font-family: @com-font-header;
 
-		.slot-default {
-			padding: 0 @com-space-xs;
+		svg, img {
+			vertical-align: top;
+		}
+
+		> span {
 			line-height: 1;
 		}
 
+		// Trim text box to cap height, so letters are centered regardless of font metrics
+		> span:not(:has(svg, img, .ic)) {
+			text-box: trim-both cap alphabetic;
+		}
+
+		.slot-default {
+			padding: 0 @com-space-xs;
+		}
+
+		// Icon font glyph sits above baseline, so inline .ic stretches the line box
 		.ic {
+			display: inline-block;
+			vertical-align: top;
 			font-weight: normal;
 		}
 	}
