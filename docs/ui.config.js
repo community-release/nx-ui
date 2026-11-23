@@ -43,11 +43,11 @@ export default {
 		'color-error': 'var(--color-red)',
 
 		'color-surface': 'var(--color-surface)',
-		'color-surface-text': '#aaa',
+		'color-surface-text': 'var(--color-text)',
 		'color-text-on-surface': 'var(--color-text)',
 
 		'color-bg': 'var(--color-bg)',
-		'color-bg-text': '#fff',
+		'color-bg-text': 'var(--color-text)',
 		'color-text-on-bg': 'var(--color-text)',
 
 		'color-border': 'var(--color-border)',
