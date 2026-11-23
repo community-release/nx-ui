@@ -54,8 +54,8 @@ const config = useRuntimeConfig();
 
 	.logo {
 		display: block;
-		width: 100px;
-		height: 32px;
+		width: 52px;
+		height: 17px;
 		background-position: left center;
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -114,11 +114,11 @@ const config = useRuntimeConfig();
 }
 
 .theme-light .component-bar-top .logo {
-	background-image: url(/logo-light.svg);
+	background-image: url(/logo-nx-ui-light.svg);
 }
 
 .theme-dark .component-bar-top .logo {
-	background-image: url(/logo-dark.svg);
+	background-image: url(/logo-nx-ui-dark.svg);
 }
 
 @media only screen and (max-width: 950px) {
