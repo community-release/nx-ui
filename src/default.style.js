@@ -32,28 +32,28 @@ export default function () {
 		'color-text-on-secondary': '#fff',
 
 		'color-gray': 'rgba(56,60,68, 0.8)',
-		'color-gray-text': 'var(--color-muted-text)',
+		'color-gray-text': 'var(--ui-color-muted-text)',
 		'color-text-on-gray': '#fff',
 
 		'color-red': 'red',
-		'color-red-text': 'var(--color-red)',
+		'color-red-text': 'var(--ui-color-red)',
 		'color-text-on-red': '#fff',
 
-		'color-error': 'var(--color-red)',
+		'color-error': 'var(--ui-color-red)',
 
 		'color-surface': '#ccc',
-		'color-surface-text': '#aaa',
-		'color-text-on-surface': 'var(--color-text)',
+		'color-surface-text': 'var(--ui-color-text)',
+		'color-text-on-surface': 'var(--ui-color-text)',
 
 		'color-neutral': '#ccc',
-		'color-neutral-text': '#aaa',
-		'color-text-on-neutral': 'var(--color-text)',
+		'color-neutral-text': 'var(--ui-color-text)',
+		'color-text-on-neutral': 'var(--ui-color-text)',
 
 		'color-bg': '#fff',
-		'color-bg-text': '#fff',
-		'color-text-on-bg': 'var(--color-text)',
+		'color-bg-text': 'var(--ui-color-text)',
+		'color-text-on-bg': 'var(--ui-color-text)',
 
-		'color-overlay': 'var(--color-overlay)',
+		'color-overlay': 'rgba(23, 33, 51, 0.8)',
 
 		'color-border': '#e8e8e8',
 		'color-border-bolder': '#e0e0e0',
@@ -68,8 +68,8 @@ export default function () {
 
 		// Font
 		'font-text': '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";',
-		'font-header': 'var(--font-text)',
-		'font-accent': 'var(--font-text)',
+		'font-header': 'var(--ui-font-text)',
+		'font-accent': 'var(--ui-font-text)',
 		'font-icons': 'FontAwesome',
 		'font-mono': 'Consolas, SF Mono',
 
