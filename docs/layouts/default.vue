@@ -3,7 +3,7 @@
 		<bar-top />
 
 		<div id="wrapper" :class="{'tag-with-menu': $currentPage.value !== 'index'}">
-			<aside v-if="$currentPage.value !== 'index'" >
+			<aside v-if="$currentPage.value !== 'index'" class="aside-menu">
 				<menu-aside />
 			</aside>
 
@@ -13,6 +13,10 @@
 					<slot />
 				</div>
 			</main>
+
+			<aside v-if="$currentPage.value !== 'index'" class="aside-toc">
+				<menu-page-toc />
+			</aside>
 		</div>
 
 		<bar-footer />
@@ -35,13 +39,22 @@ export default {
 
 		&.tag-with-menu {
 			display: grid;
-			grid-template-columns: 300px auto;
+			grid-template-columns: 240px minmax(0, 1fr) 220px;
 			gap: var(--space-xl);
 		}
 	}
 
-	aside {
+	.aside-menu,
+	.aside-toc {
+		position: sticky;
+		top: var(--space-m);
+		align-self: start;
+		overflow-y: auto;
+		max-height: calc(100vh - var(--space-m) * 2);
+	}
 
+	.aside-toc {
+		padding-top: calc(var(--space-xl) + 1.7em);
 	}
 
 	main {
@@ -53,9 +66,24 @@ export default {
 	}
 }
 
+@media only screen and (max-width: 1200px) {
+	#layout-default #wrapper.tag-with-menu {
+		grid-template-columns: 220px minmax(0, 1fr);
+
+		.aside-toc {
+			display: none;
+		}
+	}
+}
+
 @media only screen and (max-width: 950px) {
-	#layout-default #wrapper {
-		grid-template-columns: 1fr;
+	#layout-default #wrapper.tag-with-menu {
+		grid-template-columns: minmax(0, 1fr);
+
+		.aside-menu {
+			position: static;
+			max-height: none;
+		}
 	}
 }
 </style>

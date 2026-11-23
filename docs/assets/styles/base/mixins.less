@@ -34,3 +34,70 @@
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 }
+// Side menu: title + list of links with a vertical line and active indicator
+// Used by menu-aside and menu-page-toc, markup: .menu-title, ul.menu-list > li > a
+.mix-side-menu() {
+	.menu-title {
+		display: block;
+		padding: var(--space-xs) 0 var(--space-s);
+		font-weight: bold;
+		color: var(--color-header-text);
+	}
+
+	a.menu-title:hover {
+		color: var(--color-primary-text);
+	}
+
+	.menu-list {
+		position: relative;
+
+		&:before {
+			content: '';
+
+			position: absolute;
+			left: 3px;
+			top: 0;
+			bottom: 0;
+			width: 1px;
+
+			background: var(--color-border);
+		}
+
+		a {
+			position: relative;
+			display: block;
+			padding: var(--space-xs) 0 var(--space-xs) var(--space-m);
+			color: var(--color-muted-text);
+			.mix-disable-tap-highlight();
+
+			&:before {
+				content: '';
+
+				opacity: 0;
+				transform: translateY(-50%);
+				position: absolute;
+				left: 3px;
+				top: 50%;
+
+				width: 1px;
+				height: 26px;
+
+				background: var(--color-primary-text);
+			}
+
+			&:hover {
+				color: var(--color-primary-text);
+			}
+		}
+
+		a.router-link-exact-active,
+		a.tag-active {
+			font-weight: bold;
+			color: var(--color-primary-text);
+
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+}

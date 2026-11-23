@@ -41,10 +41,6 @@
 
 <style lang="less">
 .component-preview {
-	padding: var(--space-m);
-	border: 1px solid var(--color-border);
-	border-radius: var(--border-radius);
-
 	.component-preview--title {
 		font-weight: bold;
 		font-size: var(--text-l);
