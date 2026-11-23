@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.0.93
+
+[compare changes](https://github.com/community-release/nx-ui/compare/v0.0.92...v0.0.93)
+
+### 🩹 Fixes
+
+- **style:** Use ui-prefixed variables in default colors ([53868d4](https://github.com/community-release/nx-ui/commit/53868d4))
+- **radio:** Fix text-on-primary variable name typo ([52d1581](https://github.com/community-release/nx-ui/commit/52d1581))
+- **button:** Center icons and text vertically ([edaa493](https://github.com/community-release/nx-ui/commit/edaa493))
+- **button:** Use main color for outline border ([edb9cde](https://github.com/community-release/nx-ui/commit/edb9cde))
+
+### 📖 Documentation
+
+- **config:** Use text color for surface and bg text ([c28a730](https://github.com/community-release/nx-ui/commit/c28a730))
+- **button:** Add icon-only button example ([56c963f](https://github.com/community-release/nx-ui/commit/56c963f))
+- **button:** Add prepend and append slots examples ([6d3d82e](https://github.com/community-release/nx-ui/commit/6d3d82e))
+- **button:** Use icon font in example ([341f422](https://github.com/community-release/nx-ui/commit/341f422))
+- **icons:** Remove block display from icon glyph ([efac8ff](https://github.com/community-release/nx-ui/commit/efac8ff))
+- **config:** Fix gray colors and remove test color ([38aa869](https://github.com/community-release/nx-ui/commit/38aa869))
+- **button:** Add colors example ([fa83740](https://github.com/community-release/nx-ui/commit/fa83740))
+
+### ❤️ Contributors
+
+- Pavels Sokolovs <pavels.sokolovs@repharm.lv>
+
 ## v0.0.92
 
 [compare changes](https://github.com/community-release/nx-ui/compare/v0.0.91...v0.0.92)
