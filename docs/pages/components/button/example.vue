@@ -1,7 +1,7 @@
 <template>
 	<ui-grid grid-template-columns="2fr 1fr">
 		<div>
-			<ui-grid grid-template-columns="1fr 1fr">
+			<ui-grid grid-template-columns="1fr 1fr 1fr">
 				<div>
 					<UiButton 
 						ref="com"
@@ -34,6 +34,24 @@
 						target="_blank"
 					>
 						Link button
+					</UiButton>
+				</div>
+
+				<div>
+					<UiButton 
+						ref="com"
+						:color="color" 
+						:size="size" 
+						:disabled="disabled" 
+						:block="block"
+						:loading="loading"
+						:shape="shape"
+						:variant="variant"
+						@click="console.log('button click', $event)"
+						href="https://google.com"
+						target="_blank"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" style="font-size: 1rem; --icon-stroke:2;color:currentColor;" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke, 1.5)" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
 					</UiButton>
 				</div>
 			</ui-grid>
