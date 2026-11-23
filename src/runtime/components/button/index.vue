@@ -112,6 +112,9 @@
 		};
 	});
 
+	// Border is not text, so it uses main color, not x-text color
+	const borderColor = computed(() => `var(--ui-color-${props.color})`);
+
 	const stylesHover = computed(() => {
 		let background = `var(--ui-color-${props.color})`;
 		let color = `var(--ui-color-text-on-${props.color})`;
@@ -170,6 +173,7 @@
 	--button-hover-background: v-bind(stylesHover.background);
 	--button-text-color: v-bind(styles.color);
 	--button-background: v-bind(styles.background);
+	--button-border-color: v-bind(borderColor);
 
 	// Input height
 	@com-input-size-2xl: var(--ui-input-size-2xl);
@@ -316,7 +320,7 @@
 	// Outline
 	&.tag-variant-outline {
 		background: transparent;
-		border: 1px solid var(--button-text-color);
+		border: 1px solid var(--button-border-color);
 	}
 
 	// Shapes
