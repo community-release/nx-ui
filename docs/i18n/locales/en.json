@@ -1,5 +1,9 @@
 {
 	"breadcrumbs.index": "Home",
+	"breadcrumbs.guide": "Guide",
+	"breadcrumbs.introduction": "Introduction",
+	"breadcrumbs.installation": "Installation",
+	"breadcrumbs.configuration": "Configuration",
 	"breadcrumbs.components": "Components",
 	"breadcrumbs.accordion": "Accordion",
 	"breadcrumbs.animated-number": "Animated number",

@@ -25,34 +25,43 @@ export default {
 <style lang="less">
 .component-bar-breadcrumbs {
 	position: relative;
+	font-size: var(--text-s);
+	color: var(--color-text);
 
 	a {
-		color: @color-primary;
+		color: var(--color-muted-text);
+
+		&:hover {
+			color: var(--color-primary-text);
+		}
 	}
 
 	li {
 		position: relative;
 		display: inline-block;
-		margin-right: 20px;
-		padding-right: 15px;
+		margin-right: var(--space-m);
 		line-height: 1.7;
 
 		&:after {
-			content: '/';
+			.mix-icon();
+
+			content: '\f054'; // chevron-right
+			font-weight: 900;
 
 			position: absolute;
+			top: 50%;
 			left: 100%;
-			width: 20px;
-			height: 20px;
-			line-height: 20px;
-			text-align: left;
+			width: var(--space-m);
+			margin-top: -0.5em;
+			font-size: 9px;
+			line-height: 1em;
+			text-align: center;
+			color: var(--color-muted-text);
 		}
 	}
 
 	li:last-child {
 		margin-right: 0;
-		padding-right: 0;
-		//font-weight: 500;
 
 		&:after {
 			display: none;

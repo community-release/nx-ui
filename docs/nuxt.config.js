@@ -3,11 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import viteRawPlugin from 'vite-raw-plugin';
 import ui from './ui.config';
+import generateComponentsApi from './tools/generate-components-api';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PRODUCTION_BASE_PATH = '';
 
-const { version } = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8'));
+const { version, repository } = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8'));
+const repositoryUrl = repository.url.replace(/^git\+/, '').replace(/\.git$/, '');
 
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -109,7 +111,7 @@ export default defineNuxtConfig({
 	},
 
 	modules: [
-		// 'nuxt-shiki',
+		'nuxt-shiki',
 		'@unocss/nuxt',
 		'@nuxtjs/i18n',
 		'@pinia/nuxt',
@@ -125,11 +127,19 @@ export default defineNuxtConfig({
 	],
 
 	runtimeConfig: {
-		version
+		public: {
+			version,
+			repositoryUrl,
+		},
+	},
+
+	hooks: {
+		// Components props, events and slots for API tables
+		'build:before': generateComponentsApi,
 	},
 
 	shiki: {
-		bundledLangs: ['vue', 'javascript'],
+		bundledLangs: ['vue', 'javascript', 'bash'],
 		defaultTheme: 'github-dark',
 		defaultLang: 'vue',
 	},

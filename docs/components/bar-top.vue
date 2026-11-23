@@ -1,73 +1,115 @@
 <template>
-	<section class="component-bar-top">
-		<div class="g-row">
-			<nuxt-link-locale :to="'/'" class="logo">3</nuxt-link-locale>
-			
-			<helper-theme-switcher />
-			<helper-lang-switcher />
-			<nav class="menu">
-				<nuxt-link-locale class="item" v-for="item in menuMain" :key="item.id" :to="item.id">
-					{{ $t(item.text) }}
-				</nuxt-link-locale>
-			</nav>
+	<header class="component-bar-top">
+		<nuxt-link-locale :to="'/'" class="brand">
+			<span class="logo"></span>
+		</nuxt-link-locale>
+
+		<div class="bar">
+			<helper-search />
+
+			<div class="bar-right">
+				<nav class="menu">
+					<nuxt-link-locale class="item" v-for="item in menuMain" :key="item.id" :to="'/' + item.id">
+						{{ $t(item.text) }}
+					</nuxt-link-locale>
+				</nav>
+
+				<span class="version">v{{ config.public.version }}</span>
+
+				<span class="divider"></span>
+
+				<helper-lang-switcher />
+				<helper-theme-switcher />
+
+				<a :href="config.public.repositoryUrl" target="_blank" rel="noopener" class="github" aria-label="GitHub">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
 		</div>
-	</section>
+	</header>
 </template>
 
 <script setup>
-	import { useGeneralStore } from '~/stores/generalStore';
+import { useGeneralStore } from '~/stores/generalStore';
 
-	const { menuMain } = useGeneralStore();
+const { menuMain } = useGeneralStore();
+const config = useRuntimeConfig();
 </script>
 
 <style lang="less">
 .component-bar-top {
-	.mix-clear;
+	display: flex;
+	height: 64px;
+	border-bottom: 1px solid var(--color-border);
+	background: var(--color-bg);
 
-	padding: @space-m 0;
-	line-height: 50px;
+	.brand {
+		flex: 0 0 var(--aside-width);
+		display: flex;
+		align-items: center;
+		padding: 0 var(--space-l);
+		border-right: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
 
 	.logo {
-		float: left;
-
 		display: block;
-		position: relative;
-		padding-left: 100px;
 		width: 100px;
-		height: 50px;
-		line-height: 40px;
-
-		font-size: @text-s;
-
-		color: var(--color-header-text);
-
-		background-position: center;
+		height: 32px;
+		background-position: left center;
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
 
+	.bar {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-m);
+		padding: 0 var(--space-xl);
+		min-width: 0;
+	}
+
+	.bar-right {
+		display: flex;
+		align-items: center;
+		gap: var(--space-m);
+	}
+
 	.menu {
-		float: right;
-		margin-right: @space-2xl;
+		display: flex;
+		gap: var(--space-m);
 
 		a {
-			opacity: 0.7;
-			margin-right: @space-m;
-		}
+			font-weight: 500;
+			color: var(--color-text);
 
-		a.router-link-active {
-			opacity: 1;
-			font-weight: bold;
+			&:hover,
+			&.router-link-active {
+				color: var(--color-primary-text);
+			}
 		}
 	}
 
-	.component-lang-switcher {
-		float: right;
-		margin-right: @space-2xl;
+	.version {
+		font-size: var(--text-s);
+		color: var(--color-muted-text);
 	}
 
-	.component-theme-switcher {
-		float: right;
+	.divider {
+		width: 1px;
+		height: 24px;
+		background: var(--color-border);
+	}
+
+	.github {
+		font-size: 20px;
+		color: var(--color-text);
+
+		&:hover {
+			color: var(--color-primary-text);
+		}
 	}
 }
 
@@ -77,5 +119,30 @@
 
 .theme-dark .component-bar-top .logo {
 	background-image: url(/logo-dark.svg);
+}
+
+@media only screen and (max-width: 950px) {
+	.component-bar-top {
+		.brand {
+			flex-basis: auto;
+			border-right: 0;
+			background: none;
+		}
+
+		.bar {
+			padding: 0 var(--space-m);
+		}
+
+		.bar-right {
+			gap: var(--space-s);
+		}
+
+		.component-search,
+		.component-lang-switcher,
+		.version,
+		.divider {
+			display: none;
+		}
+	}
 }
 </style>

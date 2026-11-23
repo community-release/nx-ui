@@ -17,6 +17,7 @@ dist
 # Custom
 temp/*
 config.generated.json
+assets/components-api.generated.json
 
 # git
 !.gitkeep

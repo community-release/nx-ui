@@ -21,11 +21,16 @@
 
 <style lang="less">
 .component-lang-switcher {
+	font-size: var(--text-s);
+
 	a {
 		opacity: 0.7;
-		margin-right: @space-m;
 		text-transform: uppercase;
+		color: var(--color-text);
 
+		+ a {
+			margin-left: @space-xs;
+		}
 
 		&.router-link-active {
 			opacity: 1;
