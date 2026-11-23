@@ -33,8 +33,8 @@ export default {
 		'color-text-on-secondary': 'var(--color-text-on-secondary)',
 
 		'color-gray': 'var(--color-gray)',
-		'color-gray-text': 'var(--color-gray-text)',
-		'color-text-on-gray': 'var(--color-text-on-gray)',
+		'color-gray-text': 'var(--color-muted-text)',
+		'color-text-on-gray': 'var(--color-text)',
 
 		'color-red': 'var(--color-red)',
 		'color-red-text': 'var(--color-red)',
@@ -54,10 +54,6 @@ export default {
 		'color-border-bolder': 'var(--color-border-bolder)',
 
 		'color-overlay': 'var(--color-overlay)',
-
-		'color-test': 'pink',
-		'color-test-text': 'red',
-		'color-text-on-test': 'white',
 
 		// Text
 		'text-2xl': '32px',
